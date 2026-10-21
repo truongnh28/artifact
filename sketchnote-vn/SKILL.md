@@ -38,6 +38,11 @@ Nguyên tắc xuyên suốt:
 5. **GHI NHỚ NHANH**: 3–5 câu chốt. Không lặp nguyên văn tiêu đề thẻ; viết thành câu hoàn chỉnh, ngắn.
 6. Ghi lại phần **đã lược bỏ** để báo người dùng ở cuối.
 
+**Hình hoá để dễ hiểu.** Khi người dùng muốn "dễ hiểu hơn", "có hình minh hoạ", hoặc "sơ đồ tư duy":
+- Thêm thẻ `mindmap` tổng quan ở đầu poster.
+- Đổi bảng hoặc danh sách thành tranh khi có thể. Ví dụ: giới từ dùng `positions`, so sánh dùng `bars`, thời gian dùng `timeline` hoặc `funnel`.
+- Nếu thêm nội dung mà nguồn không có (vì người dùng yêu cầu), gom vào một thẻ riêng, ghi rõ chữ **"Bổ sung"** và nói lại với người dùng.
+
 **Mức chi tiết.** Mặc định poster gọn, đủ để nhớ lại bài. Nếu người dùng muốn **chi tiết hơn**, ví dụ "thêm kiến thức", "đầy đủ hơn", "ít quá", "để ôn thi", "cheat sheet", thì đặt `"density": "dense"`. Chế độ này chữ nhỏ hơn và mỗi thẻ chứa được khoảng 90 tiếng. Lúc đó, mỗi thẻ nên có:
 - Định nghĩa hoặc cách dùng, tách đủ các trường hợp mà nguồn liệt kê.
 - Cấu trúc hoặc công thức đầy đủ.
@@ -67,6 +72,10 @@ Schema đầy đủ nằm ở `references/blueprint-schema.md`; ví dụ chuẩn
   - `steps`: quy trình.
   - `table`: bảng.
   - `compare`: so sánh hai bên.
+  - `mindmap`: sơ đồ tư duy tổng quan. Nên đặt ở thẻ đầu tiên với `"noNumber": true, "span": <toàn hàng>`, mỗi nhánh tương ứng một thẻ hoặc một nhóm thẻ.
+  - `positions`: tranh mèo và hộp minh hoạ vị trí (in, on, under, behind, between…).
+  - `funnel`: phễu đi từ rộng tới hẹp, từ khái quát tới cụ thể (in › on › at, giới → loài).
+  - `bars`: cột tăng dần cho so sánh hơn/nhất hoặc mức độ.
   - `icon` / `icons`: icon doodle, khi không có gì tốt hơn.
   - Bảng gợi ý icon theo môn học nằm trong `references/content-rules.md`.
 - `header.tag` ghi môn, lớp, bộ sách nếu biết (ví dụ "TOÁN 7 – TẬP 1 – KNTT"); `header.subtitle` ghi tên bài.

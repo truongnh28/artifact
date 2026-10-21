@@ -9,6 +9,61 @@
   },
   "cards": [
     {
+      "title": "Sơ đồ tư duy Unit 7 – 12",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Ngữ pháp<br>Unit 7 – 12",
+        "branches": [
+          {
+            "label": "\"It\" & modal",
+            "items": [
+              "It + is + khoảng cách",
+              "should: lời khuyên",
+              "must ≠ have to",
+              "can/could: khả năng"
+            ]
+          },
+          {
+            "label": "Đối lập",
+            "items": [
+              "although/though: nối 2 mệnh đề",
+              "however: nối 2 câu"
+            ]
+          },
+          {
+            "label": "Yes/No questions",
+            "items": [
+              "to be / modal / do-does-did / have-has đứng đầu"
+            ]
+          },
+          {
+            "label": "Thì",
+            "items": [
+              "Hiện tại tiếp diễn: am/is/are + V-ing",
+              "Tương lai đơn: will + V"
+            ]
+          },
+          {
+            "label": "Đại từ sở hữu",
+            "items": [
+              "my → mine, your → yours"
+            ]
+          },
+          {
+            "label": "Mạo từ",
+            "items": [
+              "a + phụ âm, an + nguyên âm",
+              "the: đã xác định"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "title": "Unit 7: \"It\" & động từ khiếm khuyết",
       "span": 2,
       "body": [

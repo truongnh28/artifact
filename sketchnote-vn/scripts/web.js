@@ -23,7 +23,9 @@
       let f = 100;
       while (el.scrollWidth > el.clientWidth + 1 && f > 60) { f -= 5; el.style.fontSize = f + '%'; }
     }
+    if (typeof drawMindmaps === 'function') drawMindmaps();
   }
+  document.fonts?.ready.then(fit);
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fit, 150); });
 

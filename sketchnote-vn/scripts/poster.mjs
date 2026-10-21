@@ -6,6 +6,7 @@
 //   được giữ dạng $...$ để KaTeX auto-render xử lý trong trình duyệt.
 
 import { icon, ICONS } from './icons.mjs';
+import { positions, funnel, bars, mindmap } from './scenes.mjs';
 
 export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -203,6 +204,11 @@ export function renderPoster(bp, { math, id } = {}) {
     compare: (v) => `<div class="v-compare"><div>${body(v.left)}</div><span class="vs">${inline(v.sep ?? 'vs')}</span><div>${body(v.right)}</div></div>`,
 
     icons: (v) => `<div class="v-icons">${(v.names ?? []).map((n) => icon(n, 'doodle mid')).join('')}</div>`,
+
+    positions: (v) => positions(v, inline),
+    funnel: (v) => funnel(v, inline),
+    bars: (v) => bars(v, inline),
+    mindmap: (v) => mindmap(v, inline),
   };
 
   function visual(v) {
@@ -224,8 +230,8 @@ export function renderPoster(bp, { math, id } = {}) {
   for (const [i, c] of cards.entries()) {
     const n = syllables([].concat(c.body ?? [], c.after ?? []).join(' '));
     if (n > LIMIT) warnings.push(`Thẻ ${i + 1} "${c.title}" dài ${n} tiếng — nên ≤ ${LIMIT - 5}; chuyển bớt sang visual hoặc tách thẻ.`);
-    if (!c.keywords) warnings.push(`Thẻ ${i + 1} "${c.title}" thiếu từ khoá.`);
-    else {
+    if (!c.keywords && !c.noNumber) warnings.push(`Thẻ ${i + 1} "${c.title}" thiếu từ khoá.`);
+    else if (c.keywords) {
       const terms = c.keywords.replace(/\$[^$]*\$/g, 'X').split(/[,;]/).length, kn = syllables(c.keywords);
       if (terms > 4 || kn > 8) warnings.push(`Từ khoá thẻ ${i + 1} dài (${terms} cụm, ${kn} tiếng) — nên ≤ 4 cụm, ≤ 8 tiếng.`);
     }
@@ -235,9 +241,10 @@ export function renderPoster(bp, { math, id } = {}) {
   if (cells % cols) warnings.push(`Lưới ${cols} cột còn trống ${cols - (cells % cols)} ô ở hàng cuối — thêm/bớt thẻ hoặc dùng "span".`);
 
   // ---------- Bố cục ----------
+  let num = 0;
   const cardHtml = cards.map((c, i) => `
-    <section class="card${c.span ? ` span-${c.span}` : ''}" style="--n:${i}">
-      <header><span class="num">${i + 1}</span><h3>${inline(c.title)}</h3></header>
+    <section class="card${c.span ? ` span-${c.span}` : ''}${c.noNumber ? ' plain' : ''}" style="--n:${i}">
+      <header>${c.noNumber ? (c.icon ? icon(c.icon, 'doodle hd') : '') : `<span class="num">${++num}</span>`}<h3>${inline(c.title)}</h3></header>
       <div class="content">${c.visualFirst ? visual(c.visual) + body(c.body) : body(c.body) + visual(c.visual)}${c.after ? body(c.after) : ''}</div>
       ${c.keywords ? `<footer><span class="kw">${esc(bp.labels?.keywords ?? 'TỪ KHÓA')}</span><span>${inline(c.keywords)}</span></footer>` : ''}
     </section>`).join('');

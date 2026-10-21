@@ -9,6 +9,56 @@
   },
   "cards": [
     {
+      "title": "Sơ đồ tư duy Unit 1 – 6",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Ngữ pháp<br>Unit 1 – 6",
+        "branches": [
+          {
+            "label": "Thì",
+            "items": [
+              "Hiện tại đơn: V(s/es)",
+              "Quá khứ đơn: V-ed/V2"
+            ]
+          },
+          {
+            "label": "Câu đơn",
+            "items": [
+              "1 mệnh đề độc lập",
+              "S + V (+ O / Adv / C)"
+            ]
+          },
+          {
+            "label": "So sánh",
+            "items": [
+              "bằng: as … as",
+              "hơn: -er / more … than",
+              "nhất: the -est / the most"
+            ]
+          },
+          {
+            "label": "Lượng từ",
+            "items": [
+              "đếm được: many, few",
+              "không đếm được: much, little",
+              "few ≠ a few"
+            ]
+          },
+          {
+            "label": "Giới từ",
+            "items": [
+              "thời gian: in › on › at",
+              "nơi chốn: in / on / at"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "title": "Unit 1: Thì hiện tại đơn",
       "body": [
         "Diễn tả sự kiện, hành động, trạng thái **chung** hoặc **lặp lại thường xuyên**:",
@@ -188,6 +238,24 @@
           ]
         },
         {
+          "type": "bars",
+          "items": [
+            {
+              "label": "fast",
+              "value": 1
+            },
+            {
+              "label": "faster",
+              "value": 2
+            },
+            {
+              "label": "the fastest",
+              "value": 3
+            }
+          ],
+          "caption": "Tính từ ngắn: fast → faster → fastest"
+        },
+        {
           "type": "table",
           "head": [
             "Bất quy tắc",
@@ -258,57 +326,102 @@
       ],
       "visual": [
         {
-          "type": "table",
-          "head": [
-            "Thời gian",
-            "Cách dùng",
-            "Ví dụ"
+          "type": "funnel",
+          "items": [
+            {
+              "word": "in",
+              "text": "tháng, năm, thế kỷ, thời kỳ",
+              "ex": "in December"
+            },
+            {
+              "word": "on",
+              "text": "ngày cụ thể, ngày trong tuần, lễ có \"Day\"",
+              "ex": "on Monday"
+            },
+            {
+              "word": "at",
+              "text": "thời điểm cụ thể, dịp lễ",
+              "ex": "at 8 a.m."
+            }
           ],
-          "rows": [
-            [
-              "**at**",
-              "thời điểm cụ thể trong ngày, dịp lễ, mốc ngắn",
-              "She arrived at 8 a.m."
-            ],
-            [
-              "**on**",
-              "ngày cụ thể, ngày trong tuần, lễ có \"Day\"",
-              "I will meet her on Monday."
-            ],
-            [
-              "**in**",
-              "tháng, năm, thế kỷ, thời kỳ",
-              "He was born in December."
-            ]
-          ]
+          "caption": "Thời gian: khoảng dài → thời điểm cụ thể"
         },
         {
-          "type": "table",
-          "head": [
-            "Nơi chốn",
-            "Cách dùng",
-            "Ví dụ"
-          ],
-          "rows": [
-            [
-              "**at**",
-              "địa điểm cụ thể, sự kiện, điểm xác định",
-              "He is at the bus stop."
-            ],
-            [
-              "**on**",
-              "bề mặt, dọc tuyến đường, sông, biển",
-              "The book is on the table."
-            ],
-            [
-              "**in**",
-              "không gian khép kín, thành phố, quốc gia, khu vực lớn",
-              "He is in the room."
-            ]
+          "type": "positions",
+          "items": [
+            {
+              "pos": "in",
+              "note": "không gian khép kín",
+              "ex": "He is in the room."
+            },
+            {
+              "pos": "on",
+              "note": "bề mặt",
+              "ex": "The book is on the table."
+            },
+            {
+              "pos": "at",
+              "note": "địa điểm cụ thể",
+              "ex": "He is at the bus stop."
+            }
           ]
         }
       ],
       "keywords": "at, on, in"
+    },
+    {
+      "title": "Mở rộng: giới từ chỉ vị trí",
+      "noNumber": true,
+      "icon": "map",
+      "span": 2,
+      "body": [
+        "> **Bổ sung** – không có trong bài gốc, thêm để dễ hình dung vị trí."
+      ],
+      "visual": {
+        "type": "positions",
+        "items": [
+          {
+            "pos": "under",
+            "note": "bên dưới"
+          },
+          {
+            "pos": "above",
+            "note": "phía trên (không chạm)"
+          },
+          {
+            "pos": "below",
+            "note": "phía dưới (không chạm)"
+          },
+          {
+            "pos": "in front of",
+            "note": "phía trước"
+          },
+          {
+            "pos": "behind",
+            "note": "phía sau"
+          },
+          {
+            "pos": "next to",
+            "note": "bên cạnh"
+          },
+          {
+            "pos": "between",
+            "note": "ở giữa"
+          },
+          {
+            "pos": "opposite",
+            "note": "đối diện"
+          },
+          {
+            "pos": "on the left",
+            "note": "bên trái"
+          },
+          {
+            "pos": "on the right",
+            "note": "bên phải"
+          }
+        ]
+      }
     }
   ],
   "recap": {

@@ -96,6 +96,7 @@ ${bar}
 ${posters.map((p) => p.html).join('\n')}
 </div>
 <script>
+${readFileSync(join(here, 'mindmap.js'), 'utf8')}
 ${readFileSync(join(here, 'web.js'), 'utf8')}
 </script>`;
 

@@ -387,6 +387,76 @@ b{font-weight:700}
 .v-timeline .tl-axis-labels .now{color:var(--frame);font-weight:700}
 .tbl{max-width:100%}
 
+/* ---------- Thẻ không đánh số (tổng quan, sơ đồ tư duy) ---------- */
+.card.plain header{justify-content:center}
+.card.plain h3{flex:0 1 auto}
+.doodle.hd{width:38px;height:38px;flex:none}
+
+/* ---------- Tranh vị trí: mèo & hộp ---------- */
+.v-positions{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:10px 12px;margin-top:8px}
+@media (max-width:620px){.v-positions{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
+.pos-tile{margin:0;text-align:center}
+.pos-tile svg{display:block;width:100%;max-width:150px;margin:0 auto;overflow:visible}
+.pos-tile figcaption{display:flex;flex-direction:column;line-height:1.25;margin-top:2px}
+.pos-tile figcaption b{color:var(--collar);font-size:16px}
+.pos-tile figcaption span{font-size:13px;color:var(--ink-soft)}
+.pos-tile figcaption em{font-style:normal;font-size:12.5px;color:var(--ink-soft);opacity:.85}
+.c-body,.c-head{fill:var(--cat);stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.c-tail{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
+.c-legs,.c-line{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linecap:round}
+.c-eye,.c-nose{fill:var(--ink)}
+.c-collar{fill:none;stroke:var(--collar);stroke-width:2.4;stroke-linecap:round}
+.box .b-front{fill:var(--box);stroke:var(--ink);stroke-width:1.8}
+.box .b-side{fill:var(--box-side);stroke:var(--ink);stroke-width:1.8}
+.box .b-flap{fill:var(--box);stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.table path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.table rect{fill:var(--box-side);stroke:var(--ink);stroke-width:1.8}
+.sign path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.sign rect{fill:var(--accent-soft);stroke:var(--ink);stroke-width:1.8}
+.sign .sign-txt{stroke:var(--frame);stroke-width:2.5;stroke-dasharray:6 4}
+.pos-arrow{fill:none;stroke:var(--frame);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Phễu in → on → at ---------- */
+.v-funnel{display:flex;flex-direction:column;align-items:center;gap:5px;margin-top:8px}
+.v-funnel .lv{width:var(--w);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:2px 8px;padding:6px 26px 7px;
+  text-align:center;background:var(--accent-soft);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,16px 100%);font-size:14.5px}
+.v-funnel .lv:nth-child(2){background:var(--chip-bg)}
+.v-funnel .lv:nth-child(3){background:var(--icon-fill)}
+.v-funnel .lv b{font-size:19px;color:var(--frame)}
+.v-funnel .lv em{font-style:normal;opacity:.8}
+.v-funnel .f-cap{font-size:13px;color:var(--ink-soft)}
+
+/* ---------- Cột so sánh ---------- */
+.v-bars{display:flex;align-items:flex-end;justify-content:center;flex-wrap:wrap;gap:6px 18px;margin-top:10px}
+.bar-col{display:flex;flex-direction:column;align-items:center;width:84px}
+.bar-track{position:relative;height:86px;width:44px;display:flex;align-items:flex-end}
+.bar{width:100%;height:var(--h);background:var(--icon-fill);border:2.4px solid var(--ink);border-radius:8px 11px 4px 4px;filter:url(#rough);transform-origin:bottom}
+.bar-star{position:absolute;left:50%;bottom:calc(var(--h) + 2px);transform:translateX(-50%);color:var(--accent);font-size:20px;line-height:1}
+.bar-label{margin-top:4px;font-size:13.5px;font-weight:600;text-align:center;line-height:1.2}
+.bars-cap{flex-basis:100%;text-align:center;font-size:13px;color:var(--ink-soft)}
+
+/* ---------- Sơ đồ tư duy ---------- */
+.v-mindmap{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px 46px;margin-top:6px}
+.mm-links{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.mm-links path{fill:none;stroke-width:3;stroke-linecap:round;filter:url(#rough)}
+.mm-col{display:flex;flex-direction:column;gap:14px;position:relative}
+.mm-left{align-items:flex-end;text-align:right}
+.mm-right{align-items:flex-start}
+.mm-center{position:relative;display:grid;place-items:center;min-width:150px;max-width:220px;padding:20px 22px;text-align:center;
+  font-weight:700;font-size:19px;line-height:1.25;background:var(--accent-soft);border:2.8px solid var(--ink);border-radius:46% 54% 50% 50%/55% 48% 52% 45%}
+.mm-branch{position:relative;max-width:280px}
+.mm-node{display:inline-block;padding:4px 12px;font-weight:700;font-size:16px;border:2.4px solid var(--bc,var(--ink));border-radius:12px 16px 11px 15px;background:var(--paper)}
+.mm-items{list-style:none;margin:4px 0 0;padding:0;font-size:14px;color:var(--ink-soft);line-height:1.35}
+.content .mm-items li{padding:0 0 0 9px;margin:2px 0;border-left:3px solid var(--bc,var(--ink))}
+.content .mm-items li::before{content:none}
+.content .mm-left .mm-items li{padding:0 9px 0 0;border-left:0;border-right:3px solid var(--bc,var(--ink))}
+@media (max-width:620px){
+  .v-mindmap{grid-template-columns:1fr;gap:12px}
+  .mm-center{order:-1;justify-self:center}
+  .mm-col,.mm-left{align-items:flex-start;text-align:left;padding-left:22px}
+  .content .mm-left .mm-items li{padding:0 0 0 9px;border-right:0;border-left:3px solid var(--bc,var(--ink))}
+}
+
 /* Bản web: bố cục co giãn + hình động. Mọi hiệu ứng nằm dưới .anim (chỉ bật khi người xem
    không chọn "giảm chuyển động"); trạng thái nghỉ luôn là poster đầy đủ, đọc được ngay. */
 
@@ -499,11 +569,35 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .anim .recap.play li .ic :is(path,rect){animation:sk-draw .5s ease-out both;animation-delay:calc(.35s + var(--i,0) * .15s)}
 .anim .recap.play .recap-label .doodle{animation:sk-wiggle .8s 1s ease-in-out}
 
+/* Tranh vị trí: mèo nhảy vào chỗ */
+@keyframes sk-hop{0%{transform:translateY(-16px)}55%{transform:translateY(2px)}75%{transform:translateY(-3px)}100%{transform:none}}
+@keyframes sk-peek{from{transform:translateY(20px)}to{transform:none}}
+@keyframes sk-slide{from{transform:translateX(-18px)}to{transform:none}}
+@keyframes sk-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.anim .play .pos-tile .cat-anim{animation:sk-hop .7s ease-out both;animation-delay:calc(.3s + var(--i,0) * .12s)}
+.anim .play .pos-tile[data-pos="in"] .cat-anim{animation-name:sk-peek}
+.anim .play .pos-tile[data-pos="behind"] .cat-anim{animation-name:sk-slide}
+.anim .pos-tile[data-pos="above"] .float .cat-anim{animation:sk-float 2.4s ease-in-out infinite}
+.anim .pos-tile:hover .cat-anim{animation:sk-hop .6s ease-out}
+
+/* Phễu, cột so sánh */
+.anim .play .v-funnel .lv{animation:sk-drop .5s ease-out both;animation-delay:calc(.3s + var(--i,0) * .22s)}
+@keyframes sk-rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.anim .play .bar{animation:sk-rise .8s ease-out both;animation-delay:calc(.3s + var(--i,0) * .25s)}
+.anim .play .bar-star{animation:sk-pop .5s ease-out both;animation-delay:1.2s}
+
+/* Sơ đồ tư duy */
+@keyframes sk-drawp{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.anim .play .mm-links path{stroke-dasharray:1;animation:sk-drawp .9s ease-in-out both;animation-delay:.35s}
+.anim .play .mm-center{animation:sk-pop .55s ease-out both}
+.anim .play .mm-node{animation:sk-pop .5s ease-out both;animation-delay:calc(.6s + var(--b,0) * .12s)}
+.anim .play .mm-items{animation:sk-row .45s ease-out both;animation-delay:calc(.8s + var(--b,0) * .12s)}
+
 @media (prefers-reduced-motion:reduce){.anim *{animation:none!important;transition:none!important}}
 
-:root{--card-bg:rgba(255,255,255,.35);--ring-inner:#e6f4ea;--leaf:#3c8d5a;--icon-fill:#ffd98e;--paper:#fbf8f1;--line:rgba(120,150,200,.16);--ink:#1d3a8a;--ink-soft:#33415c;--frame:#d9534f;--accent:#f2b632;--accent-soft:#fdecc8;--chip:#2e7d4f;--chip-bg:#e6f4ea;--mark:rgba(253,224,71,.55);--title-fill:#fffdf6;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}}
-:root[data-theme="dark"]{--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}
+:root{--box:#f4b98a;--box-side:#a8683a;--cat:#d9d6e0;--collar:#3b6fd1;--card-bg:rgba(255,255,255,.35);--ring-inner:#e6f4ea;--leaf:#3c8d5a;--icon-fill:#ffd98e;--paper:#fbf8f1;--line:rgba(120,150,200,.16);--ink:#1d3a8a;--ink-soft:#33415c;--frame:#d9534f;--accent:#f2b632;--accent-soft:#fdecc8;--chip:#2e7d4f;--chip-bg:#e6f4ea;--mark:rgba(253,224,71,.55);--title-fill:#fffdf6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}}
+:root[data-theme="dark"]{--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}
 </style>
 </head>
 <body>
@@ -526,7 +620,31 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <svg class="wave" viewBox="0 0 400 16"><path d="M4 8c25-8 25 8 50 0s25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0"/></svg>
   </div>
   <div class="grid">
-    <section class="card" style="--n:0">
+    <section class="card span-2 plain" style="--n:0">
+      <header><svg class="doodle hd" viewBox="0 0 64 64" aria-hidden="true"><path style="fill:var(--icon-fill)" d="M10 18h14c-3-8 13-8 10 0h14v14c-8-3-8 13 0 10v14H34c3 8-13 8-10 0H10V42c8 3 8-13 0-10z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M10 18h14c-3-8 13-8 10 0h14v14c-8-3-8 13 0 10v14H34c3 8-13 8-10 0H10V42c8 3 8-13 0-10z"/></svg><h3>Sơ đồ tư duy Unit 1 – 6</h3></header>
+      <div class="content"><div class="v-mindmap"><svg class="mm-links" aria-hidden="true"></svg>
+    <div class="mm-col mm-left"><div class="mm-branch" style="--b:0">
+      <div class="mm-node">Thì</div>
+      <ul class="mm-items"><li>Hiện tại đơn: V(s/es)</li><li>Quá khứ đơn: V-ed/V2</li></ul>
+    </div><div class="mm-branch" style="--b:1">
+      <div class="mm-node">Câu đơn</div>
+      <ul class="mm-items"><li>1 mệnh đề độc lập</li><li>S + V (+ O / Adv / C)</li></ul>
+    </div><div class="mm-branch" style="--b:2">
+      <div class="mm-node">So sánh</div>
+      <ul class="mm-items"><li>bằng: as … as</li><li>hơn: -er / more … than</li><li>nhất: the -est / the most</li></ul>
+    </div></div>
+    <div class="mm-center"><span>Ngữ pháp<br>Unit 1 – 6</span></div>
+    <div class="mm-col mm-right"><div class="mm-branch" style="--b:3">
+      <div class="mm-node">Lượng từ</div>
+      <ul class="mm-items"><li>đếm được: many, few</li><li>không đếm được: much, little</li><li>few ≠ a few</li></ul>
+    </div><div class="mm-branch" style="--b:4">
+      <div class="mm-node">Giới từ</div>
+      <ul class="mm-items"><li>thời gian: in › on › at</li><li>nơi chốn: in / on / at</li></ul>
+    </div></div>
+  </div></div>
+      
+    </section>
+    <section class="card" style="--n:1">
       <header><span class="num">1</span><h3>Unit 1: Thì hiện tại đơn</h3></header>
       <div class="content"><p>Diễn tả sự kiện, hành động, trạng thái <b>chung</b> hoặc <b>lặp lại thường xuyên</b>:</p><ul><li>Sự thật hiển nhiên: The sun rises in the east.</li><li>Thói quen: She walks to school every day.</li><li>Lịch trình cố định: The train leaves at 7 p.m.</li></ul><div class="v-timeline"><svg viewBox="0 0 300 44">
           <path class="tl-axis" d="M8 22H294M287 17L294 22L287 27"/>
@@ -538,12 +656,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div><div class="tbl"><table class="v-table"><tr><th></th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>(+)</b></td><td>S + V(s/es) + O</td><td>He plays soccer.</td></tr><tr style="--i:1"><td><b>(–)</b></td><td>S + do/does + not + V (nguyên thể) + O</td><td>I do not like coffee.</td></tr><tr style="--i:2"><td><b>(?)</b></td><td>Do/Does + S + V (nguyên thể) + O?</td><td>Do you play football?</td></tr></table></div><p class="callout"><b>Dấu hiệu:</b> always, usually, often, sometimes, rarely, never, every day/week/month</p></div>
       <footer><span class="kw">TỪ KHÓA</span><span>thói quen, sự thật, lịch trình</span></footer>
     </section>
-    <section class="card" style="--n:1">
+    <section class="card" style="--n:2">
       <header><span class="num">2</span><h3>Unit 2: Câu đơn</h3></header>
       <div class="content"><p>Câu chứa <b>một mệnh đề độc lập</b>, có chủ ngữ và vị ngữ, diễn tả ý nghĩa hoàn chỉnh, ngắn gọn.</p><div class="tbl"><table class="v-table"><tr><th>Loại câu</th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td>Cơ bản</td><td>S + V</td><td>He runs.</td></tr><tr style="--i:1"><td>Mở rộng</td><td>S + V + O</td><td>She reads a book.</td></tr><tr style="--i:2"><td>Với trạng từ</td><td>S + V + O + Adv</td><td>They play soccer every afternoon.</td></tr><tr style="--i:3"><td>Với bổ ngữ</td><td>S + V + C</td><td>The flowers look beautiful.</td></tr></table></div><ul><li><b>Chỉ một mệnh đề</b>, không liên từ, không mệnh đề phụ thuộc: I love coffee.</li><li>Có thể <b>ngắn hoặc dài</b>, miễn ý nghĩa hoàn chỉnh: The children are playing happily in the garden.</li></ul></div>
       <footer><span class="kw">TỪ KHÓA</span><span>1 mệnh đề, S + V</span></footer>
     </section>
-    <section class="card span-2" style="--n:2">
+    <section class="card span-2" style="--n:3">
       <header><span class="num">3</span><h3>Unit 3: Thì quá khứ đơn</h3></header>
       <div class="content"><p>Hành động, sự kiện, trạng thái đã xảy ra và <b>kết thúc hoàn toàn</b> trong quá khứ; dùng để kể lại câu chuyện hoặc trả lời câu hỏi "When?".</p><div class="v-timeline"><svg viewBox="0 0 300 44">
           <path class="tl-axis" d="M8 22H294M287 17L294 22L287 27"/>
@@ -555,20 +673,162 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div><div class="tbl"><table class="v-table"><tr><th></th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>(+)</b></td><td>S + V-ed/V2 + O</td><td>She visited her aunt yesterday.</td></tr><tr style="--i:1"><td><b>(–)</b></td><td>S + did not (didn't) + V (nguyên thể) + O</td><td>They didn't watch the movie.</td></tr><tr style="--i:2"><td><b>(?)</b></td><td>Did + S + V (nguyên thể) + O?</td><td>Did you call your friend last night?</td></tr></table></div><ul><li><b>Có quy tắc:</b> thêm "-ed" (walk → walked, cook → cooked) · <b>Bất quy tắc:</b> dùng V2 (go → went, eat → ate)</li><li>Trong câu <b>phủ định</b> và <b>nghi vấn</b>, động từ trở về <b>nguyên thể</b>: They didn't finish the project.</li></ul><p class="callout"><b>Dấu hiệu:</b> yesterday, last week, last month, last year, ago, in 1990, this morning (nếu thời gian đã qua)</p></div>
       <footer><span class="kw">TỪ KHÓA</span><span>V-ed/V2, did + V</span></footer>
     </section>
-    <section class="card span-2" style="--n:3">
+    <section class="card span-2" style="--n:4">
       <header><span class="num">4</span><h3>Unit 4: Cấu trúc so sánh</h3></header>
-      <div class="content"><p>Diễn đạt sự <b>giống nhau</b>, <b>khác nhau</b> hoặc <b>mức độ nổi bật</b> của sự vật, hiện tượng.</p><div class="tbl"><table class="v-table"><tr><th>Loại</th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td>So sánh bằng</td><td>S + V + as + adj/adv + as + N/Pronoun<br>S + V + not as/so + adj/adv + as + N/Pronoun</td><td>She is as kind as her mother.<br>This book is not as interesting as I thought.</td></tr><tr style="--i:1"><td>So sánh hơn</td><td>S + V + adj/adv-er + than + N/Pronoun<br>S + V + more + adj/adv + than + N/Pronoun</td><td>My house is bigger than theirs.<br>She is more talented than her friends.</td></tr><tr style="--i:2"><td>So sánh nhất</td><td>S + V + the + adj/adv-est + (in/of)<br>S + V + the most + adj/adv + (in/of)</td><td>He is the fastest runner in the race.<br>This is the most challenging task I've ever done.</td></tr></table></div><div class="tbl"><table class="v-table"><tr><th>Bất quy tắc</th><th>good/well</th><th>bad/badly</th><th>far</th><th>little</th><th>much/many</th><th>old</th></tr><tr style="--i:0"><td>So sánh hơn</td><td>better</td><td>worse</td><td>farther/further</td><td>less</td><td>more</td><td>older/elder</td></tr><tr style="--i:1"><td>So sánh nhất</td><td>the best</td><td>the worst</td><td>the farthest/furthest</td><td>the least</td><td>the most</td><td>the oldest/the eldest</td></tr></table></div><ul><li><b>Tính từ/trạng từ ngắn:</b> thêm -er/-est (fast → faster → fastest) · <b>Dài:</b> more/most (beautiful → more beautiful → most beautiful)</li></ul></div>
+      <div class="content"><p>Diễn đạt sự <b>giống nhau</b>, <b>khác nhau</b> hoặc <b>mức độ nổi bật</b> của sự vật, hiện tượng.</p><div class="tbl"><table class="v-table"><tr><th>Loại</th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td>So sánh bằng</td><td>S + V + as + adj/adv + as + N/Pronoun<br>S + V + not as/so + adj/adv + as + N/Pronoun</td><td>She is as kind as her mother.<br>This book is not as interesting as I thought.</td></tr><tr style="--i:1"><td>So sánh hơn</td><td>S + V + adj/adv-er + than + N/Pronoun<br>S + V + more + adj/adv + than + N/Pronoun</td><td>My house is bigger than theirs.<br>She is more talented than her friends.</td></tr><tr style="--i:2"><td>So sánh nhất</td><td>S + V + the + adj/adv-est + (in/of)<br>S + V + the most + adj/adv + (in/of)</td><td>He is the fastest runner in the race.<br>This is the most challenging task I've ever done.</td></tr></table></div><div class="v-bars">
+    <div class="bar-col" style="--h:33.33333333333333%;--i:0">
+      <div class="bar-track"><div class="bar"></div></div>
+      <div class="bar-label">fast</div>
+    </div>
+    <div class="bar-col" style="--h:66.66666666666666%;--i:1">
+      <div class="bar-track"><div class="bar"></div></div>
+      <div class="bar-label">faster</div>
+    </div>
+    <div class="bar-col" style="--h:100%;--i:2">
+      <div class="bar-track"><span class="bar-star">★</span><div class="bar"></div></div>
+      <div class="bar-label">the fastest</div>
+    </div><div class="bars-cap">Tính từ ngắn: fast → faster → fastest</div></div><div class="tbl"><table class="v-table"><tr><th>Bất quy tắc</th><th>good/well</th><th>bad/badly</th><th>far</th><th>little</th><th>much/many</th><th>old</th></tr><tr style="--i:0"><td>So sánh hơn</td><td>better</td><td>worse</td><td>farther/further</td><td>less</td><td>more</td><td>older/elder</td></tr><tr style="--i:1"><td>So sánh nhất</td><td>the best</td><td>the worst</td><td>the farthest/furthest</td><td>the least</td><td>the most</td><td>the oldest/the eldest</td></tr></table></div><ul><li><b>Tính từ/trạng từ ngắn:</b> thêm -er/-est (fast → faster → fastest) · <b>Dài:</b> more/most (beautiful → more beautiful → most beautiful)</li></ul></div>
       <footer><span class="kw">TỪ KHÓA</span><span>as…as, -er/more, -est/most</span></footer>
     </section>
-    <section class="card" style="--n:4">
+    <section class="card" style="--n:5">
       <header><span class="num">5</span><h3>Unit 5: Lượng từ</h3></header>
       <div class="content"><p>Từ/cụm từ chỉ <b>số lượng</b> của danh từ.</p><ul><li><b>Đếm được:</b> many, few, several, a couple of, each, every</li><li><b>Không đếm được:</b> much, a little, less, a great deal of</li><li><b>Cả hai:</b> some, any, a lot of, lots of, all, none</li><li><b>Much/Many:</b> thường trong câu phủ định, câu hỏi → Do you have many friends?</li><li><b>Some:</b> câu khẳng định, câu hỏi mong đợi "Yes" → Would you like some tea?</li></ul><div class="v-compare"><div><p><b>few / little</b></p><p>rất ít, gần như không đủ</p><p class="callout">Few students passed the exam.</p></div><span class="vs">≠</span><div><p><b>a few / a little</b></p><p>một ít nhưng đủ</p><p class="callout">I have a few close friends here.</p></div></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>đếm được, few ≠ a few</span></footer>
     </section>
-    <section class="card" style="--n:5">
+    <section class="card" style="--n:6">
       <header><span class="num">6</span><h3>Unit 6: Giới từ at/on/in</h3></header>
-      <div class="content"><p>Chỉ quan hệ của danh từ/đại từ với <b>thời gian</b> hoặc <b>vị trí</b>.</p><div class="tbl"><table class="v-table"><tr><th>Thời gian</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>at</b></td><td>thời điểm cụ thể trong ngày, dịp lễ, mốc ngắn</td><td>She arrived at 8 a.m.</td></tr><tr style="--i:1"><td><b>on</b></td><td>ngày cụ thể, ngày trong tuần, lễ có "Day"</td><td>I will meet her on Monday.</td></tr><tr style="--i:2"><td><b>in</b></td><td>tháng, năm, thế kỷ, thời kỳ</td><td>He was born in December.</td></tr></table></div><div class="tbl"><table class="v-table"><tr><th>Nơi chốn</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>at</b></td><td>địa điểm cụ thể, sự kiện, điểm xác định</td><td>He is at the bus stop.</td></tr><tr style="--i:1"><td><b>on</b></td><td>bề mặt, dọc tuyến đường, sông, biển</td><td>The book is on the table.</td></tr><tr style="--i:2"><td><b>in</b></td><td>không gian khép kín, thành phố, quốc gia, khu vực lớn</td><td>He is in the room.</td></tr></table></div></div>
+      <div class="content"><p>Chỉ quan hệ của danh từ/đại từ với <b>thời gian</b> hoặc <b>vị trí</b>.</p><div class="v-funnel"><div class="lv" style="--w:100%;--i:0"><b>in</b><span>tháng, năm, thế kỷ, thời kỳ</span><em>in December</em></div><div class="lv" style="--w:77%;--i:1"><b>on</b><span>ngày cụ thể, ngày trong tuần, lễ có "Day"</span><em>on Monday</em></div><div class="lv" style="--w:54%;--i:2"><b>at</b><span>thời điểm cụ thể, dịp lễ</span><em>at 8 a.m.</em></div><div class="f-cap">Thời gian: khoảng dài → thời điểm cụ thể</div></div><div class="v-positions" style="--cols:3"><figure class="pos-tile" data-pos="in" style="--i:0"><svg viewBox="0 0 120 96" aria-hidden="true"><g transform="translate(38 34) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g><g class="box"><path class="b-flap" d="M30 60l-9 -9h29l4 9zM88 60l7 -8h-26.1l-3 8z"/><rect class="b-front" x="30" y="60" width="58" height="30"/><rect class="b-side" x="75" y="60" width="13" height="30"/></g></svg>
+      <figcaption><b>in</b><span>không gian khép kín</span><em>He is in the room.</em></figcaption></figure><figure class="pos-tile" data-pos="on" style="--i:1"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="30" y="58" width="60" height="32"/><rect class="b-side" x="77" y="58" width="13" height="32"/></g><g transform="translate(39 12) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>on</b><span>bề mặt</span><em>The book is on the table.</em></figcaption></figure><figure class="pos-tile" data-pos="at" style="--i:2"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="sign"><path d="M34 24v66"/><rect x="10" y="6" width="48" height="20" rx="4"/><path d="M18 16h32" class="sign-txt"/></g><g transform="translate(62 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>at</b><span>địa điểm cụ thể</span><em>He is at the bus stop.</em></figcaption></figure></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>at, on, in</span></footer>
+    </section>
+    <section class="card span-2 plain" style="--n:7">
+      <header><svg class="doodle hd" viewBox="0 0 64 64" aria-hidden="true"><path style="fill:var(--icon-fill)" d="M6 14l16-6 20 6 16-6v42l-16 6-20-6-16 6z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M6 14l16-6 20 6 16-6v42l-16 6-20-6-16 6zM22 8v42M42 14v42"/></svg><h3>Mở rộng: giới từ chỉ vị trí</h3></header>
+      <div class="content"><p class="callout"><b>Bổ sung</b> – không có trong bài gốc, thêm để dễ hình dung vị trí.</p><div class="v-positions" style="--cols:5"><figure class="pos-tile" data-pos="under" style="--i:0"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="table"><path d="M22 36v54M98 36v54"/><rect x="14" y="31" width="92" height="7" rx="2"/></g><g transform="translate(39 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>under</b><span>bên dưới</span></figcaption></figure><figure class="pos-tile" data-pos="above" style="--i:1"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="30" y="64" width="60" height="26"/><rect class="b-side" x="77" y="64" width="13" height="26"/></g><g class="float"><g transform="translate(39 0) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></g></svg>
+      <figcaption><b>above</b><span>phía trên (không chạm)</span></figcaption></figure><figure class="pos-tile" data-pos="below" style="--i:2"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="30" y="2" width="60" height="28"/><rect class="b-side" x="77" y="2" width="13" height="28"/></g><g transform="translate(39 46) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>below</b><span>phía dưới (không chạm)</span></figcaption></figure><figure class="pos-tile" data-pos="in-front-of" style="--i:3"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="28" y="26" width="64" height="64"/><rect class="b-side" x="78" y="26" width="14" height="64"/></g><g transform="translate(37 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>in front of</b><span>phía trước</span></figcaption></figure><figure class="pos-tile" data-pos="behind" style="--i:4"><svg viewBox="0 0 120 96" aria-hidden="true"><g transform="translate(66 42) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g><g class="box"><rect class="b-front" x="16" y="38" width="58" height="52"/><rect class="b-side" x="61" y="38" width="13" height="52"/></g></svg>
+      <figcaption><b>behind</b><span>phía sau</span></figcaption></figure><figure class="pos-tile" data-pos="next-to" style="--i:5"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="8" y="50" width="52" height="40"/><rect class="b-side" x="49" y="50" width="11" height="40"/></g><g transform="translate(66 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>next to</b><span>bên cạnh</span></figcaption></figure><figure class="pos-tile" data-pos="between" style="--i:6"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="0" y="50" width="36" height="40"/><rect class="b-side" x="28" y="50" width="8" height="40"/></g><g class="box"><rect class="b-front" x="84" y="50" width="36" height="40"/><rect class="b-side" x="112" y="50" width="8" height="40"/></g><g transform="translate(39 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>between</b><span>ở giữa</span></figcaption></figure><figure class="pos-tile" data-pos="opposite" style="--i:7"><svg viewBox="0 0 120 96" aria-hidden="true"><g transform="translate(4 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g><g transform="translate(116 44) scale(-1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g><path class="pos-arrow" d="M50 34h20M54 30l-4 4 4 4M66 30l4 4-4 4"/></svg>
+      <figcaption><b>opposite</b><span>đối diện</span></figcaption></figure><figure class="pos-tile" data-pos="on-the-left" style="--i:8"><svg viewBox="0 0 120 96" aria-hidden="true"><g transform="translate(2 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g><g class="box"><rect class="b-front" x="54" y="50" width="60" height="40"/><rect class="b-side" x="101" y="50" width="13" height="40"/></g></svg>
+      <figcaption><b>on the left</b><span>bên trái</span></figcaption></figure><figure class="pos-tile" data-pos="on-the-right" style="--i:9"><svg viewBox="0 0 120 96" aria-hidden="true"><g class="box"><rect class="b-front" x="6" y="50" width="60" height="40"/><rect class="b-side" x="53" y="50" width="13" height="40"/></g><g transform="translate(72 44) scale(1.05 1.05)"><g class="cat-anim">
+  <path class="c-tail" d="M30 38c10-2 10-14 3-16"/>
+  <path class="c-body" d="M10 42c-2-12 2-18 10-18s12 6 10 18z"/>
+  <path class="c-legs" d="M17 42v-8M23 42v-8"/>
+  <path class="c-head" d="M8 16 7 4l7 5c3-1 9-1 12 0l7-5-1 12c0 7-5 10-12 10S8 23 8 16z"/>
+  <circle class="c-eye" cx="15" cy="16" r="1.6"/><circle class="c-eye" cx="25" cy="16" r="1.6"/>
+  <path class="c-nose" d="M19 19h2l-1 1.5z"/>
+  <path class="c-line" d="M20 20.5q-1.5 2-3 1M20 20.5q1.5 2 3 1M12 19l-7-1M12 21l-7 1M28 19l7-1M28 21l7 1"/>
+  <path class="c-collar" d="M13 25.5q7 2.5 14 0"/></g></g></svg>
+      <figcaption><b>on the right</b><span>bên phải</span></figcaption></figure></div></div>
+      
     </section></div>
   <section class="recap">
     <div class="recap-label"><svg class="doodle mid" viewBox="0 0 64 64" aria-hidden="true"><path style="fill:var(--icon-fill)" d="M32 8c-11 0-18 8-18 17 0 7 4 11 7 14 2 2 3 4 3 7h16c0-3 1-5 3-7 3-3 7-7 7-14 0-9-7-17-18-17z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M32 8c-11 0-18 8-18 17 0 7 4 11 7 14 2 2 3 4 3 7h16c0-3 1-5 3-7 3-3 7-7 7-14 0-9-7-17-18-17zM25 52h14M27 57h10M32 46V30M28 30h8M6 22h3M55 22h3M12 7l2 3M52 7l-2 3"/></svg><span>GHI NHỚ NHANH</span></div>
@@ -588,22 +848,49 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <svg class="wave" viewBox="0 0 400 16"><path d="M4 8c25-8 25 8 50 0s25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0 25 8 50 0"/></svg>
   </div>
   <div class="grid">
-    <section class="card span-2" style="--n:0">
+    <section class="card span-2 plain" style="--n:0">
+      <header><svg class="doodle hd" viewBox="0 0 64 64" aria-hidden="true"><path style="fill:var(--icon-fill)" d="M10 18h14c-3-8 13-8 10 0h14v14c-8-3-8 13 0 10v14H34c3 8-13 8-10 0H10V42c8 3 8-13 0-10z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M10 18h14c-3-8 13-8 10 0h14v14c-8-3-8 13 0 10v14H34c3 8-13 8-10 0H10V42c8 3 8-13 0-10z"/></svg><h3>Sơ đồ tư duy Unit 7 – 12</h3></header>
+      <div class="content"><div class="v-mindmap"><svg class="mm-links" aria-hidden="true"></svg>
+    <div class="mm-col mm-left"><div class="mm-branch" style="--b:0">
+      <div class="mm-node">"It" &amp; modal</div>
+      <ul class="mm-items"><li>It + is + khoảng cách</li><li>should: lời khuyên</li><li>must ≠ have to</li><li>can/could: khả năng</li></ul>
+    </div><div class="mm-branch" style="--b:1">
+      <div class="mm-node">Đối lập</div>
+      <ul class="mm-items"><li>although/though: nối 2 mệnh đề</li><li>however: nối 2 câu</li></ul>
+    </div><div class="mm-branch" style="--b:2">
+      <div class="mm-node">Yes/No questions</div>
+      <ul class="mm-items"><li>to be / modal / do-does-did / have-has đứng đầu</li></ul>
+    </div></div>
+    <div class="mm-center"><span>Ngữ pháp<br>Unit 7 – 12</span></div>
+    <div class="mm-col mm-right"><div class="mm-branch" style="--b:3">
+      <div class="mm-node">Thì</div>
+      <ul class="mm-items"><li>Hiện tại tiếp diễn: am/is/are + V-ing</li><li>Tương lai đơn: will + V</li></ul>
+    </div><div class="mm-branch" style="--b:4">
+      <div class="mm-node">Đại từ sở hữu</div>
+      <ul class="mm-items"><li>my → mine, your → yours</li></ul>
+    </div><div class="mm-branch" style="--b:5">
+      <div class="mm-node">Mạo từ</div>
+      <ul class="mm-items"><li>a + phụ âm, an + nguyên âm</li><li>the: đã xác định</li></ul>
+    </div></div>
+  </div></div>
+      
+    </section>
+    <section class="card span-2" style="--n:1">
       <header><span class="num">1</span><h3>Unit 7: "It" &amp; động từ khiếm khuyết</h3></header>
       <div class="content"><p>Diễn đạt <b>khoảng cách</b>, đưa ra <b>lời khuyên</b>, ý kiến hoặc chỉ <b>sự cần thiết</b>.</p><div class="tbl"><table class="v-table"><tr><th>Cấu trúc</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td>It + is + khoảng cách + from/to</td><td>Chỉ khoảng cách giữa hai địa điểm (đo bằng thời gian hoặc đơn vị đo lường)</td><td>It is 5 kilometers from my house to the school.<br>It takes 10 minutes by car from here to the airport.</td></tr><tr style="--i:1"><td>Should/Shouldn't + V (nguyên thể)</td><td>Lời khuyên nên làm hoặc không nên làm</td><td>You should drink more water.<br>He shouldn't eat so much fast food.</td></tr><tr style="--i:2"><td>Must</td><td>Bắt buộc mang tính <b>chủ quan</b> từ người nói</td><td>I must go to the doctor today.</td></tr><tr style="--i:3"><td>Have to</td><td>Bắt buộc mang tính <b>khách quan</b> (luật lệ, quy định)</td><td>I have to wear a uniform at work.</td></tr><tr style="--i:4"><td>Can/Could + V (nguyên thể)</td><td>Khả năng, xin phép, hoặc yêu cầu</td><td>I can swim very well.</td></tr></table></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>should, must ≠ have to, can</span></footer>
     </section>
-    <section class="card span-2" style="--n:1">
+    <section class="card span-2" style="--n:2">
       <header><span class="num">2</span><h3>Unit 8: Although/Though &amp; However</h3></header>
       <div class="content"><p>Chỉ sự <b>đối lập</b> hoặc <b>tương phản</b> giữa hai mệnh đề: "mặc dù" hoặc "tuy nhiên".</p><div class="v-compare"><div><p><b>Although/Though</b> (Mặc dù)</p><p>Although/Though + S + V, S + V</p><p>S + V + although/though + S + V</p><ul><li>Nối <b>hai mệnh đề</b> có ý nghĩa trái ngược.</li><li><b>Though</b> thường không trang trọng bằng Although.</li></ul><p class="callout">Although it was raining, they went to the park.</p><p class="callout">Though he is rich, he is not happy.</p></div><span class="vs">≠</span><div><p><b>However</b> (Tuy nhiên)</p><p>S + V. However, S + V.</p><p>S + V; however, S + V.</p><ul><li>Nối <b>hai câu hoàn chỉnh</b> có ý nghĩa trái ngược.</li><li>Đứng đầu hoặc giữa câu thứ hai, sau dấu . hoặc ;</li></ul><p class="callout">He worked hard. However, he didn't succeed.</p><p class="callout">She is talented; however, she is not confident.</p></div></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>mặc dù ≠ tuy nhiên</span></footer>
     </section>
-    <section class="card span-2" style="--n:2">
+    <section class="card span-2" style="--n:3">
       <header><span class="num">3</span><h3>Unit 9: Yes/No Questions</h3></header>
       <div class="content"><p>Câu hỏi có thể trả lời bằng <b>Yes</b> (Có) hoặc <b>No</b> (Không); dùng để xác nhận hoặc bác bỏ thông tin.</p><div class="tbl"><table class="v-table"><tr><th>Loại câu</th><th>Cấu trúc</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td>Động từ "to be"</td><td>To be + S + ...?</td><td>Đứng đầu câu hỏi khi là động từ chính</td><td>Are you a student?<br>Was she at home yesterday?</td></tr><tr style="--i:1"><td>Động từ khuyết thiếu</td><td>Modal verb + S + V (nguyên thể) + ...?</td><td>Modal đứng đầu, sau đó chủ ngữ và V nguyên thể</td><td>Can you swim?<br>Should I call him now?</td></tr><tr style="--i:2"><td>Động từ thường</td><td>Do/Does/Did + S + V (nguyên thể) + ...?</td><td>Cần trợ động từ do/does/did</td><td>Do they play football?<br>Did she watch the movie last night?</td></tr><tr style="--i:3"><td>Hiện tại hoàn thành</td><td>Have/Has + S + V3/V-ed + ...?</td><td>Dùng trợ động từ have/has</td><td>Have you ever visited Japan?<br>Has he finished his homework?</td></tr></table></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>Yes/No, đứng đầu câu</span></footer>
     </section>
-    <section class="card" style="--n:3">
+    <section class="card" style="--n:4">
       <header><span class="num">4</span><h3>Unit 10: Hiện tại tiếp diễn</h3></header>
       <div class="content"><ul><li>Đang xảy ra lúc nói: She is talking on the phone.</li><li>Tạm thời: I am living in New York this summer.</li><li>Kế hoạch tương lai gần: We are meeting our friends tomorrow.</li><li>Thay đổi theo thời gian: The weather is getting colder.</li></ul><div class="v-timeline"><svg viewBox="0 0 300 44">
           <path class="tl-axis" d="M8 22H294M287 17L294 22L287 27"/>
@@ -615,7 +902,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div><div class="tbl"><table class="v-table"><tr><th></th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>(+)</b></td><td>S + am/is/are + V-ing</td><td>She is studying English now.</td></tr><tr style="--i:1"><td><b>(–)</b></td><td>S + am/is/are + not + V-ing</td><td>I am not working at the moment.</td></tr><tr style="--i:2"><td><b>(?)</b></td><td>Am/Is/Are + S + V-ing?</td><td>Is he sleeping?</td></tr></table></div><p class="callout"><b>Dấu hiệu:</b> now, right now, at the moment, today, this week, currently, these days</p></div>
       <footer><span class="kw">TỪ KHÓA</span><span>am/is/are + V-ing</span></footer>
     </section>
-    <section class="card" style="--n:4">
+    <section class="card" style="--n:5">
       <header><span class="num">5</span><h3>Unit 11: Thì tương lai đơn</h3></header>
       <div class="content"><ul><li>Dự đoán: It will rain tomorrow.</li><li>Quyết định ngay lúc nói: I'll help you with your homework.</li><li>Hứa hẹn, đề nghị: I promise I'll be there on time.</li><li>Yêu cầu lịch sự: Will you lend me your book?</li></ul><div class="v-timeline"><svg viewBox="0 0 300 44">
           <path class="tl-axis" d="M8 22H294M287 17L294 22L287 27"/>
@@ -627,12 +914,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       </div><div class="tbl"><table class="v-table"><tr><th></th><th>Cấu trúc</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>(+)</b></td><td>S + will + V (nguyên thể)</td><td>I will call you tomorrow.</td></tr><tr style="--i:1"><td><b>(–)</b></td><td>S + will not (won't) + V (nguyên thể)</td><td>She won't attend the meeting.</td></tr><tr style="--i:2"><td><b>(?)</b></td><td>Will + S + V (nguyên thể)?</td><td>Will they travel to Japan next year?</td></tr></table></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>will + V, won't</span></footer>
     </section>
-    <section class="card" style="--n:5">
+    <section class="card" style="--n:6">
       <header><span class="num">6</span><h3>Unit 11: Đại từ sở hữu</h3></header>
       <div class="content"><p>Thay thế cho danh từ, biểu thị <b>sự sở hữu</b> của người hoặc vật.</p><div class="tbl"><table class="v-table"><tr><th>Chủ ngữ</th><th>Tính từ sở hữu</th><th>Đại từ sở hữu</th></tr><tr style="--i:0"><td>I</td><td>my</td><td>mine</td></tr><tr style="--i:1"><td>You</td><td>your</td><td>yours</td></tr><tr style="--i:2"><td>He</td><td>his</td><td>his</td></tr><tr style="--i:3"><td>She</td><td>her</td><td>hers</td></tr><tr style="--i:4"><td>We</td><td>our</td><td>ours</td></tr><tr style="--i:5"><td>They</td><td>their</td><td>theirs</td></tr></table></div><p class="callout">This is my book. The red one is <b>mine</b>.</p></div>
       <footer><span class="kw">TỪ KHÓA</span><span>my → mine, her → hers</span></footer>
     </section>
-    <section class="card" style="--n:6">
+    <section class="card" style="--n:7">
       <header><span class="num">7</span><h3>Unit 12: Mạo từ a/an, the</h3></header>
       <div class="content"><p>Đứng trước danh từ, chỉ tính <b>xác định</b> (the) hoặc <b>không xác định</b> (a/an).</p><div class="tbl"><table class="v-table"><tr><th>Mạo từ</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td><b>a</b> + danh từ số ít</td><td>Danh từ số ít, đếm được, bắt đầu bằng <b>phụ âm</b></td><td>I saw a dog in the park.</td></tr><tr style="--i:1"><td><b>an</b> + danh từ số ít</td><td>Danh từ số ít, đếm được, bắt đầu bằng <b>nguyên âm</b> (a, e, i, o, u) hoặc âm "h" câm</td><td>She ate an apple for breakfast.<br>He waited for an hour.</td></tr><tr style="--i:2"><td><b>the</b> + danh từ</td><td>Đã xác định / cả hai bên đều biết; danh từ duy nhất (the sun, the moon); đã nhắc đến trước đó</td><td>The sun is shining brightly today.<br>I saw a bird. The bird was flying high.</td></tr></table></div><p class="callout"><b>Không dùng mạo từ:</b> trước danh từ số nhiều không xác định (Dogs are friendly animals.), danh từ không đếm được nói chung (Milk is good for health.), tên riêng, môn học, ngôn ngữ (John is learning French.)</p></div>
       <footer><span class="kw">TỪ KHÓA</span><span>phụ âm, nguyên âm, xác định</span></footer>
@@ -647,6 +934,46 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </main>
 </div>
 <script>
+// Vẽ đường nối cong cho sơ đồ tư duy (.v-mindmap) theo vị trí thật của các nút sau khi dàn trang.
+// Dùng chung cho bản PNG (build.mjs) và bản web (web.mjs); gọi lại khi đổi kích thước / đổi tab.
+function drawMindmaps() {
+  const COLORS = ['var(--frame)', 'var(--chip)', 'var(--accent)', 'var(--collar)', 'var(--leaf)', 'var(--ink-soft)'];
+  for (const mm of document.querySelectorAll('.v-mindmap')) {
+    const svg = mm.querySelector('.mm-links');
+    const box = mm.getBoundingClientRect();
+    if (!box.width) continue;
+    svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+    svg.setAttribute('width', box.width);
+    svg.setAttribute('height', box.height);
+    const c = mm.querySelector('.mm-center').getBoundingClientRect();
+    const cx = c.left + c.width / 2 - box.left, cy = c.top + c.height / 2 - box.top;
+    const stacked = getComputedStyle(mm).gridTemplateColumns.trim().split(/\s+/).length === 1;
+    let paths = '', trunk = '', trunkEnd = 0;
+    mm.querySelectorAll('.mm-branch').forEach((br) => {
+      const n = br.querySelector('.mm-node').getBoundingClientRect();
+      const color = COLORS[Number(getComputedStyle(br).getPropertyValue('--b')) % COLORS.length];
+      br.style.setProperty('--bc', color);
+      const nx = n.left + n.width / 2 - box.left, ny = n.top + n.height / 2 - box.top;
+      let x1, y1, x2, y2, d;
+      if (stacked) { // xếp dọc (màn hẹp): thân chạy dọc lề trái, mỗi nhánh rẽ ngang vào nút
+        const tx = 8, cb = c.bottom - box.top;
+        trunkEnd = Math.max(trunkEnd, ny);
+        trunk = `M${cx} ${cb}C${cx} ${cb + 16} ${tx} ${cb + 6} ${tx} ${cb + 26}`;
+        d = `M${tx} ${ny}H${n.left - box.left}`;
+      } else {
+        const right = nx > cx;
+        x1 = right ? c.right - box.left - 4 : c.left - box.left + 4; y1 = cy;
+        x2 = right ? n.left - box.left : n.right - box.left; y2 = ny;
+        const mx = (x1 + x2) / 2;
+        d = `M${x1} ${y1}C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`;
+      }
+      paths += `<path d="${d}" style="stroke:${color}" pathLength="1"/>`;
+    });
+    if (trunk) paths = `<path d="${trunk}V${trunkEnd}" style="stroke:var(--ink-soft)" pathLength="1"/>` + paths;
+    svg.innerHTML = paths;
+  }
+}
+
 // Bản web: chuyển tab giữa các poster, phát hiệu ứng khi thẻ cuộn vào màn hình,
 // bấm thẻ để xem lại, co công thức quá rộng. Không có JS thì poster vẫn hiển thị đầy đủ.
 (() => {
@@ -672,7 +999,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       let f = 100;
       while (el.scrollWidth > el.clientWidth + 1 && f > 60) { f -= 5; el.style.fontSize = f + '%'; }
     }
+    if (typeof drawMindmaps === 'function') drawMindmaps();
   }
+  document.fonts?.ready.then(fit);
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fit, 150); });
 

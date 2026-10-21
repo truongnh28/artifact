@@ -34,7 +34,9 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
       "keywords": "$a, b, \\mathbb{Z}, b \\neq 0$",
       "span": 2,                         // tuỳ chọn: thẻ chiếm 2 cột (hoặc 3 = cả hàng)
       "visualFirst": true,               // tuỳ chọn: đặt hình minh hoạ lên trước thân thẻ
-      "after": ["- lưu ý sau hình"]       // tuỳ chọn: các dòng hiển thị SAU hình minh hoạ (giải thích → bảng → lưu ý)
+      "after": ["- lưu ý sau hình"],      // tuỳ chọn: các dòng hiển thị SAU hình minh hoạ (giải thích → bảng → lưu ý)
+      "noNumber": true,                  // tuỳ chọn: thẻ không đánh số (sơ đồ tư duy, mở rộng); không bắt buộc từ khoá
+      "icon": "puzzle"                   // tuỳ chọn: icon cạnh tiêu đề cho thẻ noNumber
     }
   ],
 
@@ -70,6 +72,10 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 | `steps` | `items: [...]`, `arrows: [nhãn mũi tên 1, …]` (tuỳ chọn) | Quy trình, chuỗi biến đổi (2–5 bước). Nhãn trên mũi tên cho điều kiện/tác nhân |
 | `table` | `head: [...]`, `rows: [[...]]` | So sánh nhiều thuộc tính, bảng chia động từ, bảng giá trị (≤ 4 cột, ≤ 6 hàng). Không hợp với phân số lớn — chữ trong bảng nhỏ |
 | `compare` | `left: [dòng]`, `right: [dòng]`, `sep` (mặc định "vs") | Hai phía đối lập/đối chiếu. Dùng `"sep": "→"` cho đầu vào → đầu ra, `"≠"`, `"⇔"`… |
+| `mindmap` | `center` (có thể dùng `<br>`), `branches: [{label, items: [...]}]` (2–8 nhánh, nửa đầu bên trái, nửa sau bên phải) | Tổng quan cả poster. Đặt trong thẻ `"noNumber": true` và `span` toàn hàng. Đường nối được vẽ tự động; trên điện thoại sơ đồ chuyển thành dạng cây dọc |
+| `positions` | `items: [{pos, label?, note, ex?}]`. Các giá trị `pos`: in, on, under, above, below, in front of, behind, next to, between, opposite, on the left, on the right, at | Tranh mèo và hộp cho giới từ vị trí (hoặc từ chỉ vị trí trong môn khác). 6–10 tranh tự chia 2 hàng đều |
+| `funnel` | `items: [{word, text, ex?}]` (từ rộng tới hẹp), `caption` | Phân cấp từ rộng tới cụ thể: in › on › at; giới › ngành › lớp; châu lục › quốc gia › thành phố |
+| `bars` | `items: [{label, value}]`, `caption`, `star: false` để bỏ ngôi sao | So sánh mức độ (fast › faster › the fastest), số liệu tăng dần đơn giản |
 | `icon` | `name`, `align`: right/center/left | Minh hoạ khi không có hình mang nghĩa hơn |
 | `icons` | `names: [...]` | Một hàng 2–4 icon |
 

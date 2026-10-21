@@ -54,7 +54,8 @@ const html = `<!doctype html>
 <link rel="stylesheet" href="${A.katex}/katex.min.css">
 <script>window.__renderDone = false;
 // Công thức rộng hơn khung thì thu nhỏ dần cho vừa (thay vì bị cắt).
-function fitFormulas(){document.fonts.ready.then(()=>{for(const el of document.querySelectorAll('.v-formula .tex,.display')){let f=100;while(el.scrollWidth>el.clientWidth+1&&f>55){f-=5;el.style.fontSize=f+'%';}}});}
+function fitFormulas(){document.fonts.ready.then(()=>{for(const el of document.querySelectorAll('.v-formula .tex,.display')){let f=100;while(el.scrollWidth>el.clientWidth+1&&f>55){f-=5;el.style.fontSize=f+'%';}}drawMindmaps();});}
+${readFileSync(join(here, 'mindmap.js'), 'utf8')}
 </script>
 <script defer src="${A.katex}/katex.min.js"></script>
 <script defer src="${A.katex}/contrib/auto-render.min.js"

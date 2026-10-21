@@ -43,6 +43,10 @@ Hãy hỏi "hình này giúp hiểu quan hệ nào?". Nếu không trả lời �
 | Các bước, quy trình, chuỗi biến đổi | `steps` (có `arrows` cho nhãn mũi tên) |
 | Phương trình chữ (quang hợp, hô hấp, phản ứng) | `equation` |
 | Thì động từ (tiếng Anh), mốc lịch sử | `timeline` |
+| Tổng quan cả bài / cả chương | `mindmap` (thẻ đầu, `noNumber`) |
+| Giới từ / từ chỉ vị trí | `positions` (tranh mèo & hộp) |
+| Phân cấp rộng → hẹp | `funnel` |
+| So sánh mức độ (hơn, nhất) | `bars` |
 | Đồ thị v–t, hàm số, số liệu theo thời gian | `graph` |
 | Cấu trúc câu tiếng Anh (S + V + O) | `formula` với `\text{}` hoặc dòng `$$...$$`, hoặc `table` cho khẳng định/phủ định/nghi vấn |
 | So sánh 2 khái niệm | `compare` (`sep` đổi "vs" thành "→", "≠"…) |

@@ -110,4 +110,28 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .anim .recap.play li .ic :is(path,rect){animation:sk-draw .5s ease-out both;animation-delay:calc(.35s + var(--i,0) * .15s)}
 .anim .recap.play .recap-label .doodle{animation:sk-wiggle .8s 1s ease-in-out}
 
+/* Tranh vị trí: mèo nhảy vào chỗ */
+@keyframes sk-hop{0%{transform:translateY(-16px)}55%{transform:translateY(2px)}75%{transform:translateY(-3px)}100%{transform:none}}
+@keyframes sk-peek{from{transform:translateY(20px)}to{transform:none}}
+@keyframes sk-slide{from{transform:translateX(-18px)}to{transform:none}}
+@keyframes sk-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.anim .play .pos-tile .cat-anim{animation:sk-hop .7s ease-out both;animation-delay:calc(.3s + var(--i,0) * .12s)}
+.anim .play .pos-tile[data-pos="in"] .cat-anim{animation-name:sk-peek}
+.anim .play .pos-tile[data-pos="behind"] .cat-anim{animation-name:sk-slide}
+.anim .pos-tile[data-pos="above"] .float .cat-anim{animation:sk-float 2.4s ease-in-out infinite}
+.anim .pos-tile:hover .cat-anim{animation:sk-hop .6s ease-out}
+
+/* Phễu, cột so sánh */
+.anim .play .v-funnel .lv{animation:sk-drop .5s ease-out both;animation-delay:calc(.3s + var(--i,0) * .22s)}
+@keyframes sk-rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.anim .play .bar{animation:sk-rise .8s ease-out both;animation-delay:calc(.3s + var(--i,0) * .25s)}
+.anim .play .bar-star{animation:sk-pop .5s ease-out both;animation-delay:1.2s}
+
+/* Sơ đồ tư duy */
+@keyframes sk-drawp{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.anim .play .mm-links path{stroke-dasharray:1;animation:sk-drawp .9s ease-in-out both;animation-delay:.35s}
+.anim .play .mm-center{animation:sk-pop .55s ease-out both}
+.anim .play .mm-node{animation:sk-pop .5s ease-out both;animation-delay:calc(.6s + var(--b,0) * .12s)}
+.anim .play .mm-items{animation:sk-row .45s ease-out both;animation-delay:calc(.8s + var(--b,0) * .12s)}
+
 @media (prefers-reduced-motion:reduce){.anim *{animation:none!important;transition:none!important}}
