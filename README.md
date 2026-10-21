@@ -56,7 +56,11 @@ Lệnh này tạo **một file HTML tự chứa**: font và công thức đượ
 - Bấm vào một thẻ để xem lại hiệu ứng của thẻ đó.
 - Hiệu ứng tự tắt khi người xem bật chế độ "giảm chuyển động".
 
-Bản demo gồm cả 5 poster nằm ở [`docs/index.html`](docs/index.html). Bật GitHub Pages cho thư mục `docs/` là xem được online.
+**Xem online (GitHub Pages):**
+- Cả 5 poster: https://truongnh28.github.io/artifact/
+- Ngữ pháp tiếng Anh 7 (2 tab): https://truongnh28.github.io/artifact/ngu-phap-tieng-anh-7.html
+
+Mã nguồn của các trang này nằm trong thư mục [`docs/`](docs/).
 
 **Theme:** `blue-ink` (mặc định), `pastel-journal`, `chalkboard`, `print-bw`.
 
