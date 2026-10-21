@@ -1,5 +1,7 @@
 {
   "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
   "header": {
     "title": "TỔNG HỢP KIẾN THỨC",
     "tag": "TIẾNG ANH 7 – GLOBAL SUCCESS",
@@ -8,51 +10,116 @@
   "cards": [
     {
       "title": "Unit 7: \"It\" & động từ khiếm khuyết",
+      "span": 2,
       "body": [
-        "- It + is + khoảng cách + from/to",
-        "- **Should/Shouldn't** + V: lời khuyên",
-        "- **Must**: bắt buộc chủ quan (người nói)",
-        "- **Have to**: bắt buộc khách quan (luật lệ, quy định)",
-        "- **Can/Could** + V: khả năng, xin phép, yêu cầu"
+        "Diễn đạt **khoảng cách**, đưa ra **lời khuyên**, ý kiến hoặc chỉ **sự cần thiết**."
       ],
-      "keywords": "should, must, have to"
+      "visual": {
+        "type": "table",
+        "head": [
+          "Cấu trúc",
+          "Cách dùng",
+          "Ví dụ"
+        ],
+        "rows": [
+          [
+            "It + is + khoảng cách + from/to",
+            "Chỉ khoảng cách giữa hai địa điểm (đo bằng thời gian hoặc đơn vị đo lường)",
+            "It is 5 kilometers from my house to the school.<br>It takes 10 minutes by car from here to the airport."
+          ],
+          [
+            "Should/Shouldn't + V (nguyên thể)",
+            "Lời khuyên nên làm hoặc không nên làm",
+            "You should drink more water.<br>He shouldn't eat so much fast food."
+          ],
+          [
+            "Must",
+            "Bắt buộc mang tính **chủ quan** từ người nói",
+            "I must go to the doctor today."
+          ],
+          [
+            "Have to",
+            "Bắt buộc mang tính **khách quan** (luật lệ, quy định)",
+            "I have to wear a uniform at work."
+          ],
+          [
+            "Can/Could + V (nguyên thể)",
+            "Khả năng, xin phép, hoặc yêu cầu",
+            "I can swim very well."
+          ]
+        ]
+      },
+      "keywords": "should, must ≠ have to, can"
     },
     {
       "title": "Unit 8: Although/Though & However",
       "span": 2,
-      "body": ["Chỉ sự **đối lập, tương phản**: \"mặc dù\" hoặc \"tuy nhiên\"."],
+      "body": [
+        "Chỉ sự **đối lập** hoặc **tương phản** giữa hai mệnh đề: \"mặc dù\" hoặc \"tuy nhiên\"."
+      ],
       "visual": {
         "type": "compare",
         "left": [
           "**Although/Though** (Mặc dù)",
           "Although/Though + S + V, S + V",
           "S + V + although/though + S + V",
-          "Nối **hai mệnh đề** trái ngược.",
-          "> Although it was raining, they went to the park."
+          "- Nối **hai mệnh đề** có ý nghĩa trái ngược.",
+          "- **Though** thường không trang trọng bằng Although.",
+          "> Although it was raining, they went to the park.",
+          "> Though he is rich, he is not happy."
         ],
         "right": [
           "**However** (Tuy nhiên)",
           "S + V. However, S + V.",
           "S + V; however, S + V.",
-          "Nối **hai câu hoàn chỉnh**, đứng sau dấu . hoặc ;",
-          "> He worked hard. However, he didn't succeed."
+          "- Nối **hai câu hoàn chỉnh** có ý nghĩa trái ngược.",
+          "- Đứng đầu hoặc giữa câu thứ hai, sau dấu . hoặc ;",
+          "> He worked hard. However, he didn't succeed.",
+          "> She is talented; however, she is not confident."
         ],
         "sep": "≠"
       },
-      "keywords": "mặc dù, tuy nhiên"
+      "keywords": "mặc dù ≠ tuy nhiên"
     },
     {
       "title": "Unit 9: Yes/No Questions",
       "span": 2,
-      "body": ["Câu hỏi trả lời bằng **Yes** hoặc **No**."],
+      "body": [
+        "Câu hỏi có thể trả lời bằng **Yes** (Có) hoặc **No** (Không); dùng để xác nhận hoặc bác bỏ thông tin."
+      ],
       "visual": {
         "type": "table",
-        "head": ["Loại", "Cấu trúc", "Ví dụ"],
+        "head": [
+          "Loại câu",
+          "Cấu trúc",
+          "Cách dùng",
+          "Ví dụ"
+        ],
         "rows": [
-          ["Động từ \"to be\"", "To be + S + ...?", "Are you a student?"],
-          ["Động từ khuyết thiếu", "Modal verb + S + V (nguyên thể) + ...?", "Can you swim?"],
-          ["Động từ thường", "Do/Does/Did + S + V (nguyên thể) + ...?", "Do they play football?"],
-          ["Hiện tại hoàn thành", "Have/Has + S + V3/V-ed + ...?", "Has he finished his homework?"]
+          [
+            "Động từ \"to be\"",
+            "To be + S + ...?",
+            "Đứng đầu câu hỏi khi là động từ chính",
+            "Are you a student?<br>Was she at home yesterday?"
+          ],
+          [
+            "Động từ khuyết thiếu",
+            "Modal verb + S + V (nguyên thể) + ...?",
+            "Modal đứng đầu, sau đó chủ ngữ và V nguyên thể",
+            "Can you swim?<br>Should I call him now?"
+          ],
+          [
+            "Động từ thường",
+            "Do/Does/Did + S + V (nguyên thể) + ...?",
+            "Cần trợ động từ do/does/did",
+            "Do they play football?<br>Did she watch the movie last night?"
+          ],
+          [
+            "Hiện tại hoàn thành",
+            "Have/Has + S + V3/V-ed + ...?",
+            "Dùng trợ động từ have/has",
+            "Have you ever visited Japan?<br>Has he finished his homework?"
+          ]
         ]
       },
       "keywords": "Yes/No, đứng đầu câu"
@@ -60,52 +127,193 @@
     {
       "title": "Unit 10: Hiện tại tiếp diễn",
       "body": [
-        "Hành động **đang diễn ra** lúc nói, tạm thời; kế hoạch gần; sự thay đổi.",
-        "- **(+)** S + am/is/are + V-ing",
-        "- **(–)** S + am/is/are + not + V-ing",
-        "- **(?)** Am/Is/Are + S + V-ing?",
-        "> She is studying English now."
+        "- Đang xảy ra lúc nói: She is talking on the phone.",
+        "- Tạm thời: I am living in New York this summer.",
+        "- Kế hoạch tương lai gần: We are meeting our friends tomorrow.",
+        "- Thay đổi theo thời gian: The weather is getting colder."
       ],
-      "keywords": "now, at the moment"
+      "visual": [
+        {
+          "type": "timeline",
+          "marks": [
+            {
+              "at": -0.2,
+              "to": 0.2,
+              "label": "đang diễn ra"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Cấu trúc",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "**(+)**",
+              "S + am/is/are + V-ing",
+              "She is studying English now."
+            ],
+            [
+              "**(–)**",
+              "S + am/is/are + not + V-ing",
+              "I am not working at the moment."
+            ],
+            [
+              "**(?)**",
+              "Am/Is/Are + S + V-ing?",
+              "Is he sleeping?"
+            ]
+          ]
+        }
+      ],
+      "after": [
+        "> **Dấu hiệu:** now, right now, at the moment, today, this week, currently, these days"
+      ],
+      "keywords": "am/is/are + V-ing"
     },
     {
-      "title": "Unit 11: Will & đại từ sở hữu",
-      "span": 2,
+      "title": "Unit 11: Thì tương lai đơn",
       "body": [
-        "**Tương lai đơn**: dự đoán, quyết định tức thì, hứa hẹn, đề nghị.",
-        "- **(+)** S + will + V (nguyên thể)",
-        "- **(–)** S + will not (won't) + V (nguyên thể)",
-        "- **(?)** Will + S + V (nguyên thể)?"
+        "- Dự đoán: It will rain tomorrow.",
+        "- Quyết định ngay lúc nói: I'll help you with your homework.",
+        "- Hứa hẹn, đề nghị: I promise I'll be there on time.",
+        "- Yêu cầu lịch sự: Will you lend me your book?"
+      ],
+      "visual": [
+        {
+          "type": "timeline",
+          "marks": [
+            {
+              "at": 0.55,
+              "label": "sẽ xảy ra"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Cấu trúc",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "**(+)**",
+              "S + will + V (nguyên thể)",
+              "I will call you tomorrow."
+            ],
+            [
+              "**(–)**",
+              "S + will not (won't) + V (nguyên thể)",
+              "She won't attend the meeting."
+            ],
+            [
+              "**(?)**",
+              "Will + S + V (nguyên thể)?",
+              "Will they travel to Japan next year?"
+            ]
+          ]
+        }
+      ],
+      "keywords": "will + V, won't"
+    },
+    {
+      "title": "Unit 11: Đại từ sở hữu",
+      "body": [
+        "Thay thế cho danh từ, biểu thị **sự sở hữu** của người hoặc vật."
       ],
       "visual": {
         "type": "table",
-        "head": ["Chủ ngữ", "I", "you", "he", "she", "we", "they"],
+        "head": [
+          "Chủ ngữ",
+          "Tính từ sở hữu",
+          "Đại từ sở hữu"
+        ],
         "rows": [
-          ["Tính từ sở hữu", "my", "your", "his", "her", "our", "their"],
-          ["Đại từ sở hữu", "mine", "yours", "his", "hers", "ours", "theirs"]
+          [
+            "I",
+            "my",
+            "mine"
+          ],
+          [
+            "You",
+            "your",
+            "yours"
+          ],
+          [
+            "He",
+            "his",
+            "his"
+          ],
+          [
+            "She",
+            "her",
+            "hers"
+          ],
+          [
+            "We",
+            "our",
+            "ours"
+          ],
+          [
+            "They",
+            "their",
+            "theirs"
+          ]
         ]
       },
-      "keywords": "will + V, mine/yours"
+      "after": [
+        "> This is my book. The red one is **mine**."
+      ],
+      "keywords": "my → mine, her → hers"
     },
     {
       "title": "Unit 12: Mạo từ a/an, the",
       "body": [
-        "- **a** + danh từ số ít, đếm được, bắt đầu bằng **phụ âm**",
-        "- **an** + danh từ số ít, bắt đầu bằng **nguyên âm** (a, e, i, o, u) hoặc âm \"h\" câm",
-        "- **the**: danh từ đã xác định, duy nhất, đã nhắc đến",
-        "> Không dùng mạo từ: tên riêng, môn học, ngôn ngữ."
+        "Đứng trước danh từ, chỉ tính **xác định** (the) hoặc **không xác định** (a/an)."
       ],
-      "keywords": "phụ âm, nguyên âm"
+      "visual": {
+        "type": "table",
+        "head": [
+          "Mạo từ",
+          "Cách dùng",
+          "Ví dụ"
+        ],
+        "rows": [
+          [
+            "**a** + danh từ số ít",
+            "Danh từ số ít, đếm được, bắt đầu bằng **phụ âm**",
+            "I saw a dog in the park."
+          ],
+          [
+            "**an** + danh từ số ít",
+            "Danh từ số ít, đếm được, bắt đầu bằng **nguyên âm** (a, e, i, o, u) hoặc âm \"h\" câm",
+            "She ate an apple for breakfast.<br>He waited for an hour."
+          ],
+          [
+            "**the** + danh từ",
+            "Đã xác định / cả hai bên đều biết; danh từ duy nhất (the sun, the moon); đã nhắc đến trước đó",
+            "The sun is shining brightly today.<br>I saw a bird. The bird was flying high."
+          ]
+        ]
+      },
+      "after": [
+        "> **Không dùng mạo từ:** trước danh từ số nhiều không xác định (Dogs are friendly animals.), danh từ không đếm được nói chung (Milk is good for health.), tên riêng, môn học, ngôn ngữ (John is learning French.)"
+      ],
+      "keywords": "phụ âm, nguyên âm, xác định"
     }
   ],
   "recap": {
     "label": "GHI NHỚ NHANH",
     "items": [
-      "Must: bắt buộc chủ quan; have to: bắt buộc khách quan.",
+      "Must: bắt buộc chủ quan; have to: bắt buộc khách quan (luật lệ).",
       "Although nối hai mệnh đề; however nối hai câu, đứng sau dấu . hoặc ;",
-      "Câu hỏi Yes/No: to be, động từ khuyết thiếu hoặc trợ động từ đứng đầu câu.",
+      "Câu hỏi Yes/No: to be, modal hoặc trợ động từ đứng đầu câu.",
       "Hiện tại tiếp diễn: am/is/are + V-ing; tương lai đơn: will + V (nguyên thể).",
-      "a trước phụ âm, an trước nguyên âm, the cho danh từ đã xác định."
+      "a trước phụ âm, an trước nguyên âm hoặc \"h\" câm, the cho danh từ đã xác định."
     ]
   },
   "footer": "Học để hiểu, hiểu để vận dụng!",

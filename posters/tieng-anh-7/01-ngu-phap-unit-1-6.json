@@ -1,5 +1,7 @@
 {
   "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
   "header": {
     "title": "TỔNG HỢP KIẾN THỨC",
     "tag": "TIẾNG ANH 7 – GLOBAL SUCCESS",
@@ -9,63 +11,155 @@
     {
       "title": "Unit 1: Thì hiện tại đơn",
       "body": [
-        "Sự thật hiển nhiên, **thói quen**, lịch trình cố định.",
-        "- **(+)** S + V(s/es) + O",
-        "- **(–)** S + do/does + not + V (nguyên thể) + O",
-        "- **(?)** Do/Does + S + V (nguyên thể) + O?",
-        "> He plays soccer. · Do you play football?"
+        "Diễn tả sự kiện, hành động, trạng thái **chung** hoặc **lặp lại thường xuyên**:",
+        "- Sự thật hiển nhiên: The sun rises in the east.",
+        "- Thói quen: She walks to school every day.",
+        "- Lịch trình cố định: The train leaves at 7 p.m."
       ],
-      "keywords": "always, usually, every day"
+      "keywords": "thói quen, sự thật, lịch trình",
+      "visual": [
+        {
+          "type": "timeline",
+          "marks": [
+            {
+              "at": [
+                -0.75,
+                -0.45,
+                -0.15,
+                0.15,
+                0.45,
+                0.75
+              ],
+              "label": "lặp lại thường xuyên"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Cấu trúc",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "**(+)**",
+              "S + V(s/es) + O",
+              "He plays soccer."
+            ],
+            [
+              "**(–)**",
+              "S + do/does + not + V (nguyên thể) + O",
+              "I do not like coffee."
+            ],
+            [
+              "**(?)**",
+              "Do/Does + S + V (nguyên thể) + O?",
+              "Do you play football?"
+            ]
+          ]
+        }
+      ],
+      "after": [
+        "> **Dấu hiệu:** always, usually, often, sometimes, rarely, never, every day/week/month"
+      ]
     },
     {
       "title": "Unit 2: Câu đơn",
       "body": [
-        "Câu chứa **một mệnh đề độc lập**, có chủ ngữ và vị ngữ; không có liên từ hay mệnh đề phụ thuộc."
+        "Câu chứa **một mệnh đề độc lập**, có chủ ngữ và vị ngữ, diễn tả ý nghĩa hoàn chỉnh, ngắn gọn."
       ],
       "visual": {
         "type": "table",
         "head": [
+          "Loại câu",
           "Cấu trúc",
           "Ví dụ"
         ],
         "rows": [
           [
+            "Cơ bản",
             "S + V",
             "He runs."
           ],
           [
+            "Mở rộng",
             "S + V + O",
             "She reads a book."
           ],
           [
+            "Với trạng từ",
             "S + V + O + Adv",
             "They play soccer every afternoon."
           ],
           [
+            "Với bổ ngữ",
             "S + V + C",
             "The flowers look beautiful."
           ]
         ]
       },
+      "after": [
+        "- **Chỉ một mệnh đề**, không liên từ, không mệnh đề phụ thuộc: I love coffee.",
+        "- Có thể **ngắn hoặc dài**, miễn ý nghĩa hoàn chỉnh: The children are playing happily in the garden."
+      ],
       "keywords": "1 mệnh đề, S + V"
     },
     {
       "title": "Unit 3: Thì quá khứ đơn",
+      "span": 2,
       "body": [
-        "Hành động đã xảy ra và **kết thúc** trong quá khứ.",
-        "- **(+)** S + V-ed/V2 + O",
-        "- **(–)** S + did not (didn't) + V (nguyên thể) + O",
-        "- **(?)** Did + S + V (nguyên thể) + O?",
-        "> walk → walked · go → went"
+        "Hành động, sự kiện, trạng thái đã xảy ra và **kết thúc hoàn toàn** trong quá khứ; dùng để kể lại câu chuyện hoặc trả lời câu hỏi \"When?\"."
       ],
-      "keywords": "yesterday, last week, ago"
+      "visual": [
+        {
+          "type": "timeline",
+          "marks": [
+            {
+              "at": -0.5,
+              "label": "đã kết thúc",
+              "done": true
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "head": [
+            "",
+            "Cấu trúc",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "**(+)**",
+              "S + V-ed/V2 + O",
+              "She visited her aunt yesterday."
+            ],
+            [
+              "**(–)**",
+              "S + did not (didn't) + V (nguyên thể) + O",
+              "They didn't watch the movie."
+            ],
+            [
+              "**(?)**",
+              "Did + S + V (nguyên thể) + O?",
+              "Did you call your friend last night?"
+            ]
+          ]
+        }
+      ],
+      "after": [
+        "- **Có quy tắc:** thêm \"-ed\" (walk → walked, cook → cooked) · **Bất quy tắc:** dùng V2 (go → went, eat → ate)",
+        "- Trong câu **phủ định** và **nghi vấn**, động từ trở về **nguyên thể**: They didn't finish the project.",
+        "> **Dấu hiệu:** yesterday, last week, last month, last year, ago, in 1990, this morning (nếu thời gian đã qua)"
+      ],
+      "keywords": "V-ed/V2, did + V"
     },
     {
       "title": "Unit 4: Cấu trúc so sánh",
-      "span": 3,
+      "span": 2,
       "body": [
-        "- Tính từ/trạng từ **ngắn**: thêm -er/-est (fast → faster → fastest)",
-        "- Tính từ/trạng từ **dài**: more/most (beautiful → more beautiful → most beautiful)"
+        "Diễn đạt sự **giống nhau**, **khác nhau** hoặc **mức độ nổi bật** của sự vật, hiện tượng."
       ],
       "visual": [
         {
@@ -78,18 +172,18 @@
           "rows": [
             [
               "So sánh bằng",
-              "S + V + as + adj/adv + as + N/Pronoun",
-              "She is as kind as her mother."
+              "S + V + as + adj/adv + as + N/Pronoun<br>S + V + not as/so + adj/adv + as + N/Pronoun",
+              "She is as kind as her mother.<br>This book is not as interesting as I thought."
             ],
             [
               "So sánh hơn",
               "S + V + adj/adv-er + than + N/Pronoun<br>S + V + more + adj/adv + than + N/Pronoun",
-              "My house is bigger than theirs."
+              "My house is bigger than theirs.<br>She is more talented than her friends."
             ],
             [
               "So sánh nhất",
               "S + V + the + adj/adv-est + (in/of)<br>S + V + the most + adj/adv + (in/of)",
-              "He is the fastest runner in the race."
+              "He is the fastest runner in the race.<br>This is the most challenging task I've ever done."
             ]
           ]
         },
@@ -101,7 +195,8 @@
             "bad/badly",
             "far",
             "little",
-            "much/many"
+            "much/many",
+            "old"
           ],
           "rows": [
             [
@@ -110,7 +205,8 @@
               "worse",
               "farther/further",
               "less",
-              "more"
+              "more",
+              "older/elder"
             ],
             [
               "So sánh nhất",
@@ -118,76 +214,110 @@
               "the worst",
               "the farthest/furthest",
               "the least",
-              "the most"
+              "the most",
+              "the oldest/the eldest"
             ]
           ]
         }
       ],
-      "visualFirst": true,
+      "after": [
+        "- **Tính từ/trạng từ ngắn:** thêm -er/-est (fast → faster → fastest) · **Dài:** more/most (beautiful → more beautiful → most beautiful)"
+      ],
       "keywords": "as…as, -er/more, -est/most"
     },
     {
       "title": "Unit 5: Lượng từ",
       "body": [
+        "Từ/cụm từ chỉ **số lượng** của danh từ.",
         "- **Đếm được:** many, few, several, a couple of, each, every",
         "- **Không đếm được:** much, a little, less, a great deal of",
-        "- **Cả hai:** some, any, a lot of, lots of, all, none"
+        "- **Cả hai:** some, any, a lot of, lots of, all, none",
+        "- **Much/Many:** thường trong câu phủ định, câu hỏi → Do you have many friends?",
+        "- **Some:** câu khẳng định, câu hỏi mong đợi \"Yes\" → Would you like some tea?"
       ],
       "visual": {
         "type": "compare",
         "left": [
           "**few / little**",
-          "rất ít, gần như không đủ"
+          "rất ít, gần như không đủ",
+          "> Few students passed the exam."
         ],
         "right": [
           "**a few / a little**",
-          "một ít nhưng đủ"
+          "một ít nhưng đủ",
+          "> I have a few close friends here."
         ],
         "sep": "≠"
       },
-      "keywords": "few ≠ a few"
+      "keywords": "đếm được, few ≠ a few"
     },
     {
       "title": "Unit 6: Giới từ at/on/in",
-      "span": 2,
       "body": [
-        "Giới từ chỉ **thời gian** và **nơi chốn**:"
+        "Chỉ quan hệ của danh từ/đại từ với **thời gian** hoặc **vị trí**."
       ],
-      "visual": {
-        "type": "table",
-        "head": [
-          "",
-          "Thời gian",
-          "Nơi chốn"
-        ],
-        "rows": [
-          [
-            "**at**",
-            "thời điểm cụ thể, dịp lễ – at 8 a.m.",
-            "địa điểm cụ thể, sự kiện – at the bus stop"
+      "visual": [
+        {
+          "type": "table",
+          "head": [
+            "Thời gian",
+            "Cách dùng",
+            "Ví dụ"
           ],
-          [
-            "**on**",
-            "ngày cụ thể, thứ, lễ có \"Day\" – on Monday",
-            "bề mặt, dọc đường/sông/biển – on the table"
-          ],
-          [
-            "**in**",
-            "tháng, năm, thế kỷ, thời kỳ – in December",
-            "không gian kín, thành phố, quốc gia – in the room"
+          "rows": [
+            [
+              "**at**",
+              "thời điểm cụ thể trong ngày, dịp lễ, mốc ngắn",
+              "She arrived at 8 a.m."
+            ],
+            [
+              "**on**",
+              "ngày cụ thể, ngày trong tuần, lễ có \"Day\"",
+              "I will meet her on Monday."
+            ],
+            [
+              "**in**",
+              "tháng, năm, thế kỷ, thời kỳ",
+              "He was born in December."
+            ]
           ]
-        ]
-      },
+        },
+        {
+          "type": "table",
+          "head": [
+            "Nơi chốn",
+            "Cách dùng",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "**at**",
+              "địa điểm cụ thể, sự kiện, điểm xác định",
+              "He is at the bus stop."
+            ],
+            [
+              "**on**",
+              "bề mặt, dọc tuyến đường, sông, biển",
+              "The book is on the table."
+            ],
+            [
+              "**in**",
+              "không gian khép kín, thành phố, quốc gia, khu vực lớn",
+              "He is in the room."
+            ]
+          ]
+        }
+      ],
       "keywords": "at, on, in"
     }
   ],
   "recap": {
     "label": "GHI NHỚ NHANH",
     "items": [
-      "Hiện tại đơn: thói quen, sự thật; quá khứ đơn: việc đã kết thúc trong quá khứ.",
-      "Câu phủ định và nghi vấn dùng do/does/did, động từ trở về nguyên thể.",
+      "Hiện tại đơn: thói quen, sự thật, lịch trình; quá khứ đơn: việc đã kết thúc trong quá khứ.",
+      "Phủ định và nghi vấn dùng do/does/did, động từ trở về nguyên thể.",
       "Câu đơn chỉ có một mệnh đề độc lập.",
-      "Tính từ ngắn thêm -er/-est; tính từ dài dùng more/most.",
+      "Tính từ ngắn thêm -er/-est; tính từ dài dùng more/most; good → better → the best.",
       "few/little: ý tiêu cực; a few/a little: ý tích cực."
     ]
   },

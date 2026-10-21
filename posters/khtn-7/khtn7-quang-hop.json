@@ -21,22 +21,28 @@
     {
       "title": "Phương trình tổng quát",
       "body": [
-        "Dạng chữ:",
-        "> Điều kiện: **ánh sáng**, **diệp lục**"
+        "Dạng chữ:"
       ],
       "visual": [
         {
-          "type": "steps",
-          "items": [
-            "**Nước** + **Carbon dioxide**",
-            "**Glucose** + **Oxygen**"
+          "type": "equation",
+          "left": [
+            "Nước",
+            "Carbon dioxide"
+          ],
+          "over": "Ánh sáng",
+          "under": "Diệp lục",
+          "right": [
+            "Glucose",
+            "Oxygen"
           ]
         },
         {
           "type": "icons",
           "names": [
             "sun",
-            "leaf"
+            "leaf",
+            "cloud"
           ]
         }
       ],
@@ -75,6 +81,9 @@
         "items": [
           "Quang năng (năng lượng ánh sáng)",
           "Hoá năng (tích luỹ trong chất hữu cơ)"
+        ],
+        "arrows": [
+          "chuyển hoá"
         ]
       },
       "keywords": "Đồng thời, gắn liền"

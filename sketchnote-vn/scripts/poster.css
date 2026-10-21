@@ -36,7 +36,7 @@ b{font-weight:700}
 .deco.star path:first-child{fill:var(--accent)!important}
 .s1{left:10px;top:4px;transform:rotate(-12deg)}
 .s2{right:16px;top:10px;width:34px!important;height:34px!important;transform:rotate(14deg)}
-.laurel{width:84px;height:84px;top:58px;color:#3c8d5a}
+.laurel{width:84px;height:84px;top:58px;color:var(--leaf)}
 .laurel.l{left:44px;transform:rotate(-8deg)}
 .laurel.r{right:44px;transform:scaleX(-1) rotate(-8deg)}
 
@@ -48,15 +48,13 @@ b{font-weight:700}
 .span-3{grid-column:1/-1}
 .card{position:relative;display:flex;flex-direction:column;padding:16px 18px 14px;min-height:200px}
 .card::before{content:'';position:absolute;inset:0;border:2.6px solid var(--frame);border-radius:14px 18px 12px 16px;
-  background:rgba(255,255,255,.35);filter:url(#rough);z-index:0}
-.theme-chalkboard .card::before{background:rgba(0,0,0,.08)}
+  background:var(--card-bg);filter:url(#rough);z-index:0}
 .card>*{position:relative;z-index:1}
 .card header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .num{flex:none;display:grid;place-items:center;width:42px;height:42px;border:2.6px solid var(--ink);border-radius:50% 46% 52% 48%;
   font-weight:700;font-size:24px;background:var(--paper);box-shadow:3px 3px 0 var(--accent-soft)}
 .card h3{flex:1;text-align:center;font-weight:700;font-size:21px;line-height:1.25;text-transform:uppercase;letter-spacing:.3px}
 .content{flex:1;font-size:16.5px;color:var(--ink-soft)}
-.theme-chalkboard .content{color:var(--ink-soft)}
 .content p{margin:4px 0}
 .content ul{list-style:none;margin:4px 0}
 .content li{position:relative;padding-left:20px;margin:5px 0}
@@ -67,7 +65,6 @@ b{font-weight:700}
 .card footer::before{content:'';position:absolute;left:0;right:0;top:0;border-top:2px dashed var(--frame);opacity:.5}
 .kw{flex:none;border:2px solid var(--chip);background:var(--chip-bg);color:var(--chip);font-weight:700;font-size:13px;
   padding:2px 9px;border-radius:7px;letter-spacing:.4px}
-.theme-chalkboard .kw,.theme-print-bw .kw{color:var(--chip)}
 
 /* ---------- Icons ---------- */
 .doodle{color:var(--ink)}
@@ -100,10 +97,8 @@ b{font-weight:700}
 .v-nested svg{display:block;width:100%;overflow:visible;filter:url(#rough)}
 .v-nested .ring{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2.4}
 .v-nested .ring.r1{fill:var(--paper)}
-.v-nested .ring.r2{fill:var(--chip-bg)}
+.v-nested .ring.r2{fill:var(--ring-inner)}
 .v-nested .ring.r3{fill:var(--paper)}
-.theme-chalkboard .v-nested .ring.r2{fill:rgba(168,213,186,.22)}
-.theme-print-bw .v-nested .ring.r2{fill:#f2f2f2}
 .v-nested .slabel{position:absolute;left:0;right:0;text-align:center;font-size:14.5px;font-weight:600;color:var(--ink)}
 
 .v-steps{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-top:10px}
@@ -163,3 +158,31 @@ b{font-weight:700}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow{flex-direction:row;gap:6px;min-width:0;height:44px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow svg{width:40px;min-width:40px;transform:rotate(90deg);margin:0 -12px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .over{order:-1}
+
+/* ---------- Chế độ dày ---------- */
+.dense .card{padding:14px 16px 12px;min-height:0}
+.dense .card header{margin-bottom:6px}
+.dense .card h3{font-size:19px}
+.dense .num{width:36px;height:36px;font-size:20px}
+.dense .content{font-size:15px;line-height:1.42}
+.dense .content p{margin:3px 0}
+.dense .content li{margin:3px 0}
+.dense .callout{font-size:14.5px;padding:3px 9px;margin:5px 0}
+.dense .v-table{font-size:13.8px;margin-top:6px}
+.dense .v-table th,.dense .v-table td{padding:3px 6px}
+.dense .grid{gap:16px}
+.dense .card footer{margin-top:8px;padding-top:7px;font-size:14.5px}
+.dense .recap li{font-size:15.5px;margin:3px 0}
+
+/* ---------- Trục thời gian ---------- */
+.v-timeline{position:relative;margin:6px auto 4px;padding-top:20px;max-width:340px}
+.v-timeline svg{display:block;width:100%;overflow:visible}
+.v-timeline .tl-axis{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.v-timeline .tl-now{stroke:var(--frame);stroke-width:2.4;stroke-dasharray:4 4;stroke-linecap:round}
+.v-timeline .tl-dot{fill:var(--frame);stroke:var(--paper);stroke-width:1.5}
+.v-timeline .tl-range{fill:var(--icon-fill);stroke:var(--frame);stroke-width:2.2}
+.v-timeline .tl-done{fill:none;stroke:var(--paper);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.v-timeline .tl-label{position:absolute;top:0;transform:translateX(-50%);font-size:13.5px;font-weight:600;white-space:nowrap;color:var(--ink)}
+.v-timeline .tl-axis-labels{display:flex;justify-content:space-between;margin-top:2px;font-size:12.5px;color:var(--ink-soft)}
+.v-timeline .tl-axis-labels .now{color:var(--frame);font-weight:700}
+.tbl{max-width:100%}

@@ -39,9 +39,30 @@ node ~/.claude/skills/sketchnote-vn/scripts/build.mjs bai.json --png --a4       
 node ~/.claude/skills/sketchnote-vn/scripts/build.mjs bai.json --png --theme chalkboard
 ```
 
+### Bản web có hình động
+
+```bash
+node ~/.claude/skills/sketchnote-vn/scripts/web.mjs bai1.json bai2.json -o trang.web.html --title "Tên trang"
+```
+
+Lệnh này tạo **một file HTML tự chứa**: font và công thức được nhúng sẵn, nên mở được offline và đưa lên GitHub Pages được.
+- Nhiều file JSON sẽ thành các tab trong cùng một trang.
+- Trên điện thoại, trang tự xếp thành 1 cột.
+- Khi máy để chế độ tối, trang tự đổi sang giao diện bảng đen.
+- Hình động gồm:
+  - Thẻ trượt vào khi cuộn tới.
+  - Icon tự vẽ nét.
+  - Trục số, đồ thị, tập hợp lồng nhau và trục thời gian chạy hiệu ứng.
+- Bấm vào một thẻ để xem lại hiệu ứng của thẻ đó.
+- Hiệu ứng tự tắt khi người xem bật chế độ "giảm chuyển động".
+
+Bản demo gồm cả 5 poster nằm ở [`docs/index.html`](docs/index.html). Bật GitHub Pages cho thư mục `docs/` là xem được online.
+
 **Theme:** `blue-ink` (mặc định), `pastel-journal`, `chalkboard`, `print-bw`.
 
-**Hình minh hoạ:** `formula`, `equation` (phương trình chữ), `graph` (đồ thị), `numberline`, `nested` (tập hợp lồng nhau), `steps`, `table`, `compare`, `icon`.
+**Mức chi tiết:** thêm `"density": "dense"` vào file JSON khi muốn nhiều kiến thức hơn trên mỗi thẻ.
+
+**Hình minh hoạ:** `formula`, `equation` (phương trình chữ), `graph` (đồ thị), `timeline` (trục thời gian), `numberline`, `nested` (tập hợp lồng nhau), `steps`, `table`, `compare`, `icon`.
 
 Chi tiết schema nằm trong [`sketchnote-vn/references/blueprint-schema.md`](sketchnote-vn/references/blueprint-schema.md).
 
@@ -51,9 +72,10 @@ Chi tiết schema nằm trong [`sketchnote-vn/references/blueprint-schema.md`](s
 |---|---|---|
 | Toán 7 – Tập hợp các số hữu tỉ | [PNG](posters/toan-7/toan7-so-huu-ti.png) | [JSON](posters/toan-7/toan7-so-huu-ti.json) |
 | KHTN 7 – Quang hợp ở thực vật | [PNG](posters/khtn-7/khtn7-quang-hop.png) | [JSON](posters/khtn-7/khtn7-quang-hop.json) |
-| Vật lí 10 – Chuyển động thẳng biến đổi đều (bảng đen) | [PNG](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.png) · [PDF](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.pdf) | [JSON](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.json) |
+| Vật lí 10 – Chuyển động thẳng biến đổi đều (bảng đen) | [PNG](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.png) · [PDF A4](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.pdf) | [JSON](posters/vat-li-10/vatli10-chuyen-dong-thang-bien-doi-deu.json) |
 | Tiếng Anh 7 – Ngữ pháp Unit 1–6 | [PNG](posters/tieng-anh-7/01-ngu-phap-unit-1-6.png) | [JSON](posters/tieng-anh-7/01-ngu-phap-unit-1-6.json) |
 | Tiếng Anh 7 – Ngữ pháp Unit 7–12 | [PNG](posters/tieng-anh-7/02-ngu-phap-unit-7-12.png) | [JSON](posters/tieng-anh-7/02-ngu-phap-unit-7-12.json) |
+| Tiếng Anh 7 – bản web (2 tab, có hình động) | [HTML](posters/tieng-anh-7/ngu-phap-tieng-anh-7.web.html) | – |
 
 Nội dung poster tiếng Anh tóm tắt từ bài *Ngữ pháp tiếng Anh lớp 7 Global Success* trên apollo.edu.vn.
 

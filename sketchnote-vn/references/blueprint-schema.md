@@ -5,6 +5,7 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 ```jsonc
 {
   "theme": "blue-ink",            // blue-ink | pastel-journal | chalkboard | print-bw
+  "density": "normal",            // normal | dense (chữ nhỏ hơn, thẻ chứa ~90 tiếng; nên đi với columns: 2)
   "columns": 3,                   // mặc định: ≤4 thẻ → 2 cột, còn lại → 3 cột
   "width": 1080,                  // chiều rộng PNG (px, trước khi nhân scale); 2 cột mặc định 820
   "seed": 7,                      // đổi số để nét viền "run tay" khác đi
@@ -32,7 +33,8 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
       // visual cũng có thể là mảng nhiều visual
       "keywords": "$a, b, \\mathbb{Z}, b \\neq 0$",
       "span": 2,                         // tuỳ chọn: thẻ chiếm 2 cột (hoặc 3 = cả hàng)
-      "visualFirst": true                // tuỳ chọn: đặt hình minh hoạ lên trước thân thẻ
+      "visualFirst": true,               // tuỳ chọn: đặt hình minh hoạ lên trước thân thẻ
+      "after": ["- lưu ý sau hình"]       // tuỳ chọn: các dòng hiển thị SAU hình minh hoạ (giải thích → bảng → lưu ý)
     }
   ],
 
@@ -63,6 +65,7 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 | `equation` | `left: [...]`, `right: [...]`, `over`, `under` | **Phương trình chữ** (sinh, hoá): "Nước + Carbon dioxide —(ánh sáng, diệp lục)→ Glucose + Oxygen". Dùng font viết tay; thẻ hẹp tự xếp dọc |
 | `graph` | `x`, `y` (nhãn trục, LaTeX), `lines: [{points: [[x,y],…], label}]`, `shade` (chỉ số đường tô vùng dưới), `marks: [{at: [x,y], label}]`, `caption`, `xmax`/`ymax` | Đồ thị đơn giản: v–t, s–t, hàm bậc nhất, nhiệt độ theo thời gian. Tô vùng = diện tích dưới đồ thị |
 | `numberline` | `min`, `max`, `step`, `points: [{x, label}]` (label là LaTeX) | Trục số, khoảng giá trị |
+| `timeline` | `marks: [{at, to?, kind?, label, done?}]`, `labels` (mặc định Quá khứ/Hiện tại/Tương lai) | Thì động từ, mốc thời gian. Toạ độ −1…1, hiện tại = 0. `at` là mảng → các chấm lặp lại (thói quen); có `to` → một đoạn (đang diễn ra); `done: true` → dấu ✓ (đã kết thúc) |
 | `nested` | `sets: [ngoài → trong]` (chuỗi, có thể có `$...$`) | Quan hệ bao hàm: ℕ⊂ℤ⊂ℚ, giới → ngành → lớp. 2–4 tầng |
 | `steps` | `items: [...]`, `arrows: [nhãn mũi tên 1, …]` (tuỳ chọn) | Quy trình, chuỗi biến đổi (2–5 bước). Nhãn trên mũi tên cho điều kiện/tác nhân |
 | `table` | `head: [...]`, `rows: [[...]]` | So sánh nhiều thuộc tính, bảng chia động từ, bảng giá trị (≤ 4 cột, ≤ 6 hàng). Không hợp với phân số lớn — chữ trong bảng nhỏ |
@@ -90,4 +93,6 @@ node scripts/build.mjs bai.json --png --a4         # PDF khổ A4 dọc, poster 
 node scripts/build.mjs bai.json --png --theme chalkboard
 node scripts/build.mjs bai.json out.html --cdn     # HTML dùng CDN để chia sẻ
 node scripts/render.mjs file.html out.png --width 1080 --scale 2   # chỉ chụp
+node scripts/web.mjs a.json b.json -o trang.web.html --title "Tên"  # trang web có hình động (nhiều file → tab)
+node scripts/web.mjs a.json -o trang.html --artifact               # bản để publish Claude Artifact
 ```

@@ -1,2 +1,5 @@
 *.html
+!*.web.html
+!docs/*.html
 .DS_Store
+.claude/

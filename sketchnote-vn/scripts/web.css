@@ -1,0 +1,113 @@
+/* Bản web: bố cục co giãn + hình động. Mọi hiệu ứng nằm dưới .anim (chỉ bật khi người xem
+   không chọn "giảm chuyển động"); trạng thái nghỉ luôn là poster đầy đủ, đọc được ngay. */
+
+body{background:var(--paper);color:var(--ink);margin:0}
+.web-wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px 28px}
+.web .poster{max-width:1120px;margin:0 auto;border-radius:18px;padding:30px 30px 26px}
+
+/* ---------- Thanh điều hướng ---------- */
+.web-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;
+  max-width:1120px;margin:0 auto 12px;padding:8px 0;background:var(--paper)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.web-bar button{font:600 15px/1.2 'Mali','Itim',system-ui,sans-serif;color:var(--ink);background:var(--card-bg);
+  border:2.2px solid var(--ink);border-radius:12px 15px 11px 14px;padding:6px 14px;cursor:pointer}
+.web-bar button[aria-selected="true"]{background:var(--accent-soft);box-shadow:3px 3px 0 var(--frame)}
+.web-bar button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.web-bar .replay{border-style:dashed}
+.web-bar .sep{flex:1 1 auto}
+
+/* ---------- Điện thoại / máy tính bảng ---------- */
+@media (max-width:820px){
+  .web .poster{padding:20px 14px 18px;background-position:0 0}
+  .web .cols-3 .grid,.web .cols-2 .grid{grid-template-columns:1fr}
+  .web .span-2,.web .span-3{grid-column:auto}
+  .web .banner{padding:14px 40px 18px}
+  .web .banner h1{font-size:clamp(24px,7vw,40px)}
+  .web .subtitle{font-size:clamp(24px,6.5vw,34px)}
+  .web .tag{font-size:16px;padding:4px 16px}
+  .web .laurel{display:none}
+  .web .recap{flex-direction:column;align-items:stretch;padding:16px}
+  .web .recap-label{max-width:none;justify-content:center}
+  .web .recap-deco{display:none}
+  .web .slogan{font-size:22px;gap:10px}
+  .web .v-compare{grid-template-columns:1fr}
+  .web .v-compare .vs{justify-self:center}
+  .web-bar{gap:6px;padding:6px 0}
+  .web-bar button{font-size:13px;padding:5px 9px}
+  .web-bar .replay .txt{display:none}
+  /* Bảng nhiều cột: giữ bề rộng đọc được, cuộn ngang trong khung thay vì ép cột. */
+  .web .v-table:has(tr > :nth-child(3)){min-width:440px}
+  .web .v-table:has(tr > :nth-child(4)){min-width:540px}
+  .web .tbl{margin-inline:-4px;padding-bottom:4px}
+}
+.web .tbl{overflow-x:auto}
+.web .card,.web .content{min-width:0}
+.web .display,.web .v-formula .tex{overflow-x:auto}
+
+/* ---------- Tương tác ---------- */
+.web .card{cursor:pointer;transition:transform .25s ease}
+.web .card:hover{transform:translateY(-3px) rotate(-.25deg)}
+.web .card:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:16px}
+
+/* ---------- Hình động (chỉ khi .anim) ---------- */
+@keyframes sk-draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes sk-in{from{transform:translateY(16px) rotate(-.8deg);opacity:.35}to{transform:none;opacity:1}}
+@keyframes sk-pop{0%{transform:scale(.3)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes sk-sweep{from{background-size:0% 100%}to{background-size:100% 100%}}
+@keyframes sk-row{from{transform:translateX(-10px);opacity:.25}to{transform:none;opacity:1}}
+@keyframes sk-drop{from{transform:translateY(-16px);opacity:.15}to{transform:none;opacity:1}}
+@keyframes sk-ring{from{transform:scale(.82);opacity:.3}to{transform:none;opacity:1}}
+@keyframes sk-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes sk-fade{from{opacity:0}to{opacity:.75}}
+@keyframes sk-twinkle{0%,100%{transform:rotate(-12deg) scale(1)}50%{transform:rotate(8deg) scale(1.15)}}
+@keyframes sk-sway{0%,100%{rotate:-3deg}50%{rotate:3deg}}
+@keyframes sk-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@keyframes sk-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+@keyframes sk-pulse{0%,100%{stroke-opacity:1}50%{stroke-opacity:.25}}
+@keyframes sk-wiggle{0%,100%{rotate:0deg}25%{rotate:-7deg}75%{rotate:7deg}}
+
+.anim mark{background-repeat:no-repeat;background-size:100% 100%}
+.anim .play mark{animation:sk-sweep .8s .35s ease-out both}
+
+/* Tiêu đề */
+.anim .hero.play .ribbon,.anim .hero.play .wave path{animation:sk-draw 1.4s ease-in-out both}
+.anim .hero.play .tag{animation:sk-pop .55s .5s both}
+.anim .star{animation:sk-twinkle 3.2s ease-in-out infinite}
+.anim .s2{animation-delay:-1.6s}
+.anim .laurel.l{animation:sk-sway 4s ease-in-out infinite;transform-origin:bottom right}
+.anim .laurel.r{animation:sk-sway 4s ease-in-out -2s infinite;transform-origin:bottom left}
+
+/* Thẻ */
+.anim .card.play{animation:sk-in .6s ease-out backwards;animation-delay:calc(var(--n,0) * 70ms)}
+.anim .card.play .num{animation:sk-pop .5s ease-out both;animation-delay:calc(var(--n,0) * 70ms + .2s)}
+.anim .play .doodle :is(path,circle,rect,ellipse,polyline,line){animation:sk-draw 1.2s ease-in-out both;animation-delay:.25s}
+.anim .card:hover .doodle,.anim .card:hover .ic{animation:sk-wiggle .6s ease-in-out}
+.anim .play .v-table tr{animation:sk-row .45s ease-out both;animation-delay:calc(.25s + var(--i,0) * 90ms)}
+.anim .play .v-formula .blob{animation:sk-breathe 3.5s ease-in-out infinite}
+
+/* Trục số, tập hợp, đồ thị */
+.anim .play .v-numberline .axis path{animation:sk-draw .9s ease-out both}
+.anim .play .v-numberline .np{animation:sk-drop .5s ease-out both;animation-delay:calc(.5s + var(--i,0) * .18s);transform-box:fill-box}
+.anim .play .v-numberline .plabel{animation:sk-drop .5s ease-out both;animation-delay:calc(.55s + var(--i,0) * .18s)}
+.anim .play .v-nested .ring{animation:sk-ring .6s ease-out both;animation-delay:calc(.2s + var(--i,0) * .2s);transform-box:fill-box;transform-origin:center}
+.anim .play .v-graph .axis path{animation:sk-draw .8s ease-out both}
+.anim .play .v-graph .gline{animation:sk-draw 1.4s .5s ease-in-out both}
+.anim .play .v-graph .area{animation:sk-fade .8s 1.6s ease-out both}
+
+/* Trục thời gian */
+.anim .play .tl-axis{animation:sk-draw .9s ease-out both}
+.anim .tl-now{animation:sk-pulse 1.6s ease-in-out infinite}
+.anim .play .tl-dot{animation:sk-pop .45s ease-out both;animation-delay:calc(.5s + var(--k,0) * .35s + var(--i,0) * .14s);transform-box:fill-box;transform-origin:center}
+.anim .play .tl-range{animation:sk-grow .9s ease-out both;animation-delay:calc(.5s + var(--k,0) * .35s);transform-box:fill-box;transform-origin:left center}
+.anim .play .tl-done{animation:sk-draw .4s ease-out both;animation-delay:calc(1s + var(--k,0) * .35s)}
+
+/* Quy trình, phương trình */
+.anim .play .v-steps .step-wrap{animation:sk-drop .45s ease-out both;animation-delay:calc(.3s + var(--i,0) * .25s)}
+.anim .v-steps .arr-head,.anim .v-equation .eq-arrow svg{animation:sk-nudge 1.4s ease-in-out infinite}
+
+/* Ghi nhớ nhanh */
+.anim .recap.play li{animation:sk-row .45s ease-out both;animation-delay:calc(.2s + var(--i,0) * .15s)}
+.anim .recap.play li .ic :is(path,rect){animation:sk-draw .5s ease-out both;animation-delay:calc(.35s + var(--i,0) * .15s)}
+.anim .recap.play .recap-label .doodle{animation:sk-wiggle .8s 1s ease-in-out}
+
+@media (prefers-reduced-motion:reduce){.anim *{animation:none!important;transition:none!important}}

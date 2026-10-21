@@ -42,6 +42,7 @@ Hãy hỏi "hình này giúp hiểu quan hệ nào?". Nếu không trả lời �
 | Giá trị trên trục, khoảng, mốc thời gian có số | `numberline` |
 | Các bước, quy trình, chuỗi biến đổi | `steps` (có `arrows` cho nhãn mũi tên) |
 | Phương trình chữ (quang hợp, hô hấp, phản ứng) | `equation` |
+| Thì động từ (tiếng Anh), mốc lịch sử | `timeline` |
 | Đồ thị v–t, hàm số, số liệu theo thời gian | `graph` |
 | Cấu trúc câu tiếng Anh (S + V + O) | `formula` với `\text{}` hoặc dòng `$$...$$`, hoặc `table` cho khẳng định/phủ định/nghi vấn |
 | So sánh 2 khái niệm | `compare` (`sep` đổi "vs" thành "→", "≠"…) |

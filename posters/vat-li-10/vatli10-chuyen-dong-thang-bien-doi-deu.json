@@ -73,9 +73,35 @@
         "- Diện tích dưới đồ thị = độ dịch chuyển $d$"
       ],
       "visual": {
-        "type": "icon",
-        "name": "chart",
-        "align": "center"
+        "type": "graph",
+        "x": "t",
+        "y": "v",
+        "lines": [
+          {
+            "points": [
+              [
+                0,
+                2
+              ],
+              [
+                5,
+                7
+              ]
+            ],
+            "label": "v = v_0 + at"
+          }
+        ],
+        "shade": 0,
+        "marks": [
+          {
+            "at": [
+              0,
+              2
+            ],
+            "label": "v_0"
+          }
+        ],
+        "caption": "Diện tích tô màu = độ dịch chuyển $d$"
       },
       "keywords": "Độ dốc, diện tích"
     },

@@ -1,6 +1,6 @@
 ---
 name: sketchnote-vn
-description: Biến một tài liệu (PDF, Word, ảnh chụp trang sách, bài giảng, link, đoạn văn) thành poster "Tổng hợp kiến thức" kiểu sketchnote vẽ tay — tiêu đề băng rôn, 6–9 thẻ đánh số có "TỪ KHÓA", icon doodle, khung "GHI NHỚ NHANH", nền giấy kẻ — xuất PNG/PDF với chữ tiếng Việt và công thức toán chính xác 100%. Dùng skill này mỗi khi người dùng muốn tóm tắt bài học / chương sách / tài liệu thành một ảnh ôn tập, infographic, sketchnote, cheat sheet, phiếu tổng hợp kiến thức, poster ôn thi, "vẽ lại bài này thành 1 tấm", "tóm tắt thành ảnh", kể cả khi họ chỉ gửi ảnh mẫu kiểu đó và nói "làm giống vậy cho bài X".
+description: Biến một tài liệu (PDF, Word, ảnh chụp trang sách, bài giảng, link, đoạn văn) thành poster "Tổng hợp kiến thức" kiểu sketchnote vẽ tay — tiêu đề băng rôn, 6–9 thẻ đánh số có "TỪ KHÓA", icon doodle, khung "GHI NHỚ NHANH", nền giấy kẻ — xuất PNG/PDF hoặc trang web có hình động, với chữ tiếng Việt và công thức toán chính xác 100%. Dùng skill này mỗi khi người dùng muốn tóm tắt bài học / chương sách / tài liệu thành một ảnh ôn tập, infographic, sketchnote, cheat sheet, phiếu tổng hợp kiến thức, poster ôn thi, "vẽ lại bài này thành 1 tấm", "tóm tắt thành ảnh", kể cả khi họ chỉ gửi ảnh mẫu kiểu đó và nói "làm giống vậy cho bài X", hoặc muốn "làm dạng web", "có hình động".
 ---
 
 # Sketchnote VN — Poster tổng hợp kiến thức
@@ -38,6 +38,15 @@ Nguyên tắc xuyên suốt:
 5. **GHI NHỚ NHANH**: 3–5 câu chốt. Không lặp nguyên văn tiêu đề thẻ; viết thành câu hoàn chỉnh, ngắn.
 6. Ghi lại phần **đã lược bỏ** để báo người dùng ở cuối.
 
+**Mức chi tiết.** Mặc định poster gọn, đủ để nhớ lại bài. Nếu người dùng muốn **chi tiết hơn**, ví dụ "thêm kiến thức", "đầy đủ hơn", "ít quá", "để ôn thi", "cheat sheet", thì đặt `"density": "dense"`. Chế độ này chữ nhỏ hơn và mỗi thẻ chứa được khoảng 90 tiếng. Lúc đó, mỗi thẻ nên có:
+- Định nghĩa hoặc cách dùng, tách đủ các trường hợp mà nguồn liệt kê.
+- Cấu trúc hoặc công thức đầy đủ.
+- 1 ví dụ cho mỗi trường hợp.
+- Dấu hiệu nhận biết.
+- Lưu ý hoặc lỗi hay gặp, nếu nguồn có.
+
+Bố cục nên dùng `"columns": 2` để thẻ đủ rộng. Vẫn giữ quy tắc không bịa: chỉ thêm những gì có trong nguồn.
+
 ### Bước 2 — Viết blueprint JSON
 Schema đầy đủ nằm ở `references/blueprint-schema.md`; ví dụ chuẩn là `examples/toan7-so-huu-ti.json`, nên đọc trước khi viết. Một số điểm chính:
 - Lưu file vào thư mục người dùng chỉ định (mặc định: thư mục làm việc hiện tại), đặt tên theo bài, ví dụ `toan7-bai1-so-huu-ti.json`.
@@ -52,6 +61,7 @@ Schema đầy đủ nằm ở `references/blueprint-schema.md`; ví dụ chuẩn
   - `formula`: công thức trọng tâm.
   - `equation`: phương trình chữ có điều kiện trên mũi tên (sinh, hoá).
   - `graph`: đồ thị đơn giản (v–t, hàm số), có tô vùng dưới đồ thị.
+  - `timeline`: trục thời gian quá khứ – hiện tại – tương lai (thì động từ, mốc lịch sử).
   - `numberline`: trục số.
   - `nested`: tập hợp lồng nhau.
   - `steps`: quy trình.
@@ -82,6 +92,26 @@ node <skill-dir>/scripts/build.mjs <blueprint.json> --png
 - Hàng cuối của lưới còn ô trống.
 
 Sửa hết cảnh báo trong JSON rồi build lại, đừng bỏ qua.
+
+### Bước 3b — Bản web có hình động (khi người dùng muốn "dạng web", "hình động", "xem trên điện thoại")
+```bash
+node <skill-dir>/scripts/web.mjs bai1.json [bai2.json …] -o ten-trang.web.html --title "Tên trang"
+```
+- Kết quả là một file HTML **tự chứa**: font, KaTeX và công thức đều được dựng sẵn và nhúng vào. File mở được offline, gửi cho người khác được, đưa lên GitHub Pages được.
+- Nhiều blueprint sẽ thành các **tab** trong cùng một trang. Link `#ten-file` mở thẳng tab tương ứng.
+- Trang tự co về 1 cột trên điện thoại. Khi máy để chế độ tối, trang tự đổi sang giao diện bảng đen.
+- Hình động:
+  - Thẻ trượt vào khi cuộn tới.
+  - Icon tự vẽ nét.
+  - Trục số, đồ thị, tập hợp lồng nhau và trục thời gian chạy hiệu ứng.
+  - Dòng tô dạ quang quét dần.
+  - Bấm vào thẻ để xem lại hiệu ứng.
+- Hiệu ứng tự tắt khi người xem bật "giảm chuyển động". Khi đứng yên, poster luôn hiển thị đầy đủ.
+- Muốn đăng thành Claude Artifact thì thêm `--artifact` (bỏ phần `<!doctype>/<head>`), rồi publish file đó.
+- Cách kiểm tra:
+  - Chạy một server tĩnh, ví dụ `python3 -m http.server`.
+  - Mở trang ở bề rộng desktop và điện thoại (375px).
+  - Xác nhận không có cuộn ngang và không có lỗi console.
 
 ### Bước 4 — Tự kiểm tra bằng mắt (tối đa 3 vòng)
 `Read` file PNG và soát theo danh sách sau:
