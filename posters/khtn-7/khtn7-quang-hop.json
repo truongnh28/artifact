@@ -7,16 +7,86 @@
   },
   "cards": [
     {
+      "title": "Sơ đồ tư duy",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 3,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Quang hợp",
+        "branches": [
+          {
+            "label": "Khái niệm",
+            "items": [
+              "tổng hợp chất hữu cơ, giải phóng oxygen"
+            ]
+          },
+          {
+            "label": "Phương trình",
+            "items": [
+              "điều kiện: ánh sáng, diệp lục"
+            ]
+          },
+          {
+            "label": "Nguyên liệu – sản phẩm",
+            "items": [
+              "nước, carbon dioxide → glucose, oxygen"
+            ]
+          },
+          {
+            "label": "Trao đổi chất & năng lượng",
+            "items": [
+              "quang năng → hoá năng"
+            ]
+          },
+          {
+            "label": "Lá cây",
+            "items": [
+              "phiến lá, lục lạp, khí khổng, gân lá"
+            ]
+          },
+          {
+            "label": "Yếu tố ảnh hưởng",
+            "items": [
+              "ánh sáng, nước, carbon dioxide, nhiệt độ"
+            ]
+          },
+          {
+            "label": "Vai trò",
+            "items": [
+              "chất hữu cơ cho sinh vật, điều hoà không khí"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "title": "Khái niệm quang hợp",
       "body": [
         "Quang hợp là quá trình **lá cây** sử dụng ==nước== và ==khí carbon dioxide== nhờ năng lượng ánh sáng đã được **diệp lục** hấp thụ để tổng hợp chất hữu cơ (glucose) và giải phóng khí oxygen."
       ],
       "visual": {
-        "type": "icon",
-        "name": "leaf",
-        "align": "right"
+        "type": "flow",
+        "inLabel": "Lấy vào",
+        "outLabel": "Tạo ra",
+        "inputs": [
+          "Nước",
+          "Carbon dioxide",
+          "Ánh sáng"
+        ],
+        "outputs": [
+          "Glucose",
+          "Oxygen"
+        ],
+        "center": {
+          "icon": "leaf",
+          "label": "Lá cây",
+          "note": "diệp lục hấp thụ ánh sáng"
+        }
       },
-      "keywords": "Ánh sáng, diệp lục"
+      "keywords": "Ánh sáng, diệp lục",
+      "span": 2
     },
     {
       "title": "Phương trình tổng quát",
@@ -86,7 +156,8 @@
           "chuyển hoá"
         ]
       },
-      "keywords": "Đồng thời, gắn liền"
+      "keywords": "Đồng thời, gắn liền",
+      "span": 2
     },
     {
       "title": "Lá cây – cơ quan quang hợp",
@@ -129,7 +200,6 @@
         "> Nhiệt độ thuận lợi cho đa số cây trồng: **từ 25 °C đến 35 °C**."
       ],
       "keywords": "4 yếu tố, 25 °C – 35 °C",
-      "span": 2,
       "visual": {
         "type": "icons",
         "names": [
@@ -152,7 +222,8 @@
           "globe"
         ]
       },
-      "keywords": "Nuôi sống, điều hoà không khí"
+      "keywords": "Nuôi sống, điều hoà không khí",
+      "span": 3
     }
   ],
   "recap": {

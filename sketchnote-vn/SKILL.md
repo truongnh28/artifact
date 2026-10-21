@@ -80,6 +80,23 @@ Schema đầy đủ nằm ở `references/blueprint-schema.md`; ví dụ chuẩn
   - Bảng gợi ý icon theo môn học nằm trong `references/content-rules.md`.
 - `header.tag` ghi môn, lớp, bộ sách nếu biết (ví dụ "TOÁN 7 – TẬP 1 – KNTT"); `header.subtitle` ghi tên bài.
 
+### Bước 2b — Rà soát hình hoá (bắt buộc trước khi build)
+Đi qua **từng thẻ** và hỏi: *"Một hình vẽ có giúp hiểu nhanh hơn chữ không?"* Nếu có thì thêm `visual` theo bảng ở `references/content-rules.md` (mục 5). Chỉ dùng icon trang trí khi thật sự không có hình mang nghĩa.
+
+Danh sách kiểm:
+- [ ] Poster có từ 6 thẻ trở lên → có thẻ `mindmap` tổng quan ở đầu (`"noNumber": true`, `span` toàn hàng).
+- [ ] Mỗi khái niệm có **quan hệ không gian, thời gian, số lượng hoặc quá trình** đều đã có hình tương ứng:
+  - Vị trí → `positions`.
+  - Thời gian, thì động từ → `timeline` / `funnel`.
+  - Số lượng → `jars` / `bars`.
+  - Phân số → `fraction`.
+  - Lấy vào → tạo ra → `flow` / `equation`.
+  - Chuyển động → `motion` / `graph`.
+  - Đảo trật tự từ (câu hỏi, câu bị động…) → `reorder`.
+  - Đối xứng, khoảng cách trên trục số → `numberline` có `arcs`.
+- [ ] Không quá 1/3 số thẻ chỉ có icon trang trí.
+- [ ] Hình chỉ minh hoạ đúng điều nguồn nói. Hình thêm kiến thức mới thì phải ghi "Bổ sung".
+
 ### Bước 3 — Dựng và render
 ```bash
 node <skill-dir>/scripts/build.mjs <blueprint.json> --png

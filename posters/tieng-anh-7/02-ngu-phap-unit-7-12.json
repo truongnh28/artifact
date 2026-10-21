@@ -142,41 +142,82 @@
       "body": [
         "Câu hỏi có thể trả lời bằng **Yes** (Có) hoặc **No** (Không); dùng để xác nhận hoặc bác bỏ thông tin."
       ],
-      "visual": {
-        "type": "table",
-        "head": [
-          "Loại câu",
-          "Cấu trúc",
-          "Cách dùng",
-          "Ví dụ"
-        ],
-        "rows": [
-          [
-            "Động từ \"to be\"",
-            "To be + S + ...?",
-            "Đứng đầu câu hỏi khi là động từ chính",
-            "Are you a student?<br>Was she at home yesterday?"
+      "visual": [
+        {
+          "type": "reorder",
+          "from": [
+            "You",
+            "are",
+            "a student",
+            "."
           ],
-          [
-            "Động từ khuyết thiếu",
-            "Modal verb + S + V (nguyên thể) + ...?",
-            "Modal đứng đầu, sau đó chủ ngữ và V nguyên thể",
-            "Can you swim?<br>Should I call him now?"
+          "to": [
+            "Are",
+            "you",
+            "a student",
+            "?"
           ],
-          [
-            "Động từ thường",
-            "Do/Does/Did + S + V (nguyên thể) + ...?",
-            "Cần trợ động từ do/does/did",
-            "Do they play football?<br>Did she watch the movie last night?"
+          "moved": [
+            0
           ],
-          [
-            "Hiện tại hoàn thành",
-            "Have/Has + S + V3/V-ed + ...?",
-            "Dùng trợ động từ have/has",
-            "Have you ever visited Japan?<br>Has he finished his homework?"
+          "note": "\"to be\" đứng đầu câu"
+        },
+        {
+          "type": "reorder",
+          "from": [
+            "They",
+            "play",
+            "football",
+            "."
+          ],
+          "to": [
+            "Do",
+            "they",
+            "play",
+            "football",
+            "?"
+          ],
+          "moved": [
+            0
+          ],
+          "note": "thêm trợ động từ \"do\" ở đầu câu"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Loại câu",
+            "Cấu trúc",
+            "Cách dùng",
+            "Ví dụ"
+          ],
+          "rows": [
+            [
+              "Động từ \"to be\"",
+              "To be + S + ...?",
+              "Đứng đầu câu hỏi khi là động từ chính",
+              "Are you a student?<br>Was she at home yesterday?"
+            ],
+            [
+              "Động từ khuyết thiếu",
+              "Modal verb + S + V (nguyên thể) + ...?",
+              "Modal đứng đầu, sau đó chủ ngữ và V nguyên thể",
+              "Can you swim?<br>Should I call him now?"
+            ],
+            [
+              "Động từ thường",
+              "Do/Does/Did + S + V (nguyên thể) + ...?",
+              "Cần trợ động từ do/does/did",
+              "Do they play football?<br>Did she watch the movie last night?"
+            ],
+            [
+              "Hiện tại hoàn thành",
+              "Have/Has + S + V3/V-ed + ...?",
+              "Dùng trợ động từ have/has",
+              "Have you ever visited Japan?<br>Has he finished his homework?"
+            ]
           ]
-        ]
-      },
+        }
+      ],
       "keywords": "Yes/No, đứng đầu câu"
     },
     {

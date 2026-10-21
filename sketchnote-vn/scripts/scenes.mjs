@@ -1,4 +1,6 @@
-// Hình minh hoạ dạng tranh: mèo & hộp cho giới từ vị trí, phễu (in/on/at), cột so sánh, sơ đồ tư duy.
+// Hình minh hoạ dạng tranh: mèo & hộp cho giới từ vị trí, phễu (in/on/at), cột so sánh, sơ đồ tư duy,
+// bánh phân số, sơ đồ lấy vào → thải ra, chuyển động theo mốc, lọ số lượng, đảo trật tự từ.
+import { icon } from './icons.mjs';
 // Mỗi hàm nhận (v, inline) — inline() là bộ định dạng chữ của poster (công thức, **đậm**…).
 
 // ---------- Mèo ngồi nhìn thẳng (khung 40×44) ----------
@@ -87,5 +89,90 @@ export function mindmap(v, inline) {
     <div class="mm-col mm-left">${branches.slice(0, half).map((b, i) => node(b, i)).join('')}</div>
     <div class="mm-center"><span>${inline(v.center)}</span></div>
     <div class="mm-col mm-right">${branches.slice(half).map((b, i) => node(b, i + half)).join('')}</div>
+  </div>`;
+}
+
+// ---------- Bánh phân số: b phần bằng nhau, tô a phần ----------
+export function fraction(v, inline) {
+  const b = Math.max(1, v.parts ?? 4), a = Math.min(b, v.filled ?? 1);
+  const R = 34, C = 40;
+  const pt = (k) => {
+    const t = (k / b) * 2 * Math.PI - Math.PI / 2;
+    return `${(C + R * Math.cos(t)).toFixed(2)} ${(C + R * Math.sin(t)).toFixed(2)}`;
+  };
+  const slices = Array.from({ length: b }, (_, k) => b === 1
+    ? `<circle class="fr-slice${k < a ? ' on' : ''}" cx="${C}" cy="${C}" r="${R}" style="--i:${k}"/>`
+    : `<path class="fr-slice${k < a ? ' on' : ''}" style="--i:${k}" d="M${C} ${C}L${pt(k)}A${R} ${R} 0 0 1 ${pt(k + 1)}Z"/>`).join('');
+  const tex = v.tex ?? `$\\dfrac{${a}}{${b}}$`;
+  return `<div class="v-fraction"><svg viewBox="0 0 80 80" aria-hidden="true">${slices}</svg>
+    <div class="fr-legend"><div class="fr-tex">${inline(tex)}</div>${(v.notes ?? []).map((t) => `<div>${inline(t)}</div>`).join('')}</div></div>`;
+}
+
+// ---------- Lấy vào → quá trình → thải ra ----------
+export function flow(v, inline) {
+  const chips = (xs, cls) => (xs ?? []).map((t, i) => `<span class="fl-chip ${cls}" style="--i:${i}">${inline(t)}</span>`).join('');
+  const arrow = `<svg class="fl-arrow" viewBox="0 0 40 16" aria-hidden="true"><path d="M2 8h34M29 2l7 6-7 6"/></svg>`;
+  const c = v.center ?? {};
+  return `<div class="v-flow">
+    <div class="fl-side fl-in">${v.inLabel ? `<span class="fl-cap">${inline(v.inLabel)}</span>` : ''}${chips(v.inputs, 'in')}</div>
+    ${arrow}
+    <div class="fl-center">${c.icon ? icon(c.icon, 'doodle big') : ''}<b>${inline(c.label ?? '')}</b>${c.note ? `<span>${inline(c.note)}</span>` : ''}</div>
+    ${arrow}
+    <div class="fl-side fl-out">${v.outLabel ? `<span class="fl-cap">${inline(v.outLabel)}</span>` : ''}${chips(v.outputs, 'out')}</div>
+  </div>`;
+}
+
+// ---------- Chuyển động theo mốc thời gian (ảnh hoạt nghiệm): nhanh dần / chậm dần / đều ----------
+const CAR = `<g class="mv-car"><path class="car-body" d="M2 14h4l4-7h12l5 7h5v6H2z"/><path class="car-win" d="M11 9h5v5h-8zM18 9h3l3.5 5H18z"/><circle class="car-wheel" cx="9" cy="20" r="3.2"/><circle class="car-wheel" cx="26" cy="20" r="3.2"/></g>`;
+export function motion(v, inline) {
+  const n = v.steps ?? 5;
+  const pos = (mode) => Array.from({ length: n }, (_, i) => {
+    const t = i / (n - 1);
+    return mode === 'accel' ? t * t : mode === 'decel' ? 1 - (1 - t) * (1 - t) : t;
+  });
+  const vertical = !!v.vertical;
+  const rows = (v.rows ?? [{ mode: 'accel' }]).map((r, k) => {
+    const ps = pos(r.mode ?? 'accel');
+    const W = vertical ? 80 : 300, H = vertical ? 200 : 46, pad = vertical ? 16 : 20, span = (vertical ? H : W) - 2 * pad - (vertical ? 8 : 34);
+    const objs = ps.map((p, i) => {
+      const off = pad + p * span;
+      const op = i === n - 1 ? 1 : 0.28 + 0.5 * (i / (n - 1));
+      const shape = vertical
+        ? `<circle class="mv-ball" cx="30" cy="${off}" r="7"/>`
+        : `<g transform="translate(${off} 12)">${v.object === 'ball' ? '<circle class="mv-ball" cx="10" cy="14" r="7"/>' : CAR}</g>`;
+      const tick = vertical
+        ? `<path class="mv-tick" d="M44 ${off}h10"/><text class="mv-t" x="58" y="${off + 3}">${i}</text>`
+        : `<path class="mv-tick" d="M${off + 16} 40v5"/>`;
+      return `<g class="mv-obj" style="--i:${i};opacity:${op.toFixed(2)}">${shape}</g>${tick}`;
+    }).join('');
+    const ground = vertical ? `<path class="mv-ground" d="M44 ${pad - 6}V${H - pad + 6}"/>` : `<path class="mv-ground" d="M6 40H${W - 6}"/>`;
+    return `<div class="mv-row" style="--k:${k}">${r.label ? `<span class="mv-label">${inline(r.label)}</span>` : ''}<svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${ground}${objs}</svg>${r.note ? `<span class="mv-note">${inline(r.note)}</span>` : ''}</div>`;
+  }).join('');
+  return `<div class="v-motion${vertical ? ' vertical' : ''}">${rows}${v.caption ? `<div class="mv-cap">${inline(v.caption)}</div>` : ''}</div>`;
+}
+
+// ---------- Lọ số lượng: many → some → a few → few → none ----------
+export function jars(v, inline) {
+  return `<div class="v-jars">${(v.items ?? []).map((it, i) => {
+    const f = Math.max(0, Math.min(1, it.fill ?? 0.5));
+    const top = 18 + (1 - f) * 52;
+    return `<figure class="jar" style="--i:${i};--f:${f}"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc${i}${Math.round(f * 100)}"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="${top.toFixed(1)}" width="60" height="${(76 - top).toFixed(1)}" clip-path="url(#jc${i}${Math.round(f * 100)})"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>${inline(it.label)}</b>${it.note ? `<span>${inline(it.note)}</span>` : ''}</figcaption></figure>`;
+  }).join('')}</div>`;
+}
+
+// ---------- Đảo trật tự từ (câu khẳng định → câu hỏi) ----------
+export function reorder(v, inline) {
+  const from = v.from ?? [], to = v.to ?? [];
+  const moved = new Set((v.moved ?? []).map(Number));
+  const row = (xs, cls) => xs.map((t, i) => `<span class="ro-chip${cls === 'to' && moved.has(i) ? ' moved' : ''}" style="--i:${i}">${inline(t)}</span>`).join('');
+  return `<div class="v-reorder">
+    <div class="ro-row ro-from">${row(from, 'from')}</div>
+    <div class="ro-mid"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 2v24M5 19l7 7 7-7"/></svg>${v.note ? `<span>${inline(v.note)}</span>` : ''}</div>
+    <div class="ro-row ro-to">${row(to, 'to')}</div>
   </div>`;
 }

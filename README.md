@@ -66,7 +66,7 @@ Mã nguồn của các trang này nằm trong thư mục [`docs/`](docs/).
 
 **Mức chi tiết:** thêm `"density": "dense"` vào file JSON khi muốn nhiều kiến thức hơn trên mỗi thẻ.
 
-**Hình minh hoạ:** `mindmap` (sơ đồ tư duy), `positions` (tranh mèo & hộp cho giới từ), `funnel` (phễu in › on › at), `bars` (cột so sánh), `timeline` (trục thời gian), `formula`, `equation` (phương trình chữ), `graph` (đồ thị), `numberline`, `nested` (tập hợp lồng nhau), `steps`, `table`, `compare`, `icon`.
+**Hình minh hoạ:** `mindmap` (sơ đồ tư duy), `positions` (tranh mèo & hộp cho giới từ), `funnel` (phễu in › on › at), `bars` (cột so sánh), `jars` (lọ số lượng), `fraction` (bánh phân số), `flow` (lấy vào → tạo ra), `motion` (chuyển động theo mốc), `reorder` (đảo trật tự từ), `timeline` (trục thời gian), `formula`, `equation` (phương trình chữ), `graph` (đồ thị), `numberline`, `nested` (tập hợp lồng nhau), `steps`, `table`, `compare`, `icon`.
 
 Chi tiết schema nằm trong [`sketchnote-vn/references/blueprint-schema.md`](sketchnote-vn/references/blueprint-schema.md).
 

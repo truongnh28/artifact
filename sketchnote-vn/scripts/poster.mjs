@@ -6,7 +6,7 @@
 //   được giữ dạng $...$ để KaTeX auto-render xử lý trong trình duyệt.
 
 import { icon, ICONS } from './icons.mjs';
-import { positions, funnel, bars, mindmap } from './scenes.mjs';
+import { positions, funnel, bars, mindmap, fraction, flow, motion, jars, reorder } from './scenes.mjs';
 
 export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -86,24 +86,37 @@ export function renderPoster(bp, { math, id } = {}) {
         ${v.note ? `<div class="note">${inline(v.note)}</div>` : ''}
       </div>`,
 
+    // Trục số. points: điểm có nhãn; arcs: cung khoảng cách {from, to, label} vẽ phía trên trục;
+    // ticks: "all" (mặc định) | "zero" (chỉ ghi số 0) | "none". Nhãn đặt theo % nên không lệch khi thẻ rộng.
     numberline: (v) => {
       const min = v.min ?? -2, max = v.max ?? 2, step = v.step ?? 1;
-      const W = 300, pad = 22, y = 30;
-      const X = (x) => pad + ((x - min) / (max - min)) * (W - 2 * pad);
-      let ticks = '';
-      const tickLabels = [];
+      const arcs = v.arcs ?? [];
+      const W = 300, A = arcs.length ? 34 : 0, y = A + 26, H = y + 50;
+      const X = (x) => 22 + ((x - min) / (max - min)) * (W - 44);
+      const pctX = (x) => (x / W) * 100, pctY = (yy) => (yy / H) * 100;
+      let ticks = '', tickLabels = '';
+      const showTick = (x) => (v.ticks ?? 'all') === 'all' || ((v.ticks === 'zero') && Math.abs(x) < 1e-9);
       for (let x = min; x <= max + 1e-9; x += step) {
         ticks += `<line x1="${X(x)}" y1="${y - 6}" x2="${X(x)}" y2="${y + 6}"/>`;
-        tickLabels.push({ x: X(x), t: String(+x.toFixed(4)).replace('-', '−') });
+        if (showTick(x)) {
+          const ty = arcs.length ? y + 17 : y - 16;
+          tickLabels += `<span class="tick" style="left:${pctX(X(x))}%;top:${pctY(ty)}%">${String(+x.toFixed(4)).replace('-', '−')}</span>`;
+        }
       }
       const pts = (v.points ?? []).map((p) => ({ x: X(p.x), label: p.label }));
-      return `<div class="v-numberline">
-        <svg viewBox="0 0 ${W} 60"><g class="axis"><path d="M6 ${y}L${W - 6} ${y}M${W - 14} ${y - 6}L${W - 6} ${y}L${W - 14} ${y + 6}"/>${ticks}</g>
-        ${pts.map((p, i) => `<g class="np" style="--i:${i}"><circle cx="${p.x}" cy="${y}" r="4.5" class="pt"/><path class="arrowup" d="M${p.x} ${y + 26}V${y + 10}M${p.x - 4} ${y + 15}L${p.x} ${y + 10}L${p.x + 4} ${y + 15}"/></g>`).join('')}
+      const arcSvg = arcs.map((a, i) => {
+        const x1 = X(a.from), x2 = X(a.to), top = y - 8 - A + 6;
+        return `<path class="nl-arc" style="--i:${i}" d="M${x1} ${y - 7}C${x1} ${top} ${x2} ${top} ${x2} ${y - 7}"/>`;
+      }).join('');
+      const arcLabels = arcs.map((a) => a.label ? `<span class="arc-label" style="left:${pctX((X(a.from) + X(a.to)) / 2)}%;top:${pctY(y - A - 4)}%">${M(wrapTex(a.label), true)}</span>` : '').join('');
+      const ptLabelY = arcs.length ? y + 36 : y + 40;
+      return `<div class="v-numberline${arcs.length ? ' has-arcs' : ''}"><div class="nl-box" style="aspect-ratio:${W}/${H}">
+        <svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${arcSvg}<g class="axis"><path d="M6 ${y}L${W - 6} ${y}M${W - 14} ${y - 6}L${W - 6} ${y}L${W - 14} ${y + 6}"/>${ticks}</g>
+        ${pts.map((p, i) => `<g class="np" style="--i:${i}"><circle cx="${p.x}" cy="${y}" r="4.5" class="pt"/>${arcs.length ? '' : `<path class="arrowup" d="M${p.x} ${y + 26}V${y + 10}M${p.x - 4} ${y + 15}L${p.x} ${y + 10}L${p.x + 4} ${y + 15}"/>`}</g>`).join('')}
         </svg>
-        ${tickLabels.map((t) => `<span class="tick" style="left:${(t.x / W) * 100}%">${t.t}</span>`).join('')}
-        ${pts.map((p, i) => `<span class="plabel" style="left:${(p.x / W) * 100}%;--i:${i}">${M(wrapTex(p.label), true)}</span>`).join('')}
-      </div>`;
+        ${tickLabels}${arcLabels}
+        ${pts.map((p, i) => `<span class="plabel" style="left:${pctX(p.x)}%;top:${pctY(ptLabelY)}%;--i:${i}">${M(wrapTex(p.label), true)}</span>`).join('')}
+      </div>${v.caption ? `<div class="nl-cap">${inline(v.caption)}</div>` : ''}</div>`;
     },
 
     nested: (v) => {
@@ -209,6 +222,11 @@ export function renderPoster(bp, { math, id } = {}) {
     funnel: (v) => funnel(v, inline),
     bars: (v) => bars(v, inline),
     mindmap: (v) => mindmap(v, inline),
+    fraction: (v) => fraction(v, inline),
+    flow: (v) => flow(v, inline),
+    motion: (v) => motion(v, inline),
+    jars: (v) => jars(v, inline),
+    reorder: (v) => reorder(v, inline),
   };
 
   function visual(v) {
@@ -226,7 +244,8 @@ export function renderPoster(bp, { math, id } = {}) {
   // Chế độ dày (density: "dense") chữ nhỏ hơn, cho phép thẻ chứa nhiều hơn: ví dụ, dấu hiệu, lưu ý.
   const dense = bp.density === 'dense';
   const LIMIT = dense ? 95 : 55;
-  if (cards.length > 9) warnings.push(`Có ${cards.length} thẻ — nên ≤ 9; gộp hoặc bỏ ý yếu nhất.`);
+  const numbered = cards.filter((c) => !c.noNumber).length;
+  if (numbered > 9) warnings.push(`Có ${numbered} thẻ đánh số — nên ≤ 9; gộp hoặc bỏ ý yếu nhất.`);
   for (const [i, c] of cards.entries()) {
     const n = syllables([].concat(c.body ?? [], c.after ?? []).join(' '));
     if (n > LIMIT) warnings.push(`Thẻ ${i + 1} "${c.title}" dài ${n} tiếng — nên ≤ ${LIMIT - 5}; chuyển bớt sang visual hoặc tách thẻ.`);

@@ -303,20 +303,52 @@
         "- **Much/Many:** thường trong câu phủ định, câu hỏi → Do you have many friends?",
         "- **Some:** câu khẳng định, câu hỏi mong đợi \"Yes\" → Would you like some tea?"
       ],
-      "visual": {
-        "type": "compare",
-        "left": [
-          "**few / little**",
-          "rất ít, gần như không đủ",
-          "> Few students passed the exam."
-        ],
-        "right": [
-          "**a few / a little**",
-          "một ít nhưng đủ",
-          "> I have a few close friends here."
-        ],
-        "sep": "≠"
-      },
+      "visual": [
+        {
+          "type": "jars",
+          "items": [
+            {
+              "label": "many",
+              "fill": 0.9,
+              "note": "nhiều"
+            },
+            {
+              "label": "some",
+              "fill": 0.55,
+              "note": "một vài, một ít"
+            },
+            {
+              "label": "a few",
+              "fill": 0.3,
+              "note": "ít nhưng đủ"
+            },
+            {
+              "label": "few",
+              "fill": 0.1,
+              "note": "rất ít"
+            },
+            {
+              "label": "none",
+              "fill": 0,
+              "note": "không có"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "left": [
+            "**few / little**",
+            "rất ít, gần như không đủ",
+            "> Few students passed the exam."
+          ],
+          "right": [
+            "**a few / a little**",
+            "một ít nhưng đủ",
+            "> I have a few close friends here."
+          ],
+          "sep": "≠"
+        }
+      ],
       "keywords": "đếm được, few ≠ a few"
     },
     {

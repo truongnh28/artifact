@@ -21,7 +21,7 @@ b{font-weight:700}
 /* ---------- Hero ---------- */
 .hero{position:relative;text-align:center;padding:6px 0 18px}
 .banner{position:relative;display:inline-block;padding:20px 92px 24px;margin-top:4px}
-.banner svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:url(#rough)}
+.banner>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:url(#rough)}
 .banner .ribbon{fill:var(--title-fill);stroke:var(--ink);stroke-width:3}
 .banner .ribbon-tail{fill:var(--accent-soft);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
 .banner h1{position:relative;font-weight:700;font-size:52px;letter-spacing:1.5px;line-height:1.05;color:var(--ink);
@@ -84,17 +84,20 @@ b{font-weight:700}
 .v-formula .tex{position:relative;font-size:1.35em;color:var(--ink);white-space:nowrap}
 .v-formula .note{position:relative;font-size:.9em;margin-top:2px}
 
-.v-numberline{position:relative;margin:10px 0 44px;height:60px}
-.v-numberline svg{width:100%;height:60px;overflow:visible}
+.v-numberline{margin:10px auto 6px;padding-bottom:14px;max-width:380px}
+.v-numberline .nl-box{position:relative;width:100%}
+.v-numberline .nl-box>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .v-numberline .axis{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-numberline .pt{fill:var(--frame)}
 .v-numberline .arrowup{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
-.v-numberline .tick,.v-numberline .plabel{position:absolute;transform:translateX(-50%);white-space:nowrap;font-weight:600}
-.v-numberline .tick{top:-6px;font-size:15px}
-.v-numberline .plabel{top:62px;font-size:14px}
-
+.v-numberline .nl-arc{fill:none;stroke:var(--frame);stroke-width:2.2;stroke-dasharray:5 4;stroke-linecap:round}
+.v-numberline .tick,.v-numberline .plabel,.v-numberline .arc-label{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-weight:600}
+.v-numberline .tick{font-size:15px}
+.v-numberline .plabel{font-size:14px}
+.v-numberline .arc-label{font-size:13px;color:var(--frame);background:var(--paper);padding:0 3px;border-radius:6px}
+.v-numberline .nl-cap{text-align:center;font-size:13.5px;color:var(--ink-soft);margin-top:2px}
 .v-nested{position:relative;margin:8px auto 0;width:100%;max-width:300px}
-.v-nested svg{display:block;width:100%;overflow:visible;filter:url(#rough)}
+.v-nested>svg{display:block;width:100%;overflow:visible;filter:url(#rough)}
 .v-nested .ring{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2.4}
 .v-nested .ring.r1{fill:var(--paper)}
 .v-nested .ring.r2{fill:var(--ring-inner)}
@@ -133,7 +136,7 @@ b{font-weight:700}
 
 .v-graph{margin:8px auto 0;max-width:320px}
 .v-graph .gbox{position:relative}
-.v-graph svg{display:block;width:100%;overflow:visible}
+.v-graph .gbox>svg{display:block;width:100%;overflow:visible}
 .v-graph .axis{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .v-graph .gline{fill:none;stroke:var(--frame);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
 .v-graph .gline.g1{stroke:var(--chip)}
@@ -150,13 +153,13 @@ b{font-weight:700}
 .v-equation .term{border:2px solid var(--ink);border-radius:10px 14px 9px 13px;padding:2px 9px;background:var(--accent-soft);font-weight:600}
 .v-equation .plus{font-weight:700;color:var(--frame)}
 .v-equation .eq-arrow{display:flex;flex-direction:column;align-items:center;min-width:90px}
-.v-equation .eq-arrow svg{width:100%;min-width:90px;height:14px}
+.v-equation .eq-arrow>svg{width:100%;min-width:90px;height:14px}
 .v-equation .eq-arrow path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-equation .over,.v-equation .under{font-size:12.5px;white-space:nowrap}
 /* Thẻ hẹp (1 cột): phương trình xếp dọc, mũi tên chỉ xuống, điều kiện hai bên. */
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation{flex-direction:column;gap:2px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow{flex-direction:row;gap:6px;min-width:0;height:44px}
-.cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow svg{width:40px;min-width:40px;transform:rotate(90deg);margin:0 -12px}
+.cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow>svg{width:40px;min-width:40px;transform:rotate(90deg);margin:0 -12px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .over{order:-1}
 
 /* ---------- Chế độ dày ---------- */
@@ -176,7 +179,7 @@ b{font-weight:700}
 
 /* ---------- Trục thời gian ---------- */
 .v-timeline{position:relative;margin:6px auto 4px;padding-top:20px;max-width:340px}
-.v-timeline svg{display:block;width:100%;overflow:visible}
+.v-timeline>svg{display:block;width:100%;overflow:visible}
 .v-timeline .tl-axis{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-timeline .tl-now{stroke:var(--frame);stroke-width:2.4;stroke-dasharray:4 4;stroke-linecap:round}
 .v-timeline .tl-dot{fill:var(--frame);stroke:var(--paper);stroke-width:1.5}
@@ -196,7 +199,7 @@ b{font-weight:700}
 .v-positions{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:10px 12px;margin-top:8px}
 @media (max-width:620px){.v-positions{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
 .pos-tile{margin:0;text-align:center}
-.pos-tile svg{display:block;width:100%;max-width:150px;margin:0 auto;overflow:visible}
+.pos-tile>svg{display:block;width:100%;max-width:150px;margin:0 auto;overflow:visible}
 .pos-tile figcaption{display:flex;flex-direction:column;line-height:1.25;margin-top:2px}
 .pos-tile figcaption b{color:var(--collar);font-size:16px}
 .pos-tile figcaption span{font-size:13px;color:var(--ink-soft)}
@@ -256,3 +259,61 @@ b{font-weight:700}
   .mm-col,.mm-left{align-items:flex-start;text-align:left;padding-left:22px}
   .content .mm-left .mm-items li{padding:0 0 0 9px;border-right:0;border-left:3px solid var(--bc,var(--ink))}
 }
+
+/* ---------- Bánh phân số ---------- */
+.v-fraction{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.fr-legend{min-width:0}
+.v-fraction>svg{width:88px;height:88px;flex:none;overflow:visible}
+.fr-slice{fill:var(--paper);stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round}
+.fr-slice.on{fill:var(--icon-fill)}
+.fr-legend{font-size:14.5px;line-height:1.4}
+.fr-legend .fr-tex{font-size:1.3em;margin-bottom:2px}
+
+/* ---------- Lấy vào → quá trình → thải ra ---------- */
+.v-flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.fl-side{display:flex;flex-direction:column;gap:5px;align-items:stretch}
+.fl-cap{font-size:12.5px;color:var(--ink-soft);text-align:center}
+.fl-chip{border:2px solid var(--ink);border-radius:10px 13px 9px 12px;padding:2px 9px;font-size:14px;font-weight:600;text-align:center;background:var(--chip-bg)}
+.fl-chip.out{background:var(--icon-fill)}
+.fl-arrow{width:34px;height:14px;flex:none}
+.fl-arrow path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fl-center{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:14px}
+.fl-center .doodle.big{width:64px;height:64px}
+.fl-center span{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- Chuyển động theo mốc ---------- */
+.v-motion{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.v-motion.vertical{flex-direction:row;justify-content:center;gap:18px;align-items:flex-start}
+.mv-row{display:flex;flex-direction:column;align-items:center}
+.v-motion:not(.vertical) .mv-row>svg{width:100%;max-width:340px}
+.v-motion.vertical .mv-row>svg{width:84px}
+.mv-label{font-size:13.5px;font-weight:700;align-self:flex-start}
+.v-motion.vertical .mv-label{align-self:center}
+.mv-note,.mv-cap{font-size:12.5px;color:var(--ink-soft);text-align:center}
+.mv-ground{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-dasharray:2 5}
+.mv-tick{fill:none;stroke:var(--ink-soft);stroke-width:1.6;stroke-linecap:round}
+.mv-t{font:600 10px 'Mali',sans-serif;fill:var(--ink-soft)}
+.mv-ball{fill:var(--frame);stroke:var(--ink);stroke-width:1.6}
+.car-body{fill:var(--frame);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.car-win{fill:var(--paper);stroke:var(--ink);stroke-width:1.1}
+.car-wheel{fill:var(--ink);stroke:var(--paper);stroke-width:1.2}
+
+/* ---------- Lọ số lượng ---------- */
+.v-jars{display:flex;justify-content:center;gap:4px 10px;flex-wrap:wrap;margin-top:8px}
+.jar{margin:0;width:70px;text-align:center}
+.jar>svg{width:52px;height:66px;display:block;margin:0 auto;overflow:visible}
+.jar-glass{fill:none;stroke:var(--ink);stroke-width:2}
+.jar-fill{fill:var(--icon-fill)}
+.jar-lid{fill:var(--box-side);stroke:var(--ink);stroke-width:1.6}
+.jar figcaption{display:flex;flex-direction:column;line-height:1.2}
+.jar figcaption b{font-size:13.5px;color:var(--collar)}
+.jar figcaption span{font-size:11.5px;color:var(--ink-soft)}
+
+/* ---------- Đảo trật tự từ ---------- */
+.v-reorder{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:8px}
+.ro-row{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.ro-chip{border:2px solid var(--ink);border-radius:9px 12px 8px 11px;padding:1px 9px;font-size:14.5px;background:var(--card-bg)}
+.ro-chip.moved{background:var(--accent-soft);border-color:var(--frame);font-weight:700}
+.ro-mid{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-soft)}
+.ro-mid>svg{width:18px;height:24px}
+.ro-mid path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}

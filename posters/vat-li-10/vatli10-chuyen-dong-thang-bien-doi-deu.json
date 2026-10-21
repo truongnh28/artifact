@@ -8,6 +8,64 @@
   },
   "cards": [
     {
+      "title": "Sơ đồ tư duy",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 3,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Chuyển động thẳng<br>biến đổi đều",
+        "branches": [
+          {
+            "label": "Gia tốc",
+            "items": [
+              "$a = \\frac{\\Delta v}{\\Delta t}$, đơn vị $\\text{m/s}^2$"
+            ]
+          },
+          {
+            "label": "Đặc điểm",
+            "items": [
+              "quỹ đạo thẳng, $a$ không đổi"
+            ]
+          },
+          {
+            "label": "Nhanh / chậm dần",
+            "items": [
+              "$a \\cdot v > 0$ / $a \\cdot v < 0$"
+            ]
+          },
+          {
+            "label": "Công thức",
+            "items": [
+              "$v = v_0 + at$",
+              "$d = v_0t + \\frac{1}{2}at^2$",
+              "$v^2 - v_0^2 = 2ad$"
+            ]
+          },
+          {
+            "label": "Đồ thị v–t",
+            "items": [
+              "độ dốc = $a$, diện tích = $d$"
+            ]
+          },
+          {
+            "label": "Rơi tự do",
+            "items": [
+              "$a = g \\approx 9{,}8\\ \\text{m/s}^2$"
+            ]
+          },
+          {
+            "label": "Lưu ý",
+            "items": [
+              "km/h → m/s: chia 3,6",
+              "dấu $a$ theo chiều dương"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "title": "Gia tốc",
       "body": [
         "Gia tốc là đại lượng đặc trưng cho **sự thay đổi nhanh hay chậm của vận tốc**.",
@@ -27,9 +85,20 @@
         "- Gia tốc **không đổi**."
       ],
       "visual": {
-        "type": "icon",
-        "name": "rocket",
-        "align": "center"
+        "type": "motion",
+        "object": "car",
+        "rows": [
+          {
+            "label": "Nhanh dần đều",
+            "mode": "accel",
+            "note": "quãng đi được sau mỗi khoảng thời gian bằng nhau tăng dần"
+          },
+          {
+            "label": "Chậm dần đều",
+            "mode": "decel",
+            "note": "giảm dần"
+          }
+        ]
       },
       "keywords": "Đường thẳng, $a$ không đổi"
     },
@@ -112,9 +181,15 @@
         "$$v = g t \\quad;\\quad h = \\frac{1}{2} g t^2$$"
       ],
       "visual": {
-        "type": "icon",
-        "name": "globe",
-        "align": "center"
+        "type": "motion",
+        "vertical": true,
+        "steps": 5,
+        "rows": [
+          {
+            "mode": "accel",
+            "note": "vị trí sau những khoảng thời gian bằng nhau"
+          }
+        ]
       },
       "keywords": "$v_0 = 0$, $g \\approx 9{,}8$"
     },

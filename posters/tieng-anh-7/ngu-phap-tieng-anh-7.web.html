@@ -221,7 +221,7 @@ b{font-weight:700}
 /* ---------- Hero ---------- */
 .hero{position:relative;text-align:center;padding:6px 0 18px}
 .banner{position:relative;display:inline-block;padding:20px 92px 24px;margin-top:4px}
-.banner svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:url(#rough)}
+.banner>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:url(#rough)}
 .banner .ribbon{fill:var(--title-fill);stroke:var(--ink);stroke-width:3}
 .banner .ribbon-tail{fill:var(--accent-soft);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
 .banner h1{position:relative;font-weight:700;font-size:52px;letter-spacing:1.5px;line-height:1.05;color:var(--ink);
@@ -284,17 +284,20 @@ b{font-weight:700}
 .v-formula .tex{position:relative;font-size:1.35em;color:var(--ink);white-space:nowrap}
 .v-formula .note{position:relative;font-size:.9em;margin-top:2px}
 
-.v-numberline{position:relative;margin:10px 0 44px;height:60px}
-.v-numberline svg{width:100%;height:60px;overflow:visible}
+.v-numberline{margin:10px auto 6px;padding-bottom:14px;max-width:380px}
+.v-numberline .nl-box{position:relative;width:100%}
+.v-numberline .nl-box>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .v-numberline .axis{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-numberline .pt{fill:var(--frame)}
 .v-numberline .arrowup{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round}
-.v-numberline .tick,.v-numberline .plabel{position:absolute;transform:translateX(-50%);white-space:nowrap;font-weight:600}
-.v-numberline .tick{top:-6px;font-size:15px}
-.v-numberline .plabel{top:62px;font-size:14px}
-
+.v-numberline .nl-arc{fill:none;stroke:var(--frame);stroke-width:2.2;stroke-dasharray:5 4;stroke-linecap:round}
+.v-numberline .tick,.v-numberline .plabel,.v-numberline .arc-label{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-weight:600}
+.v-numberline .tick{font-size:15px}
+.v-numberline .plabel{font-size:14px}
+.v-numberline .arc-label{font-size:13px;color:var(--frame);background:var(--paper);padding:0 3px;border-radius:6px}
+.v-numberline .nl-cap{text-align:center;font-size:13.5px;color:var(--ink-soft);margin-top:2px}
 .v-nested{position:relative;margin:8px auto 0;width:100%;max-width:300px}
-.v-nested svg{display:block;width:100%;overflow:visible;filter:url(#rough)}
+.v-nested>svg{display:block;width:100%;overflow:visible;filter:url(#rough)}
 .v-nested .ring{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2.4}
 .v-nested .ring.r1{fill:var(--paper)}
 .v-nested .ring.r2{fill:var(--ring-inner)}
@@ -333,7 +336,7 @@ b{font-weight:700}
 
 .v-graph{margin:8px auto 0;max-width:320px}
 .v-graph .gbox{position:relative}
-.v-graph svg{display:block;width:100%;overflow:visible}
+.v-graph .gbox>svg{display:block;width:100%;overflow:visible}
 .v-graph .axis{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .v-graph .gline{fill:none;stroke:var(--frame);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough)}
 .v-graph .gline.g1{stroke:var(--chip)}
@@ -350,13 +353,13 @@ b{font-weight:700}
 .v-equation .term{border:2px solid var(--ink);border-radius:10px 14px 9px 13px;padding:2px 9px;background:var(--accent-soft);font-weight:600}
 .v-equation .plus{font-weight:700;color:var(--frame)}
 .v-equation .eq-arrow{display:flex;flex-direction:column;align-items:center;min-width:90px}
-.v-equation .eq-arrow svg{width:100%;min-width:90px;height:14px}
+.v-equation .eq-arrow>svg{width:100%;min-width:90px;height:14px}
 .v-equation .eq-arrow path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-equation .over,.v-equation .under{font-size:12.5px;white-space:nowrap}
 /* Thẻ hẹp (1 cột): phương trình xếp dọc, mũi tên chỉ xuống, điều kiện hai bên. */
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation{flex-direction:column;gap:2px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow{flex-direction:row;gap:6px;min-width:0;height:44px}
-.cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow svg{width:40px;min-width:40px;transform:rotate(90deg);margin:0 -12px}
+.cols-3 .card:not(.span-2):not(.span-3) .v-equation .eq-arrow>svg{width:40px;min-width:40px;transform:rotate(90deg);margin:0 -12px}
 .cols-3 .card:not(.span-2):not(.span-3) .v-equation .over{order:-1}
 
 /* ---------- Chế độ dày ---------- */
@@ -376,7 +379,7 @@ b{font-weight:700}
 
 /* ---------- Trục thời gian ---------- */
 .v-timeline{position:relative;margin:6px auto 4px;padding-top:20px;max-width:340px}
-.v-timeline svg{display:block;width:100%;overflow:visible}
+.v-timeline>svg{display:block;width:100%;overflow:visible}
 .v-timeline .tl-axis{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .v-timeline .tl-now{stroke:var(--frame);stroke-width:2.4;stroke-dasharray:4 4;stroke-linecap:round}
 .v-timeline .tl-dot{fill:var(--frame);stroke:var(--paper);stroke-width:1.5}
@@ -396,7 +399,7 @@ b{font-weight:700}
 .v-positions{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:10px 12px;margin-top:8px}
 @media (max-width:620px){.v-positions{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
 .pos-tile{margin:0;text-align:center}
-.pos-tile svg{display:block;width:100%;max-width:150px;margin:0 auto;overflow:visible}
+.pos-tile>svg{display:block;width:100%;max-width:150px;margin:0 auto;overflow:visible}
 .pos-tile figcaption{display:flex;flex-direction:column;line-height:1.25;margin-top:2px}
 .pos-tile figcaption b{color:var(--collar);font-size:16px}
 .pos-tile figcaption span{font-size:13px;color:var(--ink-soft)}
@@ -456,6 +459,64 @@ b{font-weight:700}
   .mm-col,.mm-left{align-items:flex-start;text-align:left;padding-left:22px}
   .content .mm-left .mm-items li{padding:0 0 0 9px;border-right:0;border-left:3px solid var(--bc,var(--ink))}
 }
+
+/* ---------- Bánh phân số ---------- */
+.v-fraction{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.fr-legend{min-width:0}
+.v-fraction>svg{width:88px;height:88px;flex:none;overflow:visible}
+.fr-slice{fill:var(--paper);stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round}
+.fr-slice.on{fill:var(--icon-fill)}
+.fr-legend{font-size:14.5px;line-height:1.4}
+.fr-legend .fr-tex{font-size:1.3em;margin-bottom:2px}
+
+/* ---------- Lấy vào → quá trình → thải ra ---------- */
+.v-flow{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.fl-side{display:flex;flex-direction:column;gap:5px;align-items:stretch}
+.fl-cap{font-size:12.5px;color:var(--ink-soft);text-align:center}
+.fl-chip{border:2px solid var(--ink);border-radius:10px 13px 9px 12px;padding:2px 9px;font-size:14px;font-weight:600;text-align:center;background:var(--chip-bg)}
+.fl-chip.out{background:var(--icon-fill)}
+.fl-arrow{width:34px;height:14px;flex:none}
+.fl-arrow path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.fl-center{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:14px}
+.fl-center .doodle.big{width:64px;height:64px}
+.fl-center span{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- Chuyển động theo mốc ---------- */
+.v-motion{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.v-motion.vertical{flex-direction:row;justify-content:center;gap:18px;align-items:flex-start}
+.mv-row{display:flex;flex-direction:column;align-items:center}
+.v-motion:not(.vertical) .mv-row>svg{width:100%;max-width:340px}
+.v-motion.vertical .mv-row>svg{width:84px}
+.mv-label{font-size:13.5px;font-weight:700;align-self:flex-start}
+.v-motion.vertical .mv-label{align-self:center}
+.mv-note,.mv-cap{font-size:12.5px;color:var(--ink-soft);text-align:center}
+.mv-ground{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-dasharray:2 5}
+.mv-tick{fill:none;stroke:var(--ink-soft);stroke-width:1.6;stroke-linecap:round}
+.mv-t{font:600 10px 'Mali',sans-serif;fill:var(--ink-soft)}
+.mv-ball{fill:var(--frame);stroke:var(--ink);stroke-width:1.6}
+.car-body{fill:var(--frame);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.car-win{fill:var(--paper);stroke:var(--ink);stroke-width:1.1}
+.car-wheel{fill:var(--ink);stroke:var(--paper);stroke-width:1.2}
+
+/* ---------- Lọ số lượng ---------- */
+.v-jars{display:flex;justify-content:center;gap:4px 10px;flex-wrap:wrap;margin-top:8px}
+.jar{margin:0;width:70px;text-align:center}
+.jar>svg{width:52px;height:66px;display:block;margin:0 auto;overflow:visible}
+.jar-glass{fill:none;stroke:var(--ink);stroke-width:2}
+.jar-fill{fill:var(--icon-fill)}
+.jar-lid{fill:var(--box-side);stroke:var(--ink);stroke-width:1.6}
+.jar figcaption{display:flex;flex-direction:column;line-height:1.2}
+.jar figcaption b{font-size:13.5px;color:var(--collar)}
+.jar figcaption span{font-size:11.5px;color:var(--ink-soft)}
+
+/* ---------- Đảo trật tự từ ---------- */
+.v-reorder{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:8px}
+.ro-row{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.ro-chip{border:2px solid var(--ink);border-radius:9px 12px 8px 11px;padding:1px 9px;font-size:14.5px;background:var(--card-bg)}
+.ro-chip.moved{background:var(--accent-soft);border-color:var(--frame);font-weight:700}
+.ro-mid{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-soft)}
+.ro-mid>svg{width:18px;height:24px}
+.ro-mid path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 
 /* Bản web: bố cục co giãn + hình động. Mọi hiệu ứng nằm dưới .anim (chỉ bật khi người xem
    không chọn "giảm chuyển động"); trạng thái nghỉ luôn là poster đầy đủ, đọc được ngay. */
@@ -562,7 +623,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* Quy trình, phương trình */
 .anim .play .v-steps .step-wrap{animation:sk-drop .45s ease-out both;animation-delay:calc(.3s + var(--i,0) * .25s)}
-.anim .v-steps .arr-head,.anim .v-equation .eq-arrow svg{animation:sk-nudge 1.4s ease-in-out infinite}
+.anim .v-steps .arr-head,.anim .v-equation .eq-arrow>svg{animation:sk-nudge 1.4s ease-in-out infinite}
 
 /* Ghi nhớ nhanh */
 .anim .recap.play li{animation:sk-row .45s ease-out both;animation-delay:calc(.2s + var(--i,0) * .15s)}
@@ -593,11 +654,29 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .anim .play .mm-node{animation:sk-pop .5s ease-out both;animation-delay:calc(.6s + var(--b,0) * .12s)}
 .anim .play .mm-items{animation:sk-row .45s ease-out both;animation-delay:calc(.8s + var(--b,0) * .12s)}
 
+/* Bánh phân số, sơ đồ lấy vào → thải ra */
+@keyframes sk-fill{from{fill:var(--paper)}}
+.anim .play .fr-slice.on{animation:sk-fill .35s ease-out both;animation-delay:calc(.4s + var(--i,0) * .18s)}
+@keyframes sk-from-l{from{transform:translateX(-14px);opacity:.2}to{transform:none;opacity:1}}
+@keyframes sk-from-r{from{transform:translateX(14px);opacity:.2}to{transform:none;opacity:1}}
+.anim .play .fl-chip.in{animation:sk-from-l .5s ease-out both;animation-delay:calc(.3s + var(--i,0) * .15s)}
+.anim .play .fl-chip.out{animation:sk-from-r .5s ease-out both;animation-delay:calc(1s + var(--i,0) * .15s)}
+.anim .fl-arrow{animation:sk-nudge 1.4s ease-in-out infinite}
+.anim .play .fl-center .doodle{animation:sk-pop .55s .7s ease-out both}
+
+/* Chuyển động theo mốc, lọ, đảo trật tự, cung trục số */
+.anim .play .mv-obj{animation:sk-pop .35s ease-out both;animation-delay:calc(.3s + var(--k,0) * .2s + var(--i,0) * .28s);transform-box:fill-box;transform-origin:center}
+.anim .play .jar-fill{animation:sk-rise .9s ease-out both;animation-delay:calc(.3s + var(--i,0) * .15s);transform-box:fill-box;transform-origin:bottom}
+.anim .play .ro-chip.moved{animation:sk-hop .7s ease-out both;animation-delay:.8s}
+.anim .play .ro-to .ro-chip:not(.moved){animation:sk-row .45s ease-out both;animation-delay:calc(.5s + var(--i,0) * .08s)}
+.anim .play .nl-arc{animation:sk-fade-in .6s ease-out both;animation-delay:calc(.6s + var(--i,0) * .25s)}
+@keyframes sk-fade-in{from{opacity:0}to{opacity:1}}
+
 @media (prefers-reduced-motion:reduce){.anim *{animation:none!important;transition:none!important}}
 
-:root{--box:#f4b98a;--box-side:#a8683a;--cat:#d9d6e0;--collar:#3b6fd1;--card-bg:rgba(255,255,255,.35);--ring-inner:#e6f4ea;--leaf:#3c8d5a;--icon-fill:#ffd98e;--paper:#fbf8f1;--line:rgba(120,150,200,.16);--ink:#1d3a8a;--ink-soft:#33415c;--frame:#d9534f;--accent:#f2b632;--accent-soft:#fdecc8;--chip:#2e7d4f;--chip-bg:#e6f4ea;--mark:rgba(253,224,71,.55);--title-fill:#fffdf6;color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}}
-:root[data-theme="dark"]{--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}
+:root{--mm1:#d9534f;--mm2:#2e7d4f;--mm3:#d99a16;--mm4:#3b6fd1;--mm5:#8e5bb5;--mm6:#33415c;--box:#f4b98a;--box-side:#a8683a;--cat:#d9d6e0;--collar:#3b6fd1;--card-bg:rgba(255,255,255,.35);--ring-inner:#e6f4ea;--leaf:#3c8d5a;--icon-fill:#ffd98e;--paper:#fbf8f1;--line:rgba(120,150,200,.16);--ink:#1d3a8a;--ink-soft:#33415c;--frame:#d9534f;--accent:#f2b632;--accent-soft:#fdecc8;--chip:#2e7d4f;--chip-bg:#e6f4ea;--mark:rgba(253,224,71,.55);--title-fill:#fffdf6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--mm1:#f6d27a;--mm2:#a8d5ba;--mm3:#f4a6a6;--mm4:#9cc7f0;--mm5:#d7b8f3;--mm6:#dfe7dc;--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}}
+:root[data-theme="dark"]{--mm1:#f6d27a;--mm2:#a8d5ba;--mm3:#f4a6a6;--mm4:#9cc7f0;--mm5:#d7b8f3;--mm6:#dfe7dc;--box:#d9a273;--box-side:#8a5a35;--cat:#cfd3d8;--collar:#f6d27a;--card-bg:rgba(0,0,0,.08);--ring-inner:rgba(168,213,186,.22);--leaf:#a8d5ba;--icon-fill:rgba(246,210,122,.35);--paper:#2f4a3c;--line:rgba(255,255,255,.05);--ink:#f5f2e8;--ink-soft:#dfe7dc;--frame:#f6d27a;--accent:#f6d27a;--accent-soft:rgba(246,210,122,.18);--chip:#2f4a3c;--chip-bg:#a8d5ba;--mark:rgba(246,210,122,.35);--title-fill:#3a5a49;color-scheme:dark}
 </style>
 </head>
 <body>
@@ -692,7 +771,32 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </section>
     <section class="card" style="--n:5">
       <header><span class="num">5</span><h3>Unit 5: Lượng từ</h3></header>
-      <div class="content"><p>Từ/cụm từ chỉ <b>số lượng</b> của danh từ.</p><ul><li><b>Đếm được:</b> many, few, several, a couple of, each, every</li><li><b>Không đếm được:</b> much, a little, less, a great deal of</li><li><b>Cả hai:</b> some, any, a lot of, lots of, all, none</li><li><b>Much/Many:</b> thường trong câu phủ định, câu hỏi → Do you have many friends?</li><li><b>Some:</b> câu khẳng định, câu hỏi mong đợi "Yes" → Would you like some tea?</li></ul><div class="v-compare"><div><p><b>few / little</b></p><p>rất ít, gần như không đủ</p><p class="callout">Few students passed the exam.</p></div><span class="vs">≠</span><div><p><b>a few / a little</b></p><p>một ít nhưng đủ</p><p class="callout">I have a few close friends here.</p></div></div></div>
+      <div class="content"><p>Từ/cụm từ chỉ <b>số lượng</b> của danh từ.</p><ul><li><b>Đếm được:</b> many, few, several, a couple of, each, every</li><li><b>Không đếm được:</b> much, a little, less, a great deal of</li><li><b>Cả hai:</b> some, any, a lot of, lots of, all, none</li><li><b>Much/Many:</b> thường trong câu phủ định, câu hỏi → Do you have many friends?</li><li><b>Some:</b> câu khẳng định, câu hỏi mong đợi "Yes" → Would you like some tea?</li></ul><div class="v-jars"><figure class="jar" style="--i:0;--f:0.9"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc090"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="23.2" width="60" height="52.8" clip-path="url(#jc090)"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>many</b><span>nhiều</span></figcaption></figure><figure class="jar" style="--i:1;--f:0.55"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc155"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="41.4" width="60" height="34.6" clip-path="url(#jc155)"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>some</b><span>một vài, một ít</span></figcaption></figure><figure class="jar" style="--i:2;--f:0.3"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc230"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="54.4" width="60" height="21.6" clip-path="url(#jc230)"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>a few</b><span>ít nhưng đủ</span></figcaption></figure><figure class="jar" style="--i:3;--f:0.1"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc310"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="64.8" width="60" height="11.2" clip-path="url(#jc310)"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>few</b><span>rất ít</span></figcaption></figure><figure class="jar" style="--i:4;--f:0"><svg viewBox="0 0 60 76" aria-hidden="true">
+        <defs><clipPath id="jc40"><path d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/></clipPath></defs>
+        <rect class="jar-fill" x="0" y="70.0" width="60" height="6.0" clip-path="url(#jc40)"/>
+        <path class="jar-glass" d="M14 16h32v6c4 3 6 7 6 12v30c0 5-4 8-9 8H17c-5 0-9-3-9-8V34c0-5 2-9 6-12z"/>
+        <rect class="jar-lid" x="12" y="8" width="36" height="9" rx="2"/>
+      </svg><figcaption><b>none</b><span>không có</span></figcaption></figure></div><div class="v-compare"><div><p><b>few / little</b></p><p>rất ít, gần như không đủ</p><p class="callout">Few students passed the exam.</p></div><span class="vs">≠</span><div><p><b>a few / a little</b></p><p>một ít nhưng đủ</p><p class="callout">I have a few close friends here.</p></div></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>đếm được, few ≠ a few</span></footer>
     </section>
     <section class="card" style="--n:6">
@@ -887,7 +991,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </section>
     <section class="card span-2" style="--n:3">
       <header><span class="num">3</span><h3>Unit 9: Yes/No Questions</h3></header>
-      <div class="content"><p>Câu hỏi có thể trả lời bằng <b>Yes</b> (Có) hoặc <b>No</b> (Không); dùng để xác nhận hoặc bác bỏ thông tin.</p><div class="tbl"><table class="v-table"><tr><th>Loại câu</th><th>Cấu trúc</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td>Động từ "to be"</td><td>To be + S + ...?</td><td>Đứng đầu câu hỏi khi là động từ chính</td><td>Are you a student?<br>Was she at home yesterday?</td></tr><tr style="--i:1"><td>Động từ khuyết thiếu</td><td>Modal verb + S + V (nguyên thể) + ...?</td><td>Modal đứng đầu, sau đó chủ ngữ và V nguyên thể</td><td>Can you swim?<br>Should I call him now?</td></tr><tr style="--i:2"><td>Động từ thường</td><td>Do/Does/Did + S + V (nguyên thể) + ...?</td><td>Cần trợ động từ do/does/did</td><td>Do they play football?<br>Did she watch the movie last night?</td></tr><tr style="--i:3"><td>Hiện tại hoàn thành</td><td>Have/Has + S + V3/V-ed + ...?</td><td>Dùng trợ động từ have/has</td><td>Have you ever visited Japan?<br>Has he finished his homework?</td></tr></table></div></div>
+      <div class="content"><p>Câu hỏi có thể trả lời bằng <b>Yes</b> (Có) hoặc <b>No</b> (Không); dùng để xác nhận hoặc bác bỏ thông tin.</p><div class="v-reorder">
+    <div class="ro-row ro-from"><span class="ro-chip" style="--i:0">You</span><span class="ro-chip" style="--i:1">are</span><span class="ro-chip" style="--i:2">a student</span><span class="ro-chip" style="--i:3">.</span></div>
+    <div class="ro-mid"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 2v24M5 19l7 7 7-7"/></svg><span>"to be" đứng đầu câu</span></div>
+    <div class="ro-row ro-to"><span class="ro-chip moved" style="--i:0">Are</span><span class="ro-chip" style="--i:1">you</span><span class="ro-chip" style="--i:2">a student</span><span class="ro-chip" style="--i:3">?</span></div>
+  </div><div class="v-reorder">
+    <div class="ro-row ro-from"><span class="ro-chip" style="--i:0">They</span><span class="ro-chip" style="--i:1">play</span><span class="ro-chip" style="--i:2">football</span><span class="ro-chip" style="--i:3">.</span></div>
+    <div class="ro-mid"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 2v24M5 19l7 7 7-7"/></svg><span>thêm trợ động từ "do" ở đầu câu</span></div>
+    <div class="ro-row ro-to"><span class="ro-chip moved" style="--i:0">Do</span><span class="ro-chip" style="--i:1">they</span><span class="ro-chip" style="--i:2">play</span><span class="ro-chip" style="--i:3">football</span><span class="ro-chip" style="--i:4">?</span></div>
+  </div><div class="tbl"><table class="v-table"><tr><th>Loại câu</th><th>Cấu trúc</th><th>Cách dùng</th><th>Ví dụ</th></tr><tr style="--i:0"><td>Động từ "to be"</td><td>To be + S + ...?</td><td>Đứng đầu câu hỏi khi là động từ chính</td><td>Are you a student?<br>Was she at home yesterday?</td></tr><tr style="--i:1"><td>Động từ khuyết thiếu</td><td>Modal verb + S + V (nguyên thể) + ...?</td><td>Modal đứng đầu, sau đó chủ ngữ và V nguyên thể</td><td>Can you swim?<br>Should I call him now?</td></tr><tr style="--i:2"><td>Động từ thường</td><td>Do/Does/Did + S + V (nguyên thể) + ...?</td><td>Cần trợ động từ do/does/did</td><td>Do they play football?<br>Did she watch the movie last night?</td></tr><tr style="--i:3"><td>Hiện tại hoàn thành</td><td>Have/Has + S + V3/V-ed + ...?</td><td>Dùng trợ động từ have/has</td><td>Have you ever visited Japan?<br>Has he finished his homework?</td></tr></table></div></div>
       <footer><span class="kw">TỪ KHÓA</span><span>Yes/No, đứng đầu câu</span></footer>
     </section>
     <section class="card" style="--n:4">
@@ -937,7 +1049,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 // Vẽ đường nối cong cho sơ đồ tư duy (.v-mindmap) theo vị trí thật của các nút sau khi dàn trang.
 // Dùng chung cho bản PNG (build.mjs) và bản web (web.mjs); gọi lại khi đổi kích thước / đổi tab.
 function drawMindmaps() {
-  const COLORS = ['var(--frame)', 'var(--chip)', 'var(--accent)', 'var(--collar)', 'var(--leaf)', 'var(--ink-soft)'];
+  const COLORS = ['var(--mm1)', 'var(--mm2)', 'var(--mm3)', 'var(--mm4)', 'var(--mm5)', 'var(--mm6)'];
   for (const mm of document.querySelectorAll('.v-mindmap')) {
     const svg = mm.querySelector('.mm-links');
     const box = mm.getBoundingClientRect();

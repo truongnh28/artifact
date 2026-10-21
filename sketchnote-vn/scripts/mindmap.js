@@ -1,7 +1,7 @@
 // Vẽ đường nối cong cho sơ đồ tư duy (.v-mindmap) theo vị trí thật của các nút sau khi dàn trang.
 // Dùng chung cho bản PNG (build.mjs) và bản web (web.mjs); gọi lại khi đổi kích thước / đổi tab.
 function drawMindmaps() {
-  const COLORS = ['var(--frame)', 'var(--chip)', 'var(--accent)', 'var(--collar)', 'var(--leaf)', 'var(--ink-soft)'];
+  const COLORS = ['var(--mm1)', 'var(--mm2)', 'var(--mm3)', 'var(--mm4)', 'var(--mm5)', 'var(--mm6)'];
   for (const mm of document.querySelectorAll('.v-mindmap')) {
     const svg = mm.querySelector('.mm-links');
     const box = mm.getBoundingClientRect();

@@ -47,6 +47,12 @@ Hãy hỏi "hình này giúp hiểu quan hệ nào?". Nếu không trả lời �
 | Giới từ / từ chỉ vị trí | `positions` (tranh mèo & hộp) |
 | Phân cấp rộng → hẹp | `funnel` |
 | So sánh mức độ (hơn, nhất) | `bars` |
+| Phân số, tỉ lệ một phần của tổng thể | `fraction` |
+| Quá trình có đầu vào và đầu ra (quang hợp, hô hấp, máy biến đổi) | `flow` |
+| Chuyển động nhanh dần, chậm dần, rơi tự do | `motion` (ngang: ô tô; `vertical`: bóng rơi) |
+| Mức độ số lượng (many → none, nhiều → ít) | `jars` |
+| Đổi trật tự từ (câu hỏi, bị động) | `reorder` |
+| Số đối, giá trị tuyệt đối, đối xứng qua 0 | `numberline` + `arcs` |
 | Đồ thị v–t, hàm số, số liệu theo thời gian | `graph` |
 | Cấu trúc câu tiếng Anh (S + V + O) | `formula` với `\text{}` hoặc dòng `$$...$$`, hoặc `table` cho khẳng định/phủ định/nghi vấn |
 | So sánh 2 khái niệm | `compare` (`sep` đổi "vs" thành "→", "≠"…) |

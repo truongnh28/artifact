@@ -7,6 +7,58 @@
   },
   "cards": [
     {
+      "title": "Sơ đồ tư duy",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 3,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Số hữu tỉ $\\mathbb{Q}$",
+        "branches": [
+          {
+            "label": "Khái niệm",
+            "items": [
+              "$\\frac{a}{b}$ với $a, b \\in \\mathbb{Z},\\ b \\neq 0$",
+              "số nguyên cũng là số hữu tỉ"
+            ]
+          },
+          {
+            "label": "Tập hợp",
+            "items": [
+              "kí hiệu $\\mathbb{Q}$",
+              "$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q}$"
+            ]
+          },
+          {
+            "label": "Trục số",
+            "items": [
+              "mỗi số hữu tỉ ↔ một điểm"
+            ]
+          },
+          {
+            "label": "Tính chất",
+            "items": [
+              "cộng, trừ, nhân, chia vẫn thuộc $\\mathbb{Q}$"
+            ]
+          },
+          {
+            "label": "So sánh",
+            "items": [
+              "$\\frac{a}{b} < \\frac{c}{d} \\Leftrightarrow ad < bc$"
+            ]
+          },
+          {
+            "label": "Số đối & | |",
+            "items": [
+              "$\\frac{a}{b} + \\left(-\\frac{a}{b}\\right) = 0$",
+              "$\\left|\\frac{a}{b}\\right| = \\frac{|a|}{|b|}$"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "title": "Khái niệm số hữu tỉ",
       "body": [
         "Số hữu tỉ là số viết được dưới dạng $\\dfrac{a}{b}$, trong đó $a, b \\in \\mathbb{Z},\\ b \\neq 0$."
@@ -26,9 +78,13 @@
         "- Mỗi cặp $(a, b)$ với $b \\neq 0$ cho một số hữu tỉ."
       ],
       "visual": {
-        "type": "icon",
-        "name": "book",
-        "align": "center"
+        "type": "fraction",
+        "parts": 9,
+        "filled": 4,
+        "notes": [
+          "Mẫu số $b = 9$: chia thành 9 phần bằng nhau",
+          "Tử số $a = 4$: lấy 4 phần"
+        ]
       },
       "keywords": "Dạng $\\frac{a}{b}$"
     },
@@ -127,7 +183,37 @@
         "- Giá trị tuyệt đối:",
         "$$\\left|\\frac{a}{b}\\right| = \\frac{|a|}{|b|}\\quad (b \\neq 0)$$"
       ],
-      "keywords": "Số đối, $|\\ |$"
+      "keywords": "Số đối, $|\\ |$",
+      "visual": {
+        "type": "numberline",
+        "min": -2,
+        "max": 2,
+        "step": 1,
+        "ticks": "zero",
+        "points": [
+          {
+            "x": -1.5,
+            "label": "-\\frac{a}{b}"
+          },
+          {
+            "x": 1.5,
+            "label": "\\frac{a}{b}"
+          }
+        ],
+        "arcs": [
+          {
+            "from": -1.5,
+            "to": 0,
+            "label": "\\left|-\\frac{a}{b}\\right|"
+          },
+          {
+            "from": 0,
+            "to": 1.5,
+            "label": "\\left|\\frac{a}{b}\\right|"
+          }
+        ],
+        "caption": "Hai số đối nằm về hai phía điểm 0 và cách đều điểm 0"
+      }
     },
     {
       "title": "Quan hệ giữa $\\mathbb{N}, \\mathbb{Z}, \\mathbb{Q}$",

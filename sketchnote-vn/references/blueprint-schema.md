@@ -66,7 +66,7 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 | `formula` | `tex` (LaTeX, không cần `$`), `note` | Một công thức trọng tâm trong "đám mây". Nên ngắn (≤ ~25 kí tự LaTeX hiển thị); công thức dài tự thu nhỏ — dài hơn nữa thì dùng dòng `$$...$$` |
 | `equation` | `left: [...]`, `right: [...]`, `over`, `under` | **Phương trình chữ** (sinh, hoá): "Nước + Carbon dioxide —(ánh sáng, diệp lục)→ Glucose + Oxygen". Dùng font viết tay; thẻ hẹp tự xếp dọc |
 | `graph` | `x`, `y` (nhãn trục, LaTeX), `lines: [{points: [[x,y],…], label}]`, `shade` (chỉ số đường tô vùng dưới), `marks: [{at: [x,y], label}]`, `caption`, `xmax`/`ymax` | Đồ thị đơn giản: v–t, s–t, hàm bậc nhất, nhiệt độ theo thời gian. Tô vùng = diện tích dưới đồ thị |
-| `numberline` | `min`, `max`, `step`, `points: [{x, label}]` (label là LaTeX) | Trục số, khoảng giá trị |
+| `numberline` | `min`, `max`, `step`, `points: [{x, label}]` (label là LaTeX), `arcs: [{from, to, label}]` (cung khoảng cách vẽ phía trên), `ticks`: `all` / `zero` / `none`, `caption` | Trục số, khoảng giá trị, số đối, giá trị tuyệt đối (khoảng cách tới 0) |
 | `timeline` | `marks: [{at, to?, kind?, label, done?}]`, `labels` (mặc định Quá khứ/Hiện tại/Tương lai) | Thì động từ, mốc thời gian. Toạ độ −1…1, hiện tại = 0. `at` là mảng → các chấm lặp lại (thói quen); có `to` → một đoạn (đang diễn ra); `done: true` → dấu ✓ (đã kết thúc) |
 | `nested` | `sets: [ngoài → trong]` (chuỗi, có thể có `$...$`) | Quan hệ bao hàm: ℕ⊂ℤ⊂ℚ, giới → ngành → lớp. 2–4 tầng |
 | `steps` | `items: [...]`, `arrows: [nhãn mũi tên 1, …]` (tuỳ chọn) | Quy trình, chuỗi biến đổi (2–5 bước). Nhãn trên mũi tên cho điều kiện/tác nhân |
@@ -76,6 +76,11 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 | `positions` | `items: [{pos, label?, note, ex?}]`. Các giá trị `pos`: in, on, under, above, below, in front of, behind, next to, between, opposite, on the left, on the right, at | Tranh mèo và hộp cho giới từ vị trí (hoặc từ chỉ vị trí trong môn khác). 6–10 tranh tự chia 2 hàng đều |
 | `funnel` | `items: [{word, text, ex?}]` (từ rộng tới hẹp), `caption` | Phân cấp từ rộng tới cụ thể: in › on › at; giới › ngành › lớp; châu lục › quốc gia › thành phố |
 | `bars` | `items: [{label, value}]`, `caption`, `star: false` để bỏ ngôi sao | So sánh mức độ (fast › faster › the fastest), số liệu tăng dần đơn giản |
+| `fraction` | `parts` (mẫu số), `filled` (tử số), `notes: [...]`, `tex` (tuỳ chọn) | Bánh chia phần: ý nghĩa phân số, tử số, mẫu số |
+| `flow` | `inputs: [...]`, `outputs: [...]`, `center: {icon, label, note}`, `inLabel`, `outLabel` | Quá trình lấy vào → biến đổi → tạo ra: quang hợp, hô hấp, tiêu hoá, hàm số (đầu vào → đầu ra) |
+| `motion` | `rows: [{label, mode: accel/decel/uniform, note}]`, `object`: car/ball, `vertical: true` (bóng rơi), `steps` | Ảnh hoạt nghiệm: vị trí sau các khoảng thời gian bằng nhau (nhanh dần, chậm dần, đều, rơi tự do) |
+| `jars` | `items: [{label, fill: 0–1, note}]` | Mức độ số lượng: many/much → some → a few → few → none; nhiều → ít |
+| `reorder` | `from: [từ…]`, `to: [từ…]`, `moved: [chỉ số trong to]`, `note` | Đảo trật tự từ: câu khẳng định → câu hỏi, chủ động → bị động, vị trí trạng từ |
 | `icon` | `name`, `align`: right/center/left | Minh hoạ khi không có hình mang nghĩa hơn |
 | `icons` | `names: [...]` | Một hàng 2–4 icon |
 
