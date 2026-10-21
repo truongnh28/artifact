@@ -6,7 +6,7 @@
 //   được giữ dạng $...$ để KaTeX auto-render xử lý trong trình duyệt.
 
 import { icon, ICONS } from './icons.mjs';
-import { positions, funnel, bars, mindmap, fraction, flow, motion, jars, reorder } from './scenes.mjs';
+import { positions, funnel, bars, mindmap, fraction, flow, motion, jars, reorder, geometry, pie, linechart } from './scenes.mjs';
 
 export const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -100,7 +100,7 @@ export function renderPoster(bp, { math, id } = {}) {
         ticks += `<line x1="${X(x)}" y1="${y - 6}" x2="${X(x)}" y2="${y + 6}"/>`;
         if (showTick(x)) {
           const ty = arcs.length ? y + 17 : y - 16;
-          tickLabels += `<span class="tick" style="left:${pctX(X(x))}%;top:${pctY(ty)}%">${String(+x.toFixed(4)).replace('-', '−')}</span>`;
+          tickLabels += `<span class="tick" style="left:${pctX(X(x))}%;top:${pctY(ty)}%">${String(+x.toFixed(4)).replace('-', '−').replace('.', ',')}</span>`;
         }
       }
       const pts = (v.points ?? []).map((p) => ({ x: X(p.x), label: p.label }));
@@ -212,7 +212,7 @@ export function renderPoster(bp, { math, id } = {}) {
     },
 
     table: (v) => `<div class="tbl"><table class="v-table">${(v.head ? `<tr>${v.head.map((h) => `<th>${inline(h)}</th>`).join('')}</tr>` : '')}${
-        (v.rows ?? []).map((r, i) => `<tr style="--i:${i}">${r.map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`).join('')}</table></div>`,
+        (v.rows ?? []).map((r, i) => `<tr style="--i:${i}">${r.map((c) => `<td>${inline(c, BIG)}</td>`).join('')}</tr>`).join('')}</table></div>`,
 
     compare: (v) => `<div class="v-compare"><div>${body(v.left)}</div><span class="vs">${inline(v.sep ?? 'vs')}</span><div>${body(v.right)}</div></div>`,
 
@@ -227,6 +227,9 @@ export function renderPoster(bp, { math, id } = {}) {
     motion: (v) => motion(v, inline),
     jars: (v) => jars(v, inline),
     reorder: (v) => reorder(v, inline),
+    geometry: (v) => geometry(v, inline),
+    pie: (v) => pie(v, inline),
+    linechart: (v) => linechart(v, inline),
   };
 
   function visual(v) {
@@ -234,7 +237,7 @@ export function renderPoster(bp, { math, id } = {}) {
     return [].concat(v).map((x) => {
       const f = VISUALS[x.type];
       if (!f) { warnings.push(`Visual không hỗ trợ: ${x.type}`); return ''; }
-      return f(x);
+      try { return f(x); } catch (e) { warnings.push(`Lỗi visual ${x.type}: ${e.message}`); return ''; }
     }).join('');
   }
 
@@ -246,15 +249,18 @@ export function renderPoster(bp, { math, id } = {}) {
   const LIMIT = dense ? 95 : 55;
   const numbered = cards.filter((c) => !c.noNumber).length;
   if (numbered > 9) warnings.push(`Có ${numbered} thẻ đánh số — nên ≤ 9; gộp hoặc bỏ ý yếu nhất.`);
-  for (const [i, c] of cards.entries()) {
+  let shown = 0;
+  for (const c of cards) {
+    // Số thẻ trong cảnh báo = số in trên poster; thẻ không đánh số gọi theo tiêu đề.
+    const i = c.noNumber ? -1 : shown++;
     const n = syllables([].concat(c.body ?? [], c.after ?? []).join(' '));
-    if (n > LIMIT) warnings.push(`Thẻ ${i + 1} "${c.title}" dài ${n} tiếng — nên ≤ ${LIMIT - 5}; chuyển bớt sang visual hoặc tách thẻ.`);
+    if (n > LIMIT) warnings.push(`Thẻ ${i >= 0 ? i + 1 : 'tổng quan'} "${c.title}" dài ${n} tiếng — nên ≤ ${LIMIT - 5}; chuyển bớt sang visual hoặc tách thẻ.`);
     if (!c.keywords && !c.noNumber) warnings.push(`Thẻ ${i + 1} "${c.title}" thiếu từ khoá.`);
     else if (c.keywords) {
       const terms = c.keywords.replace(/\$[^$]*\$/g, 'X').split(/[,;]/).length, kn = syllables(c.keywords);
-      if (terms > 4 || kn > 8) warnings.push(`Từ khoá thẻ ${i + 1} dài (${terms} cụm, ${kn} tiếng) — nên ≤ 4 cụm, ≤ 8 tiếng.`);
+      if (terms > 4 || kn > 8) warnings.push(`Từ khoá thẻ ${i >= 0 ? i + 1 : c.title} dài (${terms} cụm, ${kn} tiếng) — nên ≤ 4 cụm, ≤ 8 tiếng.`);
     }
-    if (syllables(c.title.replace(/\$[^$]*\$/g, 'X')) > 8) warnings.push(`Tiêu đề thẻ ${i + 1} dài — nên 2–6 tiếng.`);
+    if (syllables(c.title.replace(/\$[^$]*\$/g, 'X')) > 8) warnings.push(`Tiêu đề thẻ ${i >= 0 ? i + 1 : c.title} dài — nên 2–6 tiếng.`);
   }
   const cells = cards.reduce((a, c) => a + Math.min(c.span === 3 ? cols : (c.span ?? 1), cols), 0);
   if (cells % cols) warnings.push(`Lưới ${cols} cột còn trống ${cols - (cells % cols)} ô ở hàng cuối — thêm/bớt thẻ hoặc dùng "span".`);

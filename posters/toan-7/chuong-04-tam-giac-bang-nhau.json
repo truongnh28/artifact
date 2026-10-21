@@ -1,0 +1,334 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP MỘT",
+    "subtitle": "Chương IV. Tam giác bằng nhau"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy chương IV",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Tam giác<br>bằng nhau",
+        "branches": [
+          { "label": "Tổng ba góc", "items": ["$\\hat A + \\hat B + \\hat C = 180^\\circ$", "góc ngoài = tổng 2 góc trong không kề"] },
+          { "label": "Hai tam giác bằng nhau", "items": ["cạnh tương ứng bằng nhau", "góc tương ứng bằng nhau"] },
+          { "label": "Ba trường hợp", "items": ["c.c.c", "c.g.c (góc xen giữa)", "g.c.g (hai góc kề)"] },
+          { "label": "Tam giác vuông", "items": ["2 cạnh góc vuông", "cạnh góc vuông – góc nhọn kề", "cạnh huyền – góc nhọn", "cạnh huyền – cạnh góc vuông"] },
+          { "label": "Tam giác cân", "items": ["hai cạnh bên bằng nhau", "hai góc ở đáy bằng nhau"] },
+          { "label": "Đường trung trực", "items": ["$\\perp$ đoạn thẳng tại trung điểm", "cách đều hai mút"] }
+        ]
+      }
+    },
+    {
+      "title": "Tổng ba góc trong tam giác",
+      "body": [
+        "> **Định lí:** ==Tổng ba góc trong một tam giác bằng $180^\\circ$.==",
+        "$$\\hat A + \\hat B + \\hat C = 180^\\circ$$",
+        "**Chứng minh:** Qua $A$ kẻ $xy \\parallel BC$ ⇒ $\\hat B = \\widehat{BAx}$, $\\hat C = \\widehat{CAy}$ (các cặp góc so le trong).",
+        "Do đó $\\hat A + \\hat B + \\hat C = \\widehat{BAC} + \\widehat{BAx} + \\widehat{CAy} = \\widehat{xAy} = 180^\\circ$."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 125,
+        "dots": false,
+        "points": { "x": [10, 25], "y": [215, 25], "A": [90, 25], "B": [25, 120], "C": [200, 120] },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "seg": "xy" },
+          { "seg": "Ay", "par": 1 },
+          { "seg": "BC", "par": 1 },
+          { "angle": "xAB", "r": 15 },
+          { "angle": "ABC", "r": 15 },
+          { "angle": "CAy", "r": 15, "arcs": 2 },
+          { "angle": "ACB", "r": 15, "arcs": 2 }
+        ],
+        "caption": "$xy \\parallel BC$: $\\hat B = \\widehat{BAx}$, $\\hat C = \\widehat{CAy}$"
+      },
+      "after": [
+        "**Ví dụ:** $\\Delta ABC$ có $\\hat B = 50^\\circ$, $\\hat C = 60^\\circ$ ⇒ $\\hat A = 180^\\circ - 50^\\circ - 60^\\circ = 70^\\circ$."
+      ],
+      "keywords": "$180^\\circ$, kẻ $xy \\parallel BC$, so le trong"
+    },
+    {
+      "title": "Phân loại tam giác. Góc ngoài",
+      "body": [
+        "- **Tam giác nhọn:** có ba góc đều nhọn.",
+        "- **Tam giác tù:** có một góc tù.",
+        "- **Tam giác vuông:** có một góc vuông. $\\Delta MNP$ vuông tại $M$: $MN$, $MP$ là hai **cạnh góc vuông**, $NP$ là **cạnh huyền**.",
+        "> Trong tam giác vuông, hai góc nhọn **phụ nhau** (có tổng bằng $90^\\circ$).",
+        "**Góc ngoài:** $Cx$ là tia đối của tia $CB$ thì $\\widehat{ACx}$ là góc ngoài tại $C$ của $\\Delta ABC$."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 105,
+        "dots": false,
+        "points": { "A": [105, 12], "B": [15, 100], "C": [150, 100], "x": [215, 100] },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "seg": "Cx" },
+          { "angle": "BAC", "r": 16, "fill": true },
+          { "angle": "ABC", "r": 18, "fill": true },
+          { "angle": "ACx", "r": 16, "arcs": 2 }
+        ],
+        "caption": "$\\widehat{ACx} = \\hat A + \\hat B$"
+      },
+      "after": [
+        "> ==Mỗi góc ngoài của một tam giác có số đo bằng tổng số đo hai góc trong không kề với nó.=="
+      ],
+      "keywords": "phân loại, phụ nhau, góc ngoài"
+    },
+    {
+      "title": "Hai tam giác bằng nhau",
+      "body": [
+        "> Hai tam giác $ABC$ và $A'B'C'$ **bằng nhau** nếu chúng có các cạnh tương ứng bằng nhau và các góc tương ứng bằng nhau, nghĩa là:",
+        "$$AB = A'B',\\ AC = A'C',\\ BC = B'C'$$",
+        "$$\\hat A = \\hat A',\\ \\hat B = \\hat B',\\ \\hat C = \\hat C'$$",
+        "Khi đó ta viết ==$\\Delta ABC = \\Delta A'B'C'$==."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 230,
+        "h": 105,
+        "points": {
+          "A": [45, 10], "B": [10, 100], "C": [100, 100],
+          "A'": [165, 10], "B'": [130, 100], "C'": [220, 100]
+        },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "poly": "A'B'C'", "fill": 1 },
+          { "seg": "AB", "ticks": 1 },
+          { "seg": "A'B'", "ticks": 1 },
+          { "seg": "AC", "ticks": 2 },
+          { "seg": "A'C'", "ticks": 2 },
+          { "seg": "BC", "ticks": 3 },
+          { "seg": "B'C'", "ticks": 3 },
+          { "angle": "BAC", "r": 13 },
+          { "angle": "B'A'C'", "r": 13 },
+          { "angle": "ABC", "r": 12, "arcs": 2 },
+          { "angle": "A'B'C'", "r": 12, "arcs": 2 },
+          { "angle": "ACB", "r": 11, "arcs": 3 },
+          { "angle": "A'C'B'", "r": 11, "arcs": 3 }
+        ],
+        "caption": "Cùng kí hiệu: cạnh, góc tương ứng bằng nhau"
+      },
+      "after": [
+        "- $A$ và $A'$ ($B$ và $B'$, $C$ và $C'$): hai **đỉnh tương ứng**; góc $A$ và $A'$: hai **góc tương ứng**; $AB$ và $A'B'$: hai **cạnh tương ứng**."
+      ],
+      "keywords": "đỉnh, góc, cạnh tương ứng"
+    },
+    {
+      "title": "Trường hợp cạnh – cạnh – cạnh",
+      "body": [
+        "> **(c.c.c)** Nếu ba cạnh của tam giác này bằng ba cạnh của tam giác kia thì hai tam giác đó bằng nhau.",
+        "**Ví dụ:** $AC = BD$, $AD = BC$, $AB$ là cạnh chung ⇒ $\\Delta ACB = \\Delta BDA$ (c.c.c)."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 105,
+        "points": { "A": [10, 100], "B": [210, 100], "D": [60, 15], "C": [160, 15] },
+        "shapes": [
+          { "seg": "AB" },
+          { "seg": "AD", "ticks": 2 },
+          { "seg": "BC", "ticks": 2 },
+          { "seg": "AC", "ticks": 1 },
+          { "seg": "BD", "ticks": 1 }
+        ],
+        "caption": "$\\Delta ACB = \\Delta BDA$ (c.c.c)"
+      },
+      "after": [
+        "**Vẽ tam giác biết ba cạnh** ($AB = 5$ cm, $AC = 4$ cm, $BC = 6$ cm): vẽ đoạn $BC = 6$ cm; vẽ cung tròn tâm $B$ bán kính 5 cm và cung tròn tâm $C$ bán kính 4 cm cắt nhau tại $A$; nối $AB$, $AC$."
+      ],
+      "keywords": "ba cạnh, cạnh chung, compa"
+    },
+    {
+      "title": "Trường hợp cạnh – góc – cạnh",
+      "body": [
+        "Trong $\\Delta ABC$, góc $BAC$ (góc $A$) là **góc xen giữa** hai cạnh $AB$ và $AC$.",
+        "> **(c.g.c)** Nếu hai cạnh và góc xen giữa của tam giác này bằng hai cạnh và góc xen giữa của tam giác kia thì hai tam giác đó bằng nhau."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 80,
+        "points": {
+          "A": [10, 65], "B": [98, 65], "C": [43, 7.8],
+          "A'": [125, 65], "B'": [213, 65], "C'": [158, 7.8]
+        },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "poly": "A'B'C'", "fill": 1 },
+          { "seg": "AB", "ticks": 1, "label": "4 cm" },
+          { "seg": "A'B'", "ticks": 1, "label": "4 cm" },
+          { "seg": "CA", "ticks": 2, "label": "3 cm" },
+          { "seg": "C'A'", "ticks": 2, "label": "3 cm" },
+          { "angle": "BAC", "r": 16, "label": "60°" },
+          { "angle": "B'A'C'", "r": 16, "label": "60°" }
+        ],
+        "caption": "$\\Delta ABC = \\Delta A'B'C'$ (c.g.c)"
+      },
+      "after": [
+        "**Ví dụ:** $AB = AD$, $\\widehat{BAC} = \\widehat{DAC}$, $AC$ là cạnh chung ⇒ $\\Delta ABC = \\Delta ADC$ (c.g.c)."
+      ],
+      "keywords": "góc xen giữa, 2 cạnh – 1 góc"
+    },
+    {
+      "title": "Trường hợp góc – cạnh – góc",
+      "body": [
+        "Trong $\\Delta ABC$, hai góc $\\widehat{ABC}$, $\\widehat{ACB}$ (góc $B$ và góc $C$) là các **góc kề** cạnh $BC$.",
+        "> **(g.c.g)** Nếu một cạnh và hai góc kề của tam giác này bằng một cạnh và hai góc kề của tam giác kia thì hai tam giác đó bằng nhau."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 90,
+        "points": {
+          "A": [21.6, 10.2], "B": [10, 76], "C": [100, 76],
+          "A'": [136.6, 10.2], "B'": [125, 76], "C'": [215, 76]
+        },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "poly": "A'B'C'", "fill": 1 },
+          { "seg": "BC", "ticks": 1, "label": "3 cm" },
+          { "seg": "B'C'", "ticks": 1, "label": "3 cm" },
+          { "angle": "ABC", "r": 14, "label": "80°" },
+          { "angle": "A'B'C'", "r": 14, "label": "80°" },
+          { "angle": "ACB", "r": 19, "arcs": 2, "label": "40°" },
+          { "angle": "A'C'B'", "r": 19, "arcs": 2, "label": "40°" }
+        ],
+        "caption": "$\\Delta ABC = \\Delta A'B'C'$ (g.c.g)"
+      },
+      "after": [
+        "**Ví dụ:** $\\widehat{BAC} = \\widehat{EDC}$, $AC = DC$, $\\widehat{BCA} = \\widehat{ECD}$ (hai góc đối đỉnh) ⇒ $\\Delta ABC = \\Delta DEC$ (g.c.g)."
+      ],
+      "keywords": "góc kề, 1 cạnh – 2 góc kề"
+    },
+    {
+      "title": "Tam giác vuông bằng nhau",
+      "span": 2,
+      "body": [
+        "Hai tam giác vuông $ABC$ (vuông tại $A$) và $A'B'C'$ (vuông tại $A'$) bằng nhau nếu có một trong các điều kiện sau:"
+      ],
+      "visual": [
+        {
+          "type": "table",
+          "head": ["Trường hợp", "Điều kiện", "Giải thích dựa vào"],
+          "rows": [
+            ["**Hai cạnh góc vuông**", "$AB = A'B'$, $AC = A'C'$", "c.g.c"],
+            ["**Cạnh góc vuông – góc nhọn kề**", "$AB = A'B'$, $\\hat B = \\hat B'$", "g.c.g"],
+            ["**Cạnh huyền – góc nhọn**", "$BC = B'C'$, $\\hat B = \\hat B'$", "g.c.g"],
+            ["**Cạnh huyền – cạnh góc vuông**", "$BC = B'C'$, $AB = A'B'$", "định lí thừa nhận"]
+          ]
+        },
+        {
+          "type": "geometry",
+          "w": 210,
+          "h": 100,
+          "points": {
+            "A": [15, 92], "B": [75, 92], "C": [15, 12],
+            "A'": [130, 92], "B'": [190, 92], "C'": [130, 12]
+          },
+          "shapes": [
+            { "poly": "ABC", "fill": 1 },
+            { "poly": "A'B'C'", "fill": 1 },
+            { "right": "BAC" },
+            { "right": "B'A'C'" },
+            { "seg": "AB", "ticks": 1 },
+            { "seg": "A'B'", "ticks": 1 },
+            { "seg": "BC", "ticks": 2 },
+            { "seg": "B'C'", "ticks": 2 }
+          ],
+          "caption": "Cạnh huyền – cạnh góc vuông: $BC = B'C'$, $AB = A'B'$ ⇒ $\\Delta ABC = \\Delta A'B'C'$"
+        }
+      ],
+      "after": [
+        "> **Trường hợp đặc biệt:** Nếu cạnh huyền và một cạnh góc vuông của tam giác vuông này bằng cạnh huyền và một cạnh góc vuông của tam giác vuông kia thì hai tam giác vuông đó bằng nhau.",
+        "**Ví dụ:** $\\Delta BAC$ vuông tại $B$, $\\Delta DAC$ vuông tại $D$, $AC$ là cạnh chung, $\\widehat{BAC} = \\widehat{DAC}$ ⇒ $\\Delta BAC = \\Delta DAC$ (cạnh huyền – góc nhọn)."
+      ],
+      "keywords": "cạnh huyền, cạnh góc vuông, góc nhọn"
+    },
+    {
+      "title": "Tam giác cân",
+      "body": [
+        "> **Tam giác cân** là tam giác có hai cạnh bằng nhau.",
+        "$\\Delta ABC$ cân tại $A$ ($AB = AC$): $AB$, $AC$ là hai **cạnh bên**; $BC$ là **cạnh đáy**; $\\hat B$, $\\hat C$ là hai **góc ở đáy**; $\\hat A$ là **góc ở đỉnh**.",
+        "> ==Trong một tam giác cân, hai góc ở đáy bằng nhau.== Ngược lại, một tam giác có hai góc bằng nhau thì tam giác đó là tam giác cân."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 200,
+        "h": 110,
+        "points": { "A": [100, 8], "B": [35, 105], "C": [165, 105] },
+        "shapes": [
+          { "poly": "ABC", "fill": 1 },
+          { "seg": "AB", "ticks": 1 },
+          { "seg": "AC", "ticks": 1 },
+          { "angle": "ABC", "r": 16 },
+          { "angle": "ACB", "r": 16 }
+        ],
+        "caption": "$AB = AC$ ⇒ $\\hat B = \\hat C$"
+      },
+      "after": [
+        "- **Tam giác đều** là tam giác có ba cạnh bằng nhau; các góc của nó cũng bằng nhau."
+      ],
+      "keywords": "cạnh bên, góc ở đáy, tam giác đều"
+    },
+    {
+      "title": "Đường trung trực của đoạn thẳng",
+      "body": [
+        "> Đường thẳng vuông góc với một đoạn thẳng tại trung điểm của nó được gọi là **đường trung trực** của đoạn thẳng đó.",
+        "> ==Điểm nằm trên đường trung trực của một đoạn thẳng thì cách đều hai mút của đoạn thẳng đó.=="
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 140,
+        "points": {
+          "A": [20, 110], "B": [200, 110], "O": [110, 110], "M": [110, 30],
+          "dT": [110, 5], "dB": [110, 138], "d1": [110, 19]
+        },
+        "hide": ["dT", "dB", "d1"],
+        "offsets": { "O": [10, 14], "M": [11, -6] },
+        "shapes": [
+          { "seg": "AB" },
+          { "seg": "dTdB" },
+          { "seg": "dTd1", "label": "d" },
+          { "seg": "AO", "ticks": 1 },
+          { "seg": "OB", "ticks": 1 },
+          { "seg": "MA", "ticks": 2 },
+          { "seg": "MB", "ticks": 2 },
+          { "right": "MOB" }
+        ],
+        "caption": "$d$ là trung trực của $AB$, $M \\in d$ ⇒ $MA = MB$"
+      },
+      "after": [
+        "- Ngược lại, $MA = MB$ ⇒ $M$ thuộc trung trực của $AB$. Trung trực của $AB$ là tập hợp tất cả các điểm cách đều hai mút.",
+        "- **Vẽ bằng compa:** hai cung tròn tâm $A$, tâm $B$ cùng bán kính (lớn hơn $\\frac{AB}{2}$) cắt nhau tại $M$, $N$ ⇒ $MN$ là trung trực của $AB$."
+      ],
+      "keywords": "vuông góc, trung điểm, cách đều hai mút"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Tổng ba góc trong một tam giác bằng $180^\\circ$; mỗi góc ngoài bằng tổng hai góc trong không kề với nó.",
+      "Hai tam giác bằng nhau có các cạnh tương ứng và các góc tương ứng bằng nhau.",
+      "Ba trường hợp bằng nhau: c.c.c, c.g.c (góc xen giữa), g.c.g (hai góc kề cạnh).",
+      "Tam giác vuông còn có trường hợp đặc biệt cạnh huyền – cạnh góc vuông.",
+      "Tam giác cân có hai góc ở đáy bằng nhau; điểm trên đường trung trực cách đều hai mút."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Hiểu bản chất – làm bài chắc chắn!",
+  "source": "SGK Toán 7 – tập một (Bộ SGK thống nhất, NXBGD), tr. 60–87"
+}

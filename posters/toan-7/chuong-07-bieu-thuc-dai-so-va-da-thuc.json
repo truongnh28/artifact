@@ -1,0 +1,332 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP HAI",
+    "subtitle": "Chương VII. Biểu thức đại số và đa thức một biến"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy chương VII",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Biểu thức đại số<br>& đa thức<br>một biến",
+        "branches": [
+          {
+            "label": "Biểu thức đại số",
+            "items": [
+              "chứa số, chữ (biến)",
+              "giá trị: thay số rồi tính"
+            ]
+          },
+          {
+            "label": "Đơn thức",
+            "items": [
+              "$4x^3$: hệ số 4, bậc 3"
+            ]
+          },
+          {
+            "label": "Đa thức",
+            "items": [
+              "tổng các đơn thức",
+              "thu gọn, sắp xếp"
+            ]
+          },
+          {
+            "label": "Bậc & nghiệm",
+            "items": [
+              "bậc, hệ số cao nhất, hệ số tự do",
+              "$F(a) = 0$"
+            ]
+          },
+          {
+            "label": "Cộng, trừ",
+            "items": [
+              "nhóm hạng tử cùng bậc",
+              "đặt tính thẳng cột"
+            ]
+          },
+          {
+            "label": "Nhân",
+            "items": [
+              "nhân từng hạng tử rồi cộng"
+            ]
+          },
+          {
+            "label": "Chia",
+            "items": [
+              "$ax^m : bx^n = \\frac{a}{b}x^{m-n}$",
+              "$A = BQ + R$"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Biểu thức đại số",
+      "body": [
+        "Biểu thức không chứa chữ: **biểu thức số**. Biểu thức chỉ chứa số hoặc chỉ chứa chữ hoặc chứa cả số và chữ gọi chung là **biểu thức đại số**; các chữ đại diện cho số gọi là **biến**.",
+        "- Không viết dấu nhân, thừa số 1: $a \\cdot b \\to ab$; $1xy \\to xy$; $(-1)ab \\to -ab$"
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "$A = 3p - q$",
+          "$3 \\cdot 5 - 7$",
+          "$8$"
+        ],
+        "arrows": [
+          "$p = 5,\\ q = 7$",
+          "tính"
+        ]
+      },
+      "after": [
+        "> **Giá trị biểu thức:** thay giá trị đã cho của mỗi biến vào biểu thức rồi thực hiện các phép tính."
+      ],
+      "keywords": "số, chữ, biến, thay rồi tính"
+    },
+    {
+      "title": "Đơn thức một biến",
+      "body": [
+        "**Đơn thức** là biểu thức đại số có dạng tích của một số thực với một luỹ thừa của biến; số thực là **hệ số**, số mũ là **bậc**.",
+        "- Số khác 0 là đơn thức bậc 0; số 0 là đơn thức **không có bậc**.",
+        "- Cộng (trừ) cùng bậc: $-3x^4 + x^4 = -2x^4$",
+        "- Nhân: $(0{,}5x) \\cdot (6x^2) = 3x^3$"
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "4x^3",
+        "note": "$4$: hệ số · $3$: bậc"
+      },
+      "keywords": "hệ số, bậc, cùng bậc"
+    },
+    {
+      "title": "Đa thức và thu gọn",
+      "body": [
+        "**Đa thức một biến** là tổng của những đơn thức của cùng một biến; mỗi đơn thức là một **hạng tử**. Số 0 là **đa thức không**.",
+        "- $2x^3 - 5x^2 + 7$ có ba hạng tử $2x^3;\\ -5x^2;\\ 7$",
+        "- **Đa thức thu gọn:** không chứa hai đơn thức nào cùng bậc."
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "$6x^3 - 5x^2 - 4x^3 + 7$",
+          "$(6x^3 - 4x^3) - 5x^2 + 7$",
+          "$2x^3 - 5x^2 + 7$"
+        ],
+        "arrows": [
+          "đổi chỗ, nhóm",
+          "cộng cùng bậc"
+        ]
+      },
+      "keywords": "tổng đơn thức, hạng tử, thu gọn"
+    },
+    {
+      "title": "Sắp xếp đa thức",
+      "body": [
+        "Viết dạng thu gọn rồi **sắp xếp theo luỹ thừa giảm** của biến:"
+      ],
+      "visual": {
+        "type": "reorder",
+        "from": [
+          "$5x^2$",
+          "$-2x$",
+          "$+1$",
+          "$-3x^4$"
+        ],
+        "to": [
+          "$-3x^4$",
+          "$+5x^2$",
+          "$-2x$",
+          "$+1$"
+        ],
+        "moved": [
+          0
+        ],
+        "note": "$P$ theo luỹ thừa giảm"
+      },
+      "after": [
+        "- Khuyết bậc 3, có thể viết: $P = -3x^4 + 0x^3 + 5x^2 - 2x + 1$",
+        "- Theo luỹ thừa tăng: $P = 1 - 2x + 5x^2 - 3x^4$"
+      ],
+      "keywords": "luỹ thừa giảm, hệ số 0"
+    },
+    {
+      "title": "Bậc và các hệ số",
+      "body": [
+        "Trong đa thức thu gọn, khác đa thức không:",
+        "- **Bậc:** bậc của hạng tử có bậc cao nhất.",
+        "- **Hệ số cao nhất:** hệ số của hạng tử có bậc cao nhất (khác 0).",
+        "- **Hệ số tự do:** hệ số của hạng tử bậc 0."
+      ],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Đa thức thu gọn",
+          "Bậc",
+          "Hệ số cao nhất",
+          "Hệ số tự do"
+        ],
+        "rows": [
+          [
+            "$-3x^4 + 5x^2 - 2x + 1$",
+            "4",
+            "$-3$",
+            "1"
+          ],
+          [
+            "$-2x^2 + 4x + 5$",
+            "2",
+            "$-2$",
+            "5"
+          ],
+          [
+            "$x^3 + 2x^2 - 5x - 6$",
+            "3",
+            "1",
+            "$-6$"
+          ]
+        ]
+      },
+      "after": [
+        "> Đa thức không **không có bậc**. Đa thức chưa thu gọn phải **thu gọn trước**."
+      ],
+      "keywords": "bậc cao nhất, hạng tử bậc 0"
+    },
+    {
+      "title": "Nghiệm của đa thức",
+      "body": [
+        "Giá trị của $G(x) = x^2 - 4$ tại $x = 3$: $G(3) = 3^2 - 4 = 5$.",
+        "> Nếu $F(a) = 0$ thì $a$ (hoặc $x = a$) là một **nghiệm** của $F(x)$.",
+        "- $A(x) = 2x^2 + 6x$ có hai nghiệm $x = 0;\\ x = -3$",
+        "- $B(x) = x^2 + 1$ không có nghiệm vì $B(x) \\geq 1 > 0$"
+      ],
+      "visual": {
+        "type": "table",
+        "head": [
+          "$x$",
+          "$-3$",
+          "$-2$",
+          "$-1$",
+          "$0$",
+          "$1$",
+          "$2$",
+          "$3$"
+        ],
+        "rows": [
+          [
+            "$H(x)$",
+            "==$0$==",
+            "$4$",
+            "==$0$==",
+            "$-6$",
+            "$-8$",
+            "==$0$==",
+            "$24$"
+          ]
+        ]
+      },
+      "after": [
+        "- $H(x) = x^3 + 2x^2 - 5x - 6$ có ba nghiệm $-3;\\ -1;\\ 2$",
+        "- Hệ số tự do bằng 0 thì $x = 0$ là một nghiệm."
+      ],
+      "keywords": "$F(a) = 0$, nghiệm"
+    },
+    {
+      "title": "Cộng, trừ hai đa thức",
+      "span": 2,
+      "body": [
+        "Với $P = x^4 + 3x^3 - 5x^2 + 7x$ và $Q = -x^3 + 4x^2 - 2x + 1$:",
+        "- **Cách 1:** bỏ dấu ngoặc rồi nhóm các hạng tử cùng bậc.",
+        "- **Cách 2:** đặt tính sao cho các hạng tử cùng bậc **thẳng cột** (khuyết bậc nào thì để trống).",
+        "$$\\begin{array}{crrrrr} & x^4 & +3x^3 & -5x^2 & +7x & \\\\ + & & -x^3 & +4x^2 & -2x & +1 \\\\ \\hline P+Q = & x^4 & +2x^3 & -x^2 & +5x & +1 \\end{array}\\qquad\\qquad\\begin{array}{crrrrr} & x^4 & +3x^3 & -5x^2 & +7x & \\\\ - & & -x^3 & +4x^2 & -2x & +1 \\\\ \\hline P-Q = & x^4 & +4x^3 & -9x^2 & +9x & -1 \\end{array}$$"
+      ],
+      "after": [
+        "- Tính chất: giao hoán $A + B = B + A$; kết hợp $(A + B) + C = A + (B + C)$; $A + 0 = 0 + A = A$",
+        "> Nếu $Q + R = P$ thì $R = P - Q$; nếu $R = P - Q$ thì $Q + R = P$."
+      ],
+      "keywords": "cùng bậc, thẳng cột"
+    },
+    {
+      "title": "Phép nhân đa thức",
+      "span": 2,
+      "body": [
+        "> **Đơn thức × đa thức:** nhân đơn thức với **từng hạng tử** của đa thức rồi cộng các tích với nhau.",
+        "> **Đa thức × đa thức:** nhân **mỗi hạng tử** của đa thức này với **từng hạng tử** của đa thức kia rồi cộng các tích.",
+        "- $(-2x^3) \\cdot \\left(\\frac{1}{2}x^2 + 3x - 5\\right) = -x^5 - 6x^4 + 10x^3$"
+      ],
+      "visual": [
+        {
+          "type": "compare",
+          "left": [
+            "**Đặt tính nhân:** nhân lần lượt mỗi hạng tử ở dòng dưới với đa thức ở dòng trên, mỗi kết quả một dòng, cùng bậc thẳng cột.",
+            "- Giao hoán: $A \\cdot B = B \\cdot A$",
+            "- Kết hợp: $(A \\cdot B) \\cdot C = A \\cdot (B \\cdot C)$",
+            "- Phân phối: $A \\cdot (B + C) = A \\cdot B + A \\cdot C$"
+          ],
+          "right": [
+            "$$\\begin{array}{crrrr} & & 2x^2 & -3x & -5 \\\\ \\times & & & x & +3 \\\\ \\hline & & 6x^2 & -9x & -15 \\\\ + & 2x^3 & -3x^2 & -5x & \\\\ \\hline & 2x^3 & +3x^2 & -14x & -15 \\end{array}$$"
+          ],
+          "sep": "→"
+        }
+      ],
+      "keywords": "từng hạng tử, cộng các tích"
+    },
+    {
+      "title": "Phép chia đa thức",
+      "span": 2,
+      "body": [
+        "$A = B \\cdot Q$ $(B \\neq 0)$ thì $A : B = Q$: **phép chia hết** ($A$ bị chia, $B$ chia, $Q$ thương).",
+        "- Đơn thức: $ax^m : bx^n = \\frac{a}{b}x^{m-n}$ $(m \\geq n$, quy ước $x^0 = 1)$, VD $6x^4 : (-2x^3) = -3x$",
+        "- Chia cho đơn thức: chia từng hạng tử, VD $(-6x^5 + 7x^4 - 6x^3) : 3x^3 = -2x^2 + \\frac{7}{3}x - 2$",
+        "- Đặt tính: $(2x^4 - 13x^3 + 15x^2 + 11x - 3) : (x^2 - 4x - 3) = 2x^2 - 5x + 1$, dư 0"
+      ],
+      "visual": [
+        {
+          "type": "steps",
+          "items": [
+            "Hạng tử bậc cao nhất của $A$ : của $B$",
+            "Lấy $A$ trừ tích $B \\cdot$ (thương vừa tìm)",
+            "Lặp lại với dư đến khi dừng"
+          ],
+          "arrows": [
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "compare",
+          "left": [
+            "$$\\begin{array}{r|l} \\begin{array}{rrrr} 5x^3 & -3x^2 & -x & +7 \\\\ 5x^3 & & +5x & \\\\ \\hline & -3x^2 & -6x & +7 \\\\ & -3x^2 & & -3 \\\\ \\hline & & -6x & +10 \\end{array} & \\begin{array}{l} x^2 + 1 \\\\ \\hline 5x - 3 \\\\ \\\\ \\\\ \\\\ \\end{array} \\end{array}$$"
+          ],
+          "right": [
+            "**Chia có dư:** thương $5x - 3$, dư $-6x + 10$",
+            "$$A = B \\cdot Q + R$$",
+            "Dư $R = 0$ hoặc **bậc $R$ < bậc $B$**."
+          ],
+          "sep": "⇒"
+        }
+      ],
+      "keywords": "$A = BQ + R$, đặt tính chia"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Biểu thức đại số chứa số và chữ (biến); thay giá trị của biến rồi tính để được giá trị biểu thức.",
+      "Đa thức một biến là tổng các đơn thức của cùng một biến; thường thu gọn và sắp xếp theo luỹ thừa giảm.",
+      "Bậc của đa thức thu gọn là bậc của hạng tử bậc cao nhất; $a$ là nghiệm của $F(x)$ khi $F(a) = 0$.",
+      "Cộng, trừ đa thức: nhóm hoặc đặt các hạng tử cùng bậc thẳng cột; nhân: nhân từng hạng tử rồi cộng.",
+      "Chia $A$ cho $B$: $A = B \\cdot Q + R$, dư $R = 0$ (chia hết) hoặc bậc $R$ nhỏ hơn bậc $B$."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Hiểu bản chất – làm bài chắc chắn!",
+  "source": "SGK Toán 7 – tập hai (Bộ SGK thống nhất, NXBGD), tr. 22–46"
+}

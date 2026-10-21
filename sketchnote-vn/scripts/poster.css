@@ -78,7 +78,7 @@ b{font-weight:700}
 .v-icons{display:flex;gap:10px;justify-content:center;margin-top:8px}
 
 /* ---------- Visuals ---------- */
-.v-formula{position:relative;margin:10px auto 2px;padding:24px 50px;text-align:center;width:fit-content;max-width:100%}
+.v-formula{position:relative;margin:10px auto 2px;padding:24px clamp(50px,14%,90px);text-align:center;width:fit-content;max-width:100%}
 .v-formula .blob{position:absolute;inset:0;width:100%;height:100%;filter:url(#rough)}
 .v-formula .blob path{fill:var(--accent-soft);stroke:var(--ink);stroke-width:2.4}
 .v-formula .tex{position:relative;font-size:1.35em;color:var(--ink);white-space:nowrap}
@@ -300,7 +300,7 @@ b{font-weight:700}
 
 /* ---------- Lọ số lượng ---------- */
 .v-jars{display:flex;justify-content:center;gap:4px 10px;flex-wrap:wrap;margin-top:8px}
-.jar{margin:0;width:70px;text-align:center}
+.jar{margin:0;min-width:62px;max-width:96px;flex:1 1 0;text-align:center}
 .jar>svg{width:52px;height:66px;display:block;margin:0 auto;overflow:visible}
 .jar-glass{fill:none;stroke:var(--ink);stroke-width:2}
 .jar-fill{fill:var(--icon-fill)}
@@ -317,3 +317,48 @@ b{font-weight:700}
 .ro-mid{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink-soft)}
 .ro-mid>svg{width:18px;height:24px}
 .ro-mid path{fill:none;stroke:var(--frame);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Hình học ---------- */
+.v-geometry{margin:8px auto 2px;text-align:center;max-width:300px}
+.v-geometry>svg{width:100%;overflow:visible}
+.v-geometry figcaption{font-size:13px;color:var(--ink-soft);margin-top:2px}
+.g-line,.g-poly{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.g-poly.f1{fill:var(--accent-soft)}
+.g-poly.f2{fill:var(--chip-bg)}
+.g-poly.f3{fill:var(--icon-fill)}
+.g-line.dash,.g-poly.dash{stroke-dasharray:5 4;stroke-width:1.6}
+.g-mark,.g-right{fill:none;stroke:var(--frame);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.g-arc{fill:none;stroke:var(--frame);stroke-width:1.8}
+.g-arc.fill{fill:var(--icon-fill);fill-opacity:.85}
+.g-dot{fill:var(--ink)}
+.g-plabel,.g-alabel,.g-tlabel{font:700 12px 'Mali','Itim',sans-serif;fill:var(--ink);text-anchor:middle}
+.g-alabel{fill:var(--frame);font-size:10.5px}
+.g-tlabel{fill:var(--ink-soft);font-size:10.5px;font-weight:600}
+
+/* ---------- Biểu đồ quạt tròn, đoạn thẳng ---------- */
+.v-pie{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+.v-pie>svg{width:112px;height:112px;flex:none}
+.pie-s{stroke:var(--paper);stroke-width:1.2}
+.pie-legend{list-style:none;margin:0;padding:0;font-size:13.5px;line-height:1.5}
+.content .pie-legend li{padding-left:0}
+.content .pie-legend li::before{content:none}
+.pie-legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1.4px solid var(--ink)}
+.pie-cap,.lc-cap{flex-basis:100%;text-align:center;font-size:13px;color:var(--ink-soft)}
+.v-linechart{margin:8px auto 0;max-width:360px}
+.v-linechart>svg{width:100%;overflow:visible}
+.lc-axis{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.lc-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 4}
+.lc-line{fill:none;stroke:var(--frame);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.lc-pt{fill:var(--frame);stroke:var(--paper);stroke-width:1.4}
+.lc-val{font:700 9.5px 'Mali',sans-serif;fill:var(--ink);text-anchor:middle}
+.lc-x{font:600 9.5px 'Mali',sans-serif;fill:var(--ink-soft);text-anchor:middle}
+.lc-unit{font:600 9px 'Mali',sans-serif;fill:var(--ink-soft);text-anchor:start}
+
+/* Thẻ rộng: trục số, hình học, biểu đồ được rộng theo */
+.span-2 .v-numberline,.span-3 .v-numberline{max-width:620px}
+.span-2 .v-geometry,.span-3 .v-geometry{max-width:460px}
+.span-2 .v-linechart,.span-3 .v-linechart{max-width:560px}
+.g-circle{fill:none;stroke:var(--ink);stroke-width:1.8}
+.g-circle.dash{stroke-dasharray:5 4;stroke-width:1.5}
+.lc-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:13px}
+.lc-legend i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:5px;vertical-align:4px}

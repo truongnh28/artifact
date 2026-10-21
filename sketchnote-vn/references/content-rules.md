@@ -53,6 +53,9 @@ Hãy hỏi "hình này giúp hiểu quan hệ nào?". Nếu không trả lời �
 | Mức độ số lượng (many → none, nhiều → ít) | `jars` |
 | Đổi trật tự từ (câu hỏi, bị động) | `reorder` |
 | Số đối, giá trị tuyệt đối, đối xứng qua 0 | `numberline` + `arcs` |
+| Góc, tia phân giác, đường song song, tam giác, đường trung trực, hình hộp, lăng trụ | `geometry` |
+| Tỉ lệ phần trăm các phần của tổng thể | `pie` |
+| Dữ liệu thay đổi theo thời gian | `linechart` |
 | Đồ thị v–t, hàm số, số liệu theo thời gian | `graph` |
 | Cấu trúc câu tiếng Anh (S + V + O) | `formula` với `\text{}` hoặc dòng `$$...$$`, hoặc `table` cho khẳng định/phủ định/nghi vấn |
 | So sánh 2 khái niệm | `compare` (`sep` đổi "vs" thành "→", "≠"…) |

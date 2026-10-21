@@ -1,0 +1,325 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP MỘT",
+    "subtitle": "Chương III. Góc và đường thẳng song song"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy chương III",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Góc và<br>đường thẳng<br>song song",
+        "branches": [
+          { "label": "Góc ở vị trí đặc biệt", "items": ["kề bù: tổng $180^\\circ$", "đối đỉnh: bằng nhau"] },
+          { "label": "Tia phân giác", "items": ["$\\widehat{xOz} = \\widehat{zOy} = \\frac{1}{2}\\widehat{xOy}$"] },
+          { "label": "$c$ cắt $a$, $b$", "items": ["cặp góc so le trong", "cặp góc đồng vị"] },
+          { "label": "Dấu hiệu nhận biết", "items": ["so le trong / đồng vị bằng nhau ⇒ $a \\parallel b$"] },
+          { "label": "Tiên đề Euclid", "items": ["qua 1 điểm ngoài $a$: chỉ 1 đường $\\parallel a$"] },
+          { "label": "Tính chất", "items": ["$a \\parallel b$ ⇒ so le trong, đồng vị bằng nhau"] },
+          { "label": "Định lí", "items": ["Nếu … (GT) thì … (KL)", "chứng minh = lập luận"] }
+        ]
+      }
+    },
+    {
+      "title": "Hai góc kề bù",
+      "body": [
+        "> Hai góc có một cạnh chung, hai cạnh còn lại là hai tia đối nhau được gọi là **hai góc kề bù**.",
+        "**Tính chất:** ==Hai góc kề bù có tổng số đo bằng $180^\\circ$.==",
+        "- **Kề nhau:** có một cạnh chung, hai cạnh còn lại nằm khác phía đối với đường thẳng chứa cạnh chung.",
+        "- **Bù nhau:** có tổng số đo bằng $180^\\circ$."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 100,
+        "dots": false,
+        "points": { "x": [10, 90], "O": [110, 90], "y": [210, 90], "z": [152.5, 16.4] },
+        "shapes": [
+          { "seg": "xy" },
+          { "seg": "Oz" },
+          { "angle": "xOz", "r": 14, "label": "120°" },
+          { "angle": "zOy", "r": 20, "arcs": 2, "label": "60°" }
+        ],
+        "caption": "$\\widehat{xOz} + \\widehat{zOy} = 120^\\circ + 60^\\circ = 180^\\circ$"
+      },
+      "after": [
+        "- Tia $OM$ nằm giữa hai cạnh $Ox$, $Oy$ thì $\\widehat{xOM} + \\widehat{MOy} = \\widehat{xOy}$."
+      ],
+      "keywords": "cạnh chung, tia đối, $180^\\circ$"
+    },
+    {
+      "title": "Hai góc đối đỉnh",
+      "body": [
+        "> **Hai góc đối đỉnh** là hai góc mà mỗi cạnh của góc này là tia đối của một cạnh của góc kia.",
+        "**Tính chất:** ==Hai góc đối đỉnh thì bằng nhau.==",
+        "**Ví dụ:** $xx'$ cắt $yy'$ tại $O$, $\\widehat{xOy} = 60^\\circ$:",
+        "- $\\widehat{x'Oy'} = \\widehat{xOy} = 60^\\circ$ (đối đỉnh);",
+        "- $\\widehat{x'Oy} = 180^\\circ - 60^\\circ = 120^\\circ$ (kề bù)."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 140,
+        "dots": false,
+        "points": { "O": [110, 70], "x": [210, 70], "x'": [10, 70], "y": [150, 0.7], "y'": [70, 139.3] },
+        "offsets": { "O": [13, 15] },
+        "shapes": [
+          { "seg": "x'x" },
+          { "seg": "y'y" },
+          { "angle": "xOy", "r": 18, "label": "60°" },
+          { "angle": "x'Oy'", "r": 18, "label": "60°" },
+          { "angle": "x'Oy", "r": 18, "arcs": 0, "label": "120°" }
+        ],
+        "caption": "$\\widehat{xOy} = \\widehat{x'Oy'}$ (hai góc đối đỉnh)"
+      },
+      "after": [
+        "> Hai đường thẳng cắt nhau, trong các góc tạo thành có một góc vuông: **hai đường thẳng vuông góc**, kí hiệu $xx' \\perp yy'$."
+      ],
+      "keywords": "tia đối, bằng nhau, $xx' \\perp yy'$"
+    },
+    {
+      "title": "Tia phân giác của một góc",
+      "body": [
+        "> Tia nằm giữa hai cạnh của một góc và tạo với hai cạnh ấy hai góc bằng nhau được gọi là **tia phân giác** của góc đó.",
+        "Khi $Oz$ là tia phân giác của góc $xOy$ thì:",
+        "$$\\widehat{xOz} = \\widehat{yOz} = \\frac{1}{2}\\widehat{xOy}$$",
+        "- Đường thẳng chứa tia phân giác của một góc gọi là **đường phân giác** của góc đó."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 130,
+        "dots": false,
+        "points": { "O": [15, 125], "m": [215, 125], "n": [59.5, 2.8], "t": [170.6, 15.9] },
+        "shapes": [
+          { "ray": "Om", "ext": 0 },
+          { "ray": "On", "ext": 0 },
+          { "ray": "Ot", "ext": 0 },
+          { "angle": "mOt", "r": 30, "label": "35°" },
+          { "angle": "tOn", "r": 37, "label": "35°" }
+        ],
+        "caption": "$\\widehat{mOn} = 70^\\circ$, $Ot$ là tia phân giác"
+      },
+      "after": [
+        "**Ví dụ:** $\\widehat{mOt} = \\widehat{tOn} = \\frac{1}{2} \\cdot 70^\\circ = 35^\\circ$.",
+        "- Góc tạo bởi hai tia phân giác của hai góc kề bù là một góc vuông."
+      ],
+      "keywords": "nằm giữa, hai góc bằng nhau, $\\frac{1}{2}$"
+    },
+    {
+      "title": "Góc so le trong, góc đồng vị",
+      "body": [
+        "Đường thẳng $c$ cắt hai đường thẳng $a$ và $b$ lần lượt tại $A$ và $B$ tạo thành bốn góc đỉnh $A$, bốn góc đỉnh $B$ (đánh số như hình):"
+      ],
+      "visual": [
+        {
+          "type": "geometry",
+          "w": 220,
+          "h": 150,
+          "dots": false,
+          "points": {
+            "a": [10, 44], "a2": [215, 29.6],
+            "b": [10, 108.3], "b2": [215, 114.4],
+            "c": [77, 4.7], "c2": [153, 145.3],
+            "A": [95, 38], "B": [135, 112]
+          },
+          "hide": ["a2", "b2", "c2"],
+          "offsets": { "A": [6, -10], "B": [-6, 10] },
+          "shapes": [
+            { "seg": "aa2" },
+            { "seg": "bb2" },
+            { "seg": "cc2" },
+            { "angle": ["a", "A", "B"], "r": 18, "fill": true, "label": "1" },
+            { "angle": ["a", "A", "c"], "r": 24, "arcs": 0, "label": "2" },
+            { "angle": ["c", "A", "a2"], "r": 24, "arcs": 0, "label": "3" },
+            { "angle": ["a2", "A", "B"], "r": 24, "arcs": 0, "label": "4" },
+            { "angle": ["b", "B", "c2"], "r": 24, "arcs": 0, "label": "1" },
+            { "angle": ["b", "B", "A"], "r": 24, "arcs": 0, "label": "2" },
+            { "angle": ["A", "B", "b2"], "r": 18, "fill": true, "label": "3" },
+            { "angle": ["b2", "B", "c2"], "r": 24, "arcs": 0, "label": "4" }
+          ],
+          "caption": "Tô màu: cặp so le trong $\\hat{A}_1$ và $\\hat{B}_3$"
+        },
+        {
+          "type": "table",
+          "head": ["Cặp góc", "Gồm"],
+          "rows": [
+            ["**So le trong**", "$\\hat{A}_1$ và $\\hat{B}_3$; $\\hat{A}_4$ và $\\hat{B}_2$"],
+            ["**Đồng vị**", "$\\hat{A}_1$ và $\\hat{B}_1$; $\\hat{A}_2$ và $\\hat{B}_2$;<br>$\\hat{A}_3$ và $\\hat{B}_3$; $\\hat{A}_4$ và $\\hat{B}_4$"]
+          ]
+        }
+      ],
+      "after": [
+        "> Nếu $c$ cắt hai đường thẳng phân biệt $a$, $b$ và có **một cặp góc so le trong bằng nhau** thì: hai góc so le trong còn lại bằng nhau; hai góc đồng vị bằng nhau."
+      ],
+      "keywords": "so le trong, đồng vị, cặp góc"
+    },
+    {
+      "title": "Dấu hiệu nhận biết song song",
+      "body": [
+        "> Nếu đường thẳng $c$ cắt hai đường thẳng phân biệt $a$, $b$ và trong các góc tạo thành có **một cặp góc so le trong bằng nhau** hoặc **một cặp góc đồng vị bằng nhau** thì ==$a$ và $b$ song song với nhau==.",
+        "**Ví dụ:** $\\widehat{xAB} = \\widehat{ABy'} = 70^\\circ$; hai góc này ở vị trí so le trong nên $xy \\parallel x'y'$."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 140,
+        "dots": false,
+        "points": {
+          "x": [15, 35], "y": [215, 35], "A": [120, 35],
+          "x'": [15, 105.5], "y'": [215, 105.5], "B": [94.4, 105.5],
+          "z": [130.3, 6.8], "z'": [84.1, 133.7]
+        },
+        "offsets": { "A": [-8, -9], "B": [7, 10] },
+        "shapes": [
+          { "seg": "xy" },
+          { "seg": "x'y'" },
+          { "seg": "zz'" },
+          { "seg": "Ay", "par": 1 },
+          { "seg": "By'", "par": 1 },
+          { "angle": "xAB", "r": 16, "label": "70°" },
+          { "angle": "ABy'", "r": 16, "label": "70°" }
+        ],
+        "caption": "So le trong bằng nhau ⇒ $xy \\parallel x'y'$"
+      },
+      "after": [
+        "- **Nhận xét:** Hai đường thẳng phân biệt cùng vuông góc với một đường thẳng thứ ba thì chúng song song với nhau."
+      ],
+      "keywords": "so le trong, đồng vị, $a \\parallel b$"
+    },
+    {
+      "title": "Tiên đề Euclid",
+      "body": [
+        "> **Tiên đề Euclid:** Qua một điểm ở ngoài một đường thẳng, chỉ có một đường thẳng song song với đường thẳng đó.",
+        "- Điểm $M$ nằm ngoài đường thẳng $a$ thì đường thẳng $b$ đi qua $M$ và song song với $a$ là **duy nhất**.",
+        "- **Chú ý:** Nếu một đường thẳng cắt một trong hai đường thẳng song song thì nó cũng cắt đường thẳng còn lại."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 115,
+        "points": {
+          "M": [80, 40],
+          "b1": [10, 40], "b3": [190, 40], "b2": [210, 40],
+          "a1": [10, 100], "a3": [190, 100], "a2": [210, 100],
+          "p1": [38, 4], "p2": [160.5, 109]
+        },
+        "hide": ["b1", "b2", "b3", "a1", "a2", "a3", "p1", "p2"],
+        "offsets": { "M": [7, -10] },
+        "shapes": [
+          { "seg": "b1b2" },
+          { "seg": "a1a2" },
+          { "seg": "Mb3", "par": 1 },
+          { "seg": "a1a3", "par": 1 },
+          { "seg": "b3b2", "label": "b" },
+          { "seg": "a3a2", "label": "a" },
+          { "seg": "p1p2", "dash": true }
+        ],
+        "caption": "Chỉ một đường thẳng $b$ qua $M$ song song với $a$; đường khác qua $M$ (nét đứt) cắt $a$"
+      },
+      "after": [
+        "- Euclid: nhà toán học cổ Hy Lạp (thế kỉ III trước Công nguyên), viết bộ sách “Cơ bản” gồm 13 cuốn."
+      ],
+      "keywords": "điểm ngoài, duy nhất, cắt cả hai"
+    },
+    {
+      "title": "Tính chất hai đường song song",
+      "body": [
+        "> Nếu một đường thẳng cắt hai đường thẳng song song thì: ==hai góc so le trong bằng nhau==; ==hai góc đồng vị bằng nhau==.",
+        "**Ví dụ:** $xy \\parallel x'y'$, $\\widehat{BAy} = 50^\\circ$:",
+        "- $\\widehat{ABx'} = \\widehat{BAy} = 50^\\circ$ (so le trong);",
+        "- $\\widehat{y'Bz'} = \\widehat{BAy} = 50^\\circ$ (đồng vị)."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 135,
+        "dots": false,
+        "points": {
+          "x": [10, 35], "y": [215, 35], "A": [85, 35],
+          "x'": [10, 103.9], "y'": [215, 103.9], "B": [142.9, 103.9],
+          "z": [62.5, 8.2], "z'": [165.4, 130.7]
+        },
+        "offsets": { "A": [5, -11], "B": [-6, 11] },
+        "shapes": [
+          { "seg": "xy" },
+          { "seg": "x'y'" },
+          { "seg": "zz'" },
+          { "seg": "Ay", "par": 1 },
+          { "seg": "x'B", "par": 1 },
+          { "angle": "BAy", "r": 16, "label": "50°" },
+          { "angle": "ABx'", "r": 16, "label": "50°" },
+          { "angle": "y'Bz'", "r": 16, "label": "50°" }
+        ],
+        "caption": "$xy \\parallel x'y'$ ⇒ so le trong, đồng vị bằng nhau"
+      },
+      "after": [
+        "- Một đường thẳng vuông góc với một trong hai đường thẳng song song thì nó cũng vuông góc với đường thẳng kia.",
+        "- Hai đường thẳng phân biệt cùng song song với một đường thẳng thứ ba thì chúng song song với nhau."
+      ],
+      "keywords": "so le trong, đồng vị, bằng nhau"
+    },
+    {
+      "title": "Định lí và chứng minh định lí",
+      "body": [
+        "> **Định lí** là một khẳng định được suy ra từ những khẳng định đúng đã biết. Mỗi định lí thường được phát biểu dưới dạng: **Nếu … thì …**",
+        "- Phần giữa từ “nếu” và từ “thì” là **giả thiết** (GT); phần sau từ “thì” là **kết luận** (KL)."
+      ],
+      "visual": [
+        {
+          "type": "compare",
+          "left": ["**GT**", "hai góc đối đỉnh"],
+          "right": ["**KL**", "hai góc đó bằng nhau"],
+          "sep": "⇒"
+        },
+        {
+          "type": "geometry",
+          "w": 220,
+          "h": 125,
+          "dots": false,
+          "points": {
+            "d": [110, 8], "d0": [110, 125],
+            "d'": [15, 35], "e1": [210, 35],
+            "d''": [15, 95], "e2": [210, 95],
+            "P": [110, 35], "Q": [110, 95]
+          },
+          "hide": ["d0", "e1", "e2", "P", "Q"],
+          "shapes": [
+            { "seg": ["d", "d0"] },
+            { "seg": ["d'", "e1"] },
+            { "seg": ["d''", "e2"] },
+            { "seg": ["P", "e1"], "par": 1 },
+            { "seg": ["Q", "e2"], "par": 1 },
+            { "right": ["d", "P", "e1"] }
+          ],
+          "caption": "GT: $d' \\parallel d''$, $d \\perp d'$ · KL: $d \\perp d''$"
+        }
+      ],
+      "after": [
+        "> **Chứng minh một định lí** là dùng lập luận để từ giả thiết và những khẳng định đúng đã biết suy ra kết luận của định lí."
+      ],
+      "keywords": "Nếu … thì …, GT, KL, chứng minh"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Hai góc kề bù có tổng số đo bằng $180^\\circ$; hai góc đối đỉnh thì bằng nhau.",
+      "Tia phân giác chia góc thành hai góc bằng nhau, mỗi góc bằng nửa góc ban đầu.",
+      "Có một cặp góc so le trong (hoặc đồng vị) bằng nhau thì hai đường thẳng song song.",
+      "Qua một điểm ở ngoài một đường thẳng chỉ có một đường thẳng song song với nó (tiên đề Euclid).",
+      "Hai đường thẳng song song thì các góc so le trong bằng nhau, các góc đồng vị bằng nhau."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Vẽ hình đúng – suy luận chặt chẽ!",
+  "source": "SGK Toán 7 – tập một (Bộ SGK thống nhất, NXBGD), tr. 40–59"
+}

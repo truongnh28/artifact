@@ -5,6 +5,7 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 ```jsonc
 {
   "theme": "blue-ink",            // blue-ink | pastel-journal | chalkboard | print-bw
+  "tab": "Chương I",              // tuỳ chọn: nhãn tab ngắn trong bản web nhiều poster (mặc định lấy "Chương …"/"Bài …" từ subtitle)
   "density": "normal",            // normal | dense (chữ nhỏ hơn, thẻ chứa ~90 tiếng; nên đi với columns: 2)
   "columns": 3,                   // mặc định: ≤4 thẻ → 2 cột, còn lại → 3 cột
   "width": 1080,                  // chiều rộng PNG (px, trước khi nhân scale); 2 cột mặc định 820
@@ -51,6 +52,10 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 ```
 
 ## Công thức (KaTeX)
+- Công thức inline có thể bị xuống dòng sau `=`, `:`. Bọc trong ngoặc nhọn `${a = b}$` để giữ nguyên một khối.
+- Giá trị tuyệt đối số âm: viết `|{-2}|` để dấu trừ không bị giãn như phép trừ.
+- Không đặt chữ tiếng Việt có dấu trong `\\text{}` (một số dấu như "í" hiển thị lệch) — để chữ ngoài `$...$`.
+- Trong ô bảng, `\\frac` tự đổi thành `\\dfrac` (phân số to, dễ đọc).
 - Inline `$...$` và dòng riêng `$$...$$`. Trong JSON, mỗi `\` phải viết thành `\\`.
 - `**đậm**` và `==tô==` bọc được cả công thức: `"**chia $3{,}6$**"`.
 - Chữ tiếng Việt trong công thức (`\text{...}`) tự dùng font viết tay. Nhưng phương trình chữ thuần thì dùng visual `equation`, đừng nhét vào KaTeX.
@@ -81,6 +86,9 @@ Blueprint là nguồn sự thật duy nhất của poster. `scripts/build.mjs` �
 | `motion` | `rows: [{label, mode: accel/decel/uniform, note}]`, `object`: car/ball, `vertical: true` (bóng rơi), `steps` | Ảnh hoạt nghiệm: vị trí sau các khoảng thời gian bằng nhau (nhanh dần, chậm dần, đều, rơi tự do) |
 | `jars` | `items: [{label, fill: 0–1, note}]` | Mức độ số lượng: many/much → some → a few → few → none; nhiều → ít |
 | `reorder` | `from: [từ…]`, `to: [từ…]`, `moved: [chỉ số trong to]`, `note` | Đảo trật tự từ: câu khẳng định → câu hỏi, chủ động → bị động, vị trí trạng từ |
+| `geometry` | `w`, `h` (khung toạ độ, mặc định 220×150, gốc ở góc trên-trái, y hướng xuống), `points: {A: [x, y], …}`, `shapes: [...]`, `hide: [điểm phụ]`, `offsets: {A: [dx, dy]}`, `caption` | Hình học phẳng/không gian. Xem chi tiết bên dưới |
+| `pie` | `items: [{label, value, pct?}]`, `caption` | Biểu đồ hình quạt tròn (tự tính %) |
+| `linechart` | `labels: [...]`, `values: [...]` (một đường) hoặc `series: [{label, values}]` (nhiều đường, có chú thích), `unit`, `min`/`max`, `caption` | Biểu đồ đoạn thẳng (dữ liệu theo thời gian), so sánh nhiều dãy số liệu |
 | `icon` | `name`, `align`: right/center/left | Minh hoạ khi không có hình mang nghĩa hơn |
 | `icons` | `names: [...]` | Một hàng 2–4 icon |
 
@@ -107,3 +115,28 @@ node scripts/render.mjs file.html out.png --width 1080 --scale 2   # chỉ chụ
 node scripts/web.mjs a.json b.json -o trang.web.html --title "Tên"  # trang web có hình động (nhiều file → tab)
 node scripts/web.mjs a.json -o trang.html --artifact               # bản để publish Claude Artifact
 ```
+
+## Hình học (`geometry`) chi tiết
+
+Tên điểm có thể là chữ hoa, chữ thường hoặc có chỉ số (`A`, `x`, `a1`, `M'`). Trong chuỗi như `"a2AB"`, tên được tách theo danh sách điểm đã khai báo, ưu tiên tên dài nhất. Cũng có thể truyền mảng: `["a2", "A", "B"]`.
+
+| shape | Ý nghĩa | Tuỳ chọn |
+|---|---|---|
+| `{ "poly": "ABC" }` | Đa giác (tam giác, mặt hình hộp…) | `fill`: 0–3 (màu tô), `dash` |
+| `{ "seg": "AB" }` | Đoạn thẳng | `ticks`: 1–3 (kí hiệu đoạn bằng nhau), `par`: 1–2 (kí hiệu song song), `at`: 0–1 (vị trí kí hiệu/nhãn dọc đoạn, mặc định 0,5), `dash` (cạnh khuất), `label` (chữ cạnh đoạn, vd `"a"`, `"S_đáy"`) |
+| `{ "line": "AB" }` | Đường thẳng (kéo dài hai phía) | `ext` (mặc định 0,3), `ticks`, `par`, `label` |
+| `{ "ray": "Ox" }` | Tia gốc O đi qua x | `ext` |
+| `{ "angle": "BAC" }` | Cung góc tại đỉnh **ở giữa** (A) | `arcs`: 1–3 (kí hiệu góc bằng nhau), `label` (vd `"60°"`, `"1"`), `r` (bán kính, mặc định 16), `fill` |
+| `{ "right": "ABC" }` | Kí hiệu góc vuông tại B | |
+| `{ "circle": "O", "r": 40 }` hoặc `{ "circle": "O", "through": "A" }` | Đường tròn tâm O (bán kính r, hoặc đi qua A) | `dash` |
+
+Mẹo:
+- Nhãn trong hình là chữ thường (không KaTeX) nhưng hỗ trợ chỉ số `S_đáy`, `x_{1}` và mũ `a^2`. Kí hiệu góc như $\hat{A}_1$ đặt trong `caption`.
+- Điểm nằm bên trong hình (trọng tâm, giao điểm…) thường cần `offsets` để nhãn không đè lên nét.
+- Hai cung góc chung một tia: cho `r` khác nhau để không nhập thành một cung.
+- `"arcs": 0` + `label`: chỉ ghi số đo, không vẽ cung.
+- `"dots": false`: bỏ chấm tròn ở mọi điểm (dùng khi có điểm "giả" chỉ để đặt nhãn).
+- Hình trong thẻ `span: 2` được rộng tới 460px; muốn khác thì đặt `"maxw"`.
+- Đường thẳng a, b không có điểm tên: khai báo điểm phụ ở hai đầu (`a1`, `a2`) rồi cho vào `hide`.
+- Hình hộp hoặc lăng trụ: vẽ bằng phép chiếu xiên, ví dụ mặt sau lệch (+50, −35) so với mặt trước. Cạnh khuất dùng `dash: true`. Có thể tô ba mặt nhìn thấy bằng `fill` 1, 2, 3.
+- Ghi kết luận bằng `caption`, có KaTeX, ví dụ `"$\\Delta ABC = \\Delta DEF$ (c.c.c)"`.

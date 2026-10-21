@@ -60,7 +60,10 @@ for (const f of files) {
   lightTheme ??= bp.theme;
   const id = slug(f);
   const r = renderPoster(bp, { math, id });
-  posters.push({ id, html: r.html, label: bp.header?.subtitle ?? bp.header?.title ?? id, seed: bp.seed });
+  const full = bp.header?.subtitle ?? bp.header?.title ?? id;
+  // Nhãn tab ngắn: "tab" trong blueprint, hoặc phần "Chương IV" / "Bài 3" / "Unit 1" trước dấu chấm.
+  const short = bp.tab ?? (full.match(/^((?:Chương|Bài|Unit|Phần|Chủ đề)\s+[^.:]+)[.:]/)?.[1] ?? full);
+  posters.push({ id, html: r.html, label: short, full, seed: bp.seed });
   allWarnings.push(...r.warnings.map((w) => `${basename(f)}: ${w}`));
   const errs = (r.html.match(/class="katex-error"[^>]*title="([^"]*)"/g) ?? []);
   errs.forEach((e) => allWarnings.push(`${basename(f)}: lỗi KaTeX ${e}`));
@@ -76,7 +79,7 @@ const themeCss = lightTheme === dark
 
 const title = titleArg ?? posters[0].label;
 const bar = `<nav class="web-bar" aria-label="Poster">
-  ${posters.length > 1 ? posters.map((p) => `<button type="button" data-tab="${p.id}" aria-selected="false">${esc(p.label)}</button>`).join('') : ''}
+  ${posters.length > 1 ? posters.map((p) => `<button type="button" data-tab="${p.id}" aria-selected="false" title="${esc(p.full)}">${esc(p.label)}</button>`).join('') : ''}
   <button type="button" class="replay" title="Phát lại hiệu ứng" aria-label="Phát lại hiệu ứng">↻<span class="txt"> Phát lại hiệu ứng</span></button>
 </nav>`;
 

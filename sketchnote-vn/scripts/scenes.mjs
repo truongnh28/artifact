@@ -176,3 +176,137 @@ export function reorder(v, inline) {
     <div class="ro-row ro-to">${row(to, 'to')}</div>
   </div>`;
 }
+
+// ---------- Hình học: điểm, đoạn, tia, đường thẳng, đa giác, góc, góc vuông, kí hiệu bằng nhau ----------
+// v.points: { A: [x, y], … } trong khung v.w × v.h (mặc định 220 × 150).
+// v.shapes: [{ poly: "ABC", fill: 1 }, { seg: "AB", ticks: 1, par: 1, dash: true }, { line: "AB" },
+//            { ray: "OA" }, { angle: "BAC", arcs: 1, label: "60°" }, { right: "ABC" }]
+// v.hide: ["M"] để ẩn nhãn điểm; v.dots: false để bỏ chấm tròn.
+// Nhãn chữ trong hình: "S_đáy", "x_{1}" → chỉ số dưới; "a^2" → mũ. Còn lại giữ nguyên.
+const svgText = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/_\{([^}]*)\}|_(\S+)/g, (_, a, b) => `<tspan class="sub" dy="3" font-size="75%">${a ?? b}</tspan><tspan dy="-3"></tspan>`)
+  .replace(/\^\{([^}]*)\}|\^(\S)/g, (_, a, b) => `<tspan dy="-5" font-size="70%">${a ?? b}</tspan><tspan dy="5"></tspan>`);
+
+export function geometry(v, inline) {
+  const W = v.w ?? 220, H = v.h ?? 150, P = v.points ?? {};
+  const pt = (n) => { const p = P[n]; if (!p) throw new Error(`geometry: thiếu điểm ${n}`); return p; };
+  // Tách tên điểm theo danh sách đã khai báo, ưu tiên tên dài nhất ("a2AB" → a2, A, B). Có thể truyền mảng.
+  const keys = Object.keys(P).sort((x, y) => y.length - x.length);
+  const names = (s) => {
+    if (Array.isArray(s)) return s;
+    const out = []; let rest = String(s).replace(/\s+/g, '');
+    while (rest) {
+      const k = keys.find((n) => rest.startsWith(n));
+      if (!k) throw new Error(`geometry: không nhận ra điểm ở "${rest}" (các điểm: ${keys.join(', ')})`);
+      out.push(k); rest = rest.slice(k.length);
+    }
+    return out;
+  };
+  const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
+  const len = (a) => Math.hypot(a[0], a[1]) || 1;
+  const unit = (a) => { const l = len(a); return [a[0] / l, a[1] / l]; };
+  const f = (n) => n.toFixed(1);
+  let out = '';
+  for (const s of v.shapes ?? []) {
+    const cls = s.dash ? ' dash' : '';
+    if (s.poly) {
+      const ps = names(s.poly).map(pt);
+      out += `<path class="g-poly f${s.fill ?? 0}${cls}"${s.dash ? '' : ' pathLength="1"'} d="M${ps.map((p) => p.map(f).join(' ')).join('L')}Z"/>`;
+    } else if (s.seg || s.line || s.ray) {
+      const [a, b] = names(s.seg ?? s.line ?? s.ray).map(pt);
+      const d = sub(b, a), e = s.ext ?? 0.3;
+      const p1 = s.line ? [a[0] - d[0] * e, a[1] - d[1] * e] : a;
+      const p2 = s.seg ? b : [b[0] + d[0] * e, b[1] + d[1] * e];
+      out += `<path class="g-line${cls}"${s.dash ? '' : ' pathLength="1"'} d="M${f(p1[0])} ${f(p1[1])}L${f(p2[0])} ${f(p2[1])}"/>`;
+      const t0 = s.at ?? 0.5, m = [a[0] + d[0] * t0, a[1] + d[1] * t0], u = unit(d), nrm = [-u[1], u[0]];
+      for (let k = 0; k < (s.ticks ?? 0); k++) {         // kí hiệu đoạn bằng nhau
+        const o = (k - ((s.ticks - 1) / 2)) * 4, c = [m[0] + u[0] * o, m[1] + u[1] * o];
+        out += `<path class="g-mark" d="M${f(c[0] - nrm[0] * 5)} ${f(c[1] - nrm[1] * 5)}L${f(c[0] + nrm[0] * 5)} ${f(c[1] + nrm[1] * 5)}"/>`;
+      }
+      for (let k = 0; k < (s.par ?? 0); k++) {            // kí hiệu song song (mũi tên)
+        const c = [m[0] + u[0] * (k * 6), m[1] + u[1] * (k * 6)];
+        out += `<path class="g-mark" d="M${f(c[0] - u[0] * 5 - nrm[0] * 4)} ${f(c[1] - u[1] * 5 - nrm[1] * 4)}L${f(c[0])} ${f(c[1])}L${f(c[0] - u[0] * 5 + nrm[0] * 4)} ${f(c[1] - u[1] * 5 + nrm[1] * 4)}"/>`;
+      }
+      if (s.label) {
+        const q = [m[0] + nrm[0] * 12, m[1] + nrm[1] * 12];
+        out += `<text class="g-tlabel" x="${f(q[0])}" y="${f(q[1])}">${svgText(s.label)}</text>`;
+      }
+    } else if (s.angle) {
+      const [b, a, c] = names(s.angle).map(pt);
+      const u1 = unit(sub(b, a)), u2 = unit(sub(c, a));
+      let a1 = Math.atan2(u1[1], u1[0]), a2 = Math.atan2(u2[1], u2[0]);
+      let dA = a2 - a1; while (dA <= -Math.PI) dA += 2 * Math.PI; while (dA > Math.PI) dA -= 2 * Math.PI;
+      const sweep = dA > 0 ? 1 : 0;
+      for (let k = 0; k < (s.arcs ?? 1); k++) {
+        const r = (s.r ?? 16) + k * 4;
+        const p1 = [a[0] + Math.cos(a1) * r, a[1] + Math.sin(a1) * r], p2 = [a[0] + Math.cos(a1 + dA) * r, a[1] + Math.sin(a1 + dA) * r];
+        out += `<path class="g-arc${s.fill && k === 0 ? ' fill' : ''}" d="${s.fill && k === 0 ? `M${f(a[0])} ${f(a[1])}L` : 'M'}${f(p1[0])} ${f(p1[1])}A${r} ${r} 0 0 ${sweep} ${f(p2[0])} ${f(p2[1])}${s.fill && k === 0 ? 'Z' : ''}"/>`;
+      }
+      if (s.label) {
+        const mid = a1 + dA / 2, r = (s.r ?? 16) + 4 * ((s.arcs ?? 1) - 1) + 11;
+        out += `<text class="g-alabel" x="${f(a[0] + Math.cos(mid) * r)}" y="${f(a[1] + Math.sin(mid) * r + 4)}">${svgText(s.label)}</text>`;
+      }
+    } else if (s.circle) {                       // { circle: "O", r: 40 } hoặc { circle: "O", through: "A" }
+      const c = pt(names(s.circle)[0]);
+      const r = s.r ?? len(sub(pt(names(s.through)[0]), c));
+      out += `<circle class="g-circle${cls}" cx="${f(c[0])}" cy="${f(c[1])}" r="${f(r)}"${s.dash ? '' : ' pathLength="1"'}/>`;
+    } else if (s.right) {
+      const [a, b, c] = names(s.right).map(pt);
+      const u1 = unit(sub(a, b)), u2 = unit(sub(c, b)), k = 8;
+      const p1 = [b[0] + u1[0] * k, b[1] + u1[1] * k], p3 = [b[0] + u2[0] * k, b[1] + u2[1] * k];
+      out += `<path class="g-right" d="M${f(p1[0])} ${f(p1[1])}L${f(p1[0] + u2[0] * k)} ${f(p1[1] + u2[1] * k)}L${f(p3[0])} ${f(p3[1])}"/>`;
+    }
+  }
+  // Nhãn điểm: đẩy ra xa trọng tâm các điểm.
+  const all = Object.values(P), cx = all.reduce((t, p) => t + p[0], 0) / all.length, cy = all.reduce((t, p) => t + p[1], 0) / all.length;
+  const hide = new Set(v.hide ?? []);
+  for (const [n, p] of Object.entries(P)) {
+    if (hide.has(n)) continue;                 // điểm phụ (đầu mút đường thẳng…): không chấm, không nhãn
+    if (v.dots !== false) out += `<circle class="g-dot" cx="${f(p[0])}" cy="${f(p[1])}" r="2.4"/>`;
+    const o = v.offsets?.[n] ?? (() => { const u = unit([p[0] - cx, p[1] - cy]); return [u[0] * 11, u[1] * 11]; })();
+    out += `<text class="g-plabel" x="${f(p[0] + o[0])}" y="${f(p[1] + o[1] + 4)}">${svgText(n)}</text>`;
+  }
+  return `<figure class="v-geometry"${v.maxw ? ` style="max-width:${v.maxw}px"` : ''}><svg viewBox="${-10} ${-10} ${W + 20} ${H + 20}" aria-hidden="true">${out}</svg>${v.caption ? `<figcaption>${inline(v.caption)}</figcaption>` : ''}</figure>`;
+}
+
+// ---------- Biểu đồ hình quạt tròn ----------
+export function pie(v, inline) {
+  const items = v.items ?? [];
+  const total = items.reduce((t, it) => t + (it.value ?? 0), 0) || 1;
+  let acc = 0;
+  const R = 46, C = 50;
+  const at = (t) => [C + R * Math.cos(2 * Math.PI * t - Math.PI / 2), C + R * Math.sin(2 * Math.PI * t - Math.PI / 2)];
+  const sectors = items.map((it, i) => {
+    const a = acc / total; acc += it.value ?? 0; const b = acc / total;
+    const [x1, y1] = at(a), [x2, y2] = at(b);
+    const d = b - a >= 0.9999 ? `M${C} ${C - R}A${R} ${R} 0 1 1 ${C - 0.01} ${C - R}Z` : `M${C} ${C}L${x1.toFixed(2)} ${y1.toFixed(2)}A${R} ${R} 0 ${b - a > 0.5 ? 1 : 0} 1 ${x2.toFixed(2)} ${y2.toFixed(2)}Z`;
+    return `<path class="pie-s" style="--i:${i};fill:var(--mm${(i % 6) + 1})" d="${d}"/>`;
+  }).join('');
+  const pct = (x) => (Math.round((x / total) * 1000) / 10).toString().replace('.', ',');
+  return `<div class="v-pie"><svg viewBox="0 0 100 100" aria-hidden="true">${sectors}</svg>
+    <ul class="pie-legend">${items.map((it, i) => `<li><span class="sw" style="background:var(--mm${(i % 6) + 1})"></span>${inline(it.label)} <b>${it.pct ?? pct(it.value ?? 0) + '%'}</b></li>`).join('')}</ul>
+    ${v.caption ? `<div class="pie-cap">${inline(v.caption)}</div>` : ''}</div>`;
+}
+
+// ---------- Biểu đồ đoạn thẳng ----------
+export function linechart(v, inline) {
+  // Nhiều đường: v.series = [{label, values}]; một đường: v.values.
+  const series = v.series ?? [{ values: v.values ?? [] }];
+  const xs = v.labels ?? [], ys = series.flatMap((sr) => sr.values);
+  const W = 300, H = 150, L = 34, R = 12, T = 18, B = 26;
+  const max = v.max ?? Math.max(...ys) * 1.15, min = v.min ?? 0;
+  const X = (i) => L + (xs.length > 1 ? (i / (xs.length - 1)) * (W - L - R - 28) + 16 : (W - L - R) / 2);
+  const Y = (y) => H - B - ((y - min) / (max - min || 1)) * (H - B - T);
+  const grid = [0.25, 0.5, 0.75, 1].map((t) => `<path class="lc-grid" d="M${L} ${Y(min + (max - min) * t).toFixed(1)}H${W - R}"/>`).join('');
+  return `<div class="v-linechart"><svg viewBox="0 0 ${W} ${H}" aria-hidden="true">${grid}
+      <path class="lc-axis" d="M${L} ${T - 8}V${H - B}H${W - R + 4}"/>
+      ${series.map((sr, k) => {
+        const col = series.length > 1 ? `var(--mm${(k % 6) + 1})` : 'var(--frame)';
+        const p = sr.values.map((y, i) => `${X(i).toFixed(1)},${Y(y).toFixed(1)}`).join(' ');
+        return `<polyline class="lc-line" pathLength="1" style="stroke:${col}" points="${p}"/>` + sr.values.map((y, i) =>
+          `<circle class="lc-pt" style="--i:${i};fill:${col}" cx="${X(i).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="3.2"/><text class="lc-val" x="${X(i).toFixed(1)}" y="${(Y(y) - 7).toFixed(1)}">${String(y).replace('.', ',')}</text>`).join('');
+      }).join('')}
+      ${xs.map((x, i) => `<text class="lc-x" x="${X(i).toFixed(1)}" y="${H - B + 14}">${x}</text>`).join('')}
+      ${v.unit ? `<text class="lc-unit" x="${L - 4}" y="${T - 10}">${v.unit}</text>` : ''}
+    </svg>${series.length > 1 ? `<div class="lc-legend">${series.map((sr, k) => `<span><i style="background:var(--mm${(k % 6) + 1})"></i>${inline(sr.label ?? '')}</span>`).join('')}</div>` : ''}${v.caption ? `<div class="lc-cap">${inline(v.caption)}</div>` : ''}</div>`;
+}

@@ -8,6 +8,7 @@
     const target = posters.find((p) => p.id === id) ? id : posters[0]?.id;
     posters.forEach((p) => { p.hidden = posters.length > 1 && p.id !== target; });
     tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === target)));
+    tabs.find((t) => t.dataset.tab === target)?.scrollIntoView({ block: 'nearest', inline: 'center' });
     replayAll();
     fit();
   }

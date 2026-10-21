@@ -1,0 +1,1393 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP HAI",
+    "subtitle": "Chương IX. Quan hệ giữa các yếu tố trong một tam giác"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy chương IX",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Các yếu tố<br>trong tam giác",
+        "branches": [
+          {
+            "label": "Góc – cạnh đối diện",
+            "items": [
+              "góc lớn hơn ↔ cạnh lớn hơn",
+              "cạnh huyền lớn nhất"
+            ]
+          },
+          {
+            "label": "Vuông góc – xiên",
+            "items": [
+              "đường vuông góc ngắn nhất",
+              "khoảng cách $= AH$"
+            ]
+          },
+          {
+            "label": "BĐT tam giác",
+            "items": [
+              "$b - c < a < b + c$"
+            ]
+          },
+          {
+            "label": "Trung tuyến",
+            "items": [
+              "trọng tâm $G$",
+              "$GA = \\frac{2}{3}MA$"
+            ]
+          },
+          {
+            "label": "Phân giác",
+            "items": [
+              "đồng quy tại $I$",
+              "cách đều ba cạnh"
+            ]
+          },
+          {
+            "label": "Trung trực",
+            "items": [
+              "đồng quy tại $O$",
+              "cách đều ba đỉnh"
+            ]
+          },
+          {
+            "label": "Đường cao",
+            "items": [
+              "trực tâm $H$",
+              "nhọn: trong · tù: ngoài"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Góc và cạnh đối diện",
+      "body": [
+        "> **Định lí 1:** Trong một tam giác, góc đối diện với cạnh lớn hơn là góc lớn hơn.",
+        "> **Định lí 2:** Trong một tam giác, cạnh đối diện với góc lớn hơn là cạnh lớn hơn.",
+        "$$AC > AB \\Rightarrow \\hat{B} > \\hat{C};\\quad \\hat{B} > \\hat{C} \\Rightarrow AC > AB$$"
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 210,
+        "h": 92,
+        "dots": false,
+        "points": {
+          "A": [
+            10,
+            82
+          ],
+          "B": [
+            59.4,
+            24.2
+          ],
+          "C": [
+            200,
+            82
+          ]
+        },
+        "offsets": {
+          "A": [
+            -8,
+            4
+          ],
+          "B": [
+            0,
+            -9
+          ],
+          "C": [
+            8,
+            4
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": [
+              "B",
+              "A"
+            ],
+            "label": "2"
+          },
+          {
+            "seg": [
+              "C",
+              "B"
+            ],
+            "label": "4"
+          },
+          {
+            "seg": [
+              "A",
+              "C"
+            ],
+            "label": "5"
+          },
+          {
+            "angle": "ABC",
+            "arcs": 2,
+            "r": 13
+          },
+          {
+            "angle": "BCA",
+            "arcs": 1,
+            "r": 24
+          }
+        ],
+        "caption": "$AC > BC > AB \\Rightarrow \\hat{B} > \\hat{A} > \\hat{C}$"
+      },
+      "after": [
+        "- **Nhận xét:** tam giác vuông có cạnh huyền lớn nhất; tam giác tù có cạnh đối diện góc tù lớn nhất.",
+        "- VD 2: $\\hat{B} = 80^\\circ$, $\\hat{C} = 45^\\circ \\Rightarrow \\hat{A} = 55^\\circ$ nên $AC > BC > AB$."
+      ],
+      "keywords": "góc lớn ↔ cạnh lớn, cạnh huyền"
+    },
+    {
+      "title": "Đường vuông góc, đường xiên",
+      "body": [
+        "Từ $A \\notin d$ kẻ $AH \\perp d$ tại $H$: $AH$ là **đường vuông góc**, $H$ là **chân đường vuông góc**. Lấy $M \\in d$ ($M$ khác $H$): $AM$ là **đường xiên**.",
+        "> **Định lí:** Trong các đường xiên và đường vuông góc kẻ từ một điểm nằm ngoài một đường thẳng đến đường thẳng đó thì đường vuông góc là đường ngắn nhất."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 112,
+        "dots": false,
+        "points": {
+          "A": [
+            50,
+            8
+          ],
+          "H": [
+            50,
+            98
+          ],
+          "M": [
+            118,
+            98
+          ],
+          "N": [
+            186,
+            98
+          ],
+          "d1": [
+            0,
+            98
+          ],
+          "d": [
+            218,
+            98
+          ]
+        },
+        "hide": [
+          "d1"
+        ],
+        "offsets": {
+          "A": [
+            0,
+            -6
+          ],
+          "H": [
+            -4,
+            15
+          ],
+          "M": [
+            0,
+            15
+          ],
+          "N": [
+            0,
+            15
+          ],
+          "d": [
+            2,
+            -8
+          ]
+        },
+        "shapes": [
+          {
+            "seg": "d1d"
+          },
+          {
+            "seg": "AH"
+          },
+          {
+            "seg": "AM"
+          },
+          {
+            "seg": "AN"
+          },
+          {
+            "right": "AHM"
+          }
+        ],
+        "caption": "$AH \\perp d$; $HM < HN \\Rightarrow AH < AM < AN$"
+      },
+      "after": [
+        "- Độ dài $AH$ gọi là **khoảng cách** từ $A$ đến $d$; nếu $A \\in d$ thì khoảng cách bằng 0."
+      ],
+      "keywords": "$AH \\perp d$, ngắn nhất, khoảng cách"
+    },
+    {
+      "title": "Bất đẳng thức tam giác",
+      "body": [
+        "> **Định lí:** Trong một tam giác, độ dài của một cạnh bất kì luôn nhỏ hơn tổng độ dài hai cạnh còn lại.",
+        "$$AB < AC + BC,\\ \\ AC < AB + BC,\\ \\ BC < AB + AC$$",
+        "- **Tính chất:** một cạnh bất kì luôn lớn hơn hiệu độ dài hai cạnh còn lại."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 220,
+        "h": 100,
+        "dots": false,
+        "points": {
+          "A": [
+            12,
+            92
+          ],
+          "B": [
+            78,
+            12
+          ],
+          "C": [
+            208,
+            92
+          ]
+        },
+        "offsets": {
+          "A": [
+            -8,
+            4
+          ],
+          "B": [
+            0,
+            -8
+          ],
+          "C": [
+            8,
+            4
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": [
+              "C",
+              "B"
+            ],
+            "label": "a"
+          },
+          {
+            "seg": [
+              "A",
+              "C"
+            ],
+            "label": "b"
+          },
+          {
+            "seg": [
+              "B",
+              "A"
+            ],
+            "label": "c"
+          }
+        ],
+        "caption": "$b - c < a < b + c$"
+      },
+      "after": [
+        "- **Chú ý:** chỉ cần so sánh độ dài lớn nhất với tổng hai độ dài còn lại (hoặc nhỏ nhất với hiệu hai độ dài còn lại).",
+        "- $2, 4, 7$ cm: $2 + 4 = 6 < 7$ ⇒ không phải ba cạnh tam giác; $2, 3, 4$ cm: $2 > 4 - 3$ ⇒ được."
+      ],
+      "keywords": "hiệu < cạnh < tổng"
+    },
+    {
+      "title": "Trung tuyến và trọng tâm",
+      "body": [
+        "Đoạn $AM$ nối đỉnh $A$ với trung điểm $M$ của $BC$ là **đường trung tuyến** của $\\Delta ABC$.",
+        "> **Định lí 1:** Ba đường trung tuyến của một tam giác cùng đi qua một điểm. Điểm đó cách mỗi đỉnh một khoảng bằng $\\frac{2}{3}$ độ dài đường trung tuyến đi qua đỉnh ấy.",
+        "- Điểm đồng quy $G$ gọi là **trọng tâm** tam giác."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 210,
+        "h": 135,
+        "points": {
+          "A": [
+            80,
+            10
+          ],
+          "B": [
+            10,
+            125
+          ],
+          "C": [
+            200,
+            125
+          ],
+          "M": [
+            105,
+            125
+          ],
+          "N": [
+            140,
+            67.5
+          ],
+          "P": [
+            45,
+            67.5
+          ],
+          "G": [
+            96.7,
+            86.7
+          ]
+        },
+        "offsets": {
+          "A": [
+            0,
+            -8
+          ],
+          "B": [
+            -8,
+            6
+          ],
+          "C": [
+            8,
+            6
+          ],
+          "M": [
+            0,
+            15
+          ],
+          "N": [
+            9,
+            -4
+          ],
+          "P": [
+            -10,
+            -3
+          ],
+          "G": [
+            12,
+            -6
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": "BM",
+            "ticks": 1
+          },
+          {
+            "seg": "MC",
+            "ticks": 1
+          },
+          {
+            "seg": "CN",
+            "ticks": 2
+          },
+          {
+            "seg": "NA",
+            "ticks": 2
+          },
+          {
+            "seg": "AP",
+            "ticks": 3
+          },
+          {
+            "seg": "PB",
+            "ticks": 3
+          },
+          {
+            "seg": "AM"
+          },
+          {
+            "seg": "BN"
+          },
+          {
+            "seg": "CP"
+          }
+        ],
+        "caption": "$\\frac{GA}{MA} = \\frac{GB}{NB} = \\frac{GC}{PC} = \\frac{2}{3}$"
+      },
+      "after": [
+        "- VD 1: $GA = \\frac{2}{3}MA$, $GM = \\frac{1}{3}MA$ nên $GA = 2GM$."
+      ],
+      "keywords": "trung điểm, $\\frac{2}{3}$, trọng tâm $G$"
+    },
+    {
+      "title": "Phân giác – cách đều ba cạnh",
+      "body": [
+        "Tia phân giác của góc $A$ cắt $BC$ tại $D$: đoạn $AD$ là **đường phân giác** (xuất phát từ đỉnh $A$) của $\\Delta ABC$.",
+        "> **Định lí 2:** Ba đường phân giác của một tam giác đồng quy tại một điểm. Điểm này cách đều ba cạnh của tam giác đó."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 210,
+        "h": 135,
+        "points": {
+          "A": [
+            80,
+            10
+          ],
+          "B": [
+            10,
+            125
+          ],
+          "C": [
+            200,
+            125
+          ],
+          "D": [
+            95,
+            125
+          ],
+          "E": [
+            129.8,
+            57.7
+          ],
+          "F": [
+            47.3,
+            63.7
+          ],
+          "I": [
+            89.2,
+            80.5
+          ],
+          "H": [
+            89.2,
+            125
+          ],
+          "K": [
+            120,
+            48.3
+          ],
+          "L": [
+            51.2,
+            57.3
+          ]
+        },
+        "hide": [
+          "E",
+          "F"
+        ],
+        "offsets": {
+          "A": [
+            0,
+            -8
+          ],
+          "B": [
+            -8,
+            6
+          ],
+          "C": [
+            8,
+            6
+          ],
+          "D": [
+            7,
+            15
+          ],
+          "H": [
+            -7,
+            15
+          ],
+          "K": [
+            4,
+            -10
+          ],
+          "L": [
+            -10,
+            -4
+          ],
+          "I": [
+            10,
+            12
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": "AD"
+          },
+          {
+            "seg": "BE"
+          },
+          {
+            "seg": "CF"
+          },
+          {
+            "angle": "BAD",
+            "arcs": 1,
+            "r": 14
+          },
+          {
+            "angle": "DAC",
+            "arcs": 1,
+            "r": 18
+          },
+          {
+            "angle": "ABE",
+            "arcs": 2,
+            "r": 14
+          },
+          {
+            "angle": "EBC",
+            "arcs": 2,
+            "r": 14
+          },
+          {
+            "angle": "BCF",
+            "arcs": 3,
+            "r": 18
+          },
+          {
+            "angle": "FCA",
+            "arcs": 3,
+            "r": 18
+          },
+          {
+            "seg": "IH",
+            "dash": true
+          },
+          {
+            "seg": "IK",
+            "dash": true
+          },
+          {
+            "seg": "IL",
+            "dash": true
+          },
+          {
+            "right": "IHC"
+          },
+          {
+            "right": "IKA"
+          },
+          {
+            "right": "ILB"
+          }
+        ],
+        "caption": "Đồng quy tại $I$; $IH = IK = IL$"
+      },
+      "after": [
+        "- Mọi điểm trên tia phân giác của một góc cách đều hai cạnh của góc đó; ngược lại, điểm trong góc cách đều hai cạnh thì nằm trên tia phân giác."
+      ],
+      "keywords": "phân giác, $I$, cách đều ba cạnh"
+    },
+    {
+      "title": "Trung trực – cách đều ba đỉnh",
+      "body": [
+        "Trong một tam giác, đường trung trực của mỗi cạnh gọi là **đường trung trực của tam giác**.",
+        "> **Định lí 1:** Ba đường trung trực của một tam giác đồng quy tại một điểm. Điểm này cách đều ba đỉnh của tam giác.",
+        "- **Nhận xét:** vì $OA = OB = OC$ nên có một đường tròn tâm $O$ đi qua ba đỉnh $A, B, C$."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 200,
+        "h": 196,
+        "points": {
+          "A": [
+            77.2,
+            13
+          ],
+          "B": [
+            22.3,
+            139.3
+          ],
+          "C": [
+            177.7,
+            139.3
+          ],
+          "O": [
+            100,
+            98
+          ],
+          "M": [
+            100,
+            139.3
+          ],
+          "N": [
+            127.5,
+            76.2
+          ],
+          "P": [
+            49.8,
+            76.2
+          ],
+          "m2": [
+            100,
+            83.5
+          ],
+          "n2": [
+            90.4,
+            105.6
+          ],
+          "p2": [
+            117.6,
+            105.6
+          ],
+          "c0": [
+            188,
+            98
+          ],
+          "c1": [
+            187.7,
+            105.7
+          ],
+          "c2": [
+            186.7,
+            113.3
+          ],
+          "c3": [
+            185,
+            120.8
+          ],
+          "c4": [
+            182.7,
+            128.1
+          ],
+          "c5": [
+            179.8,
+            135.2
+          ],
+          "c6": [
+            176.2,
+            142
+          ],
+          "c7": [
+            172.1,
+            148.5
+          ],
+          "c8": [
+            167.4,
+            154.6
+          ],
+          "c9": [
+            162.2,
+            160.2
+          ],
+          "c10": [
+            156.6,
+            165.4
+          ],
+          "c11": [
+            150.5,
+            170.1
+          ],
+          "c12": [
+            144,
+            174.2
+          ],
+          "c13": [
+            137.2,
+            177.8
+          ],
+          "c14": [
+            130.1,
+            180.7
+          ],
+          "c15": [
+            122.8,
+            183
+          ],
+          "c16": [
+            115.3,
+            184.7
+          ],
+          "c17": [
+            107.7,
+            185.7
+          ],
+          "c18": [
+            100,
+            186
+          ],
+          "c19": [
+            92.3,
+            185.7
+          ],
+          "c20": [
+            84.7,
+            184.7
+          ],
+          "c21": [
+            77.2,
+            183
+          ],
+          "c22": [
+            69.9,
+            180.7
+          ],
+          "c23": [
+            62.8,
+            177.8
+          ],
+          "c24": [
+            56,
+            174.2
+          ],
+          "c25": [
+            49.5,
+            170.1
+          ],
+          "c26": [
+            43.4,
+            165.4
+          ],
+          "c27": [
+            37.8,
+            160.2
+          ],
+          "c28": [
+            32.6,
+            154.6
+          ],
+          "c29": [
+            27.9,
+            148.5
+          ],
+          "c30": [
+            23.8,
+            142
+          ],
+          "c31": [
+            20.2,
+            135.2
+          ],
+          "c32": [
+            17.3,
+            128.1
+          ],
+          "c33": [
+            15,
+            120.8
+          ],
+          "c34": [
+            13.3,
+            113.3
+          ],
+          "c35": [
+            12.3,
+            105.7
+          ],
+          "c36": [
+            12,
+            98
+          ],
+          "c37": [
+            12.3,
+            90.3
+          ],
+          "c38": [
+            13.3,
+            82.7
+          ],
+          "c39": [
+            15,
+            75.2
+          ],
+          "c40": [
+            17.3,
+            67.9
+          ],
+          "c41": [
+            20.2,
+            60.8
+          ],
+          "c42": [
+            23.8,
+            54
+          ],
+          "c43": [
+            27.9,
+            47.5
+          ],
+          "c44": [
+            32.6,
+            41.4
+          ],
+          "c45": [
+            37.8,
+            35.8
+          ],
+          "c46": [
+            43.4,
+            30.6
+          ],
+          "c47": [
+            49.5,
+            25.9
+          ],
+          "c48": [
+            56,
+            21.8
+          ],
+          "c49": [
+            62.8,
+            18.2
+          ],
+          "c50": [
+            69.9,
+            15.3
+          ],
+          "c51": [
+            77.2,
+            13
+          ],
+          "c52": [
+            84.7,
+            11.3
+          ],
+          "c53": [
+            92.3,
+            10.3
+          ],
+          "c54": [
+            100,
+            10
+          ],
+          "c55": [
+            107.7,
+            10.3
+          ],
+          "c56": [
+            115.3,
+            11.3
+          ],
+          "c57": [
+            122.8,
+            13
+          ],
+          "c58": [
+            130.1,
+            15.3
+          ],
+          "c59": [
+            137.2,
+            18.2
+          ],
+          "c60": [
+            144,
+            21.8
+          ],
+          "c61": [
+            150.5,
+            25.9
+          ],
+          "c62": [
+            156.6,
+            30.6
+          ],
+          "c63": [
+            162.2,
+            35.8
+          ],
+          "c64": [
+            167.4,
+            41.4
+          ],
+          "c65": [
+            172.1,
+            47.5
+          ],
+          "c66": [
+            176.2,
+            54
+          ],
+          "c67": [
+            179.8,
+            60.8
+          ],
+          "c68": [
+            182.7,
+            67.9
+          ],
+          "c69": [
+            185,
+            75.2
+          ],
+          "c70": [
+            186.7,
+            82.7
+          ],
+          "c71": [
+            187.7,
+            90.3
+          ]
+        },
+        "hide": [
+          "m2",
+          "n2",
+          "p2",
+          "c0",
+          "c1",
+          "c2",
+          "c3",
+          "c4",
+          "c5",
+          "c6",
+          "c7",
+          "c8",
+          "c9",
+          "c10",
+          "c11",
+          "c12",
+          "c13",
+          "c14",
+          "c15",
+          "c16",
+          "c17",
+          "c18",
+          "c19",
+          "c20",
+          "c21",
+          "c22",
+          "c23",
+          "c24",
+          "c25",
+          "c26",
+          "c27",
+          "c28",
+          "c29",
+          "c30",
+          "c31",
+          "c32",
+          "c33",
+          "c34",
+          "c35",
+          "c36",
+          "c37",
+          "c38",
+          "c39",
+          "c40",
+          "c41",
+          "c42",
+          "c43",
+          "c44",
+          "c45",
+          "c46",
+          "c47",
+          "c48",
+          "c49",
+          "c50",
+          "c51",
+          "c52",
+          "c53",
+          "c54",
+          "c55",
+          "c56",
+          "c57",
+          "c58",
+          "c59",
+          "c60",
+          "c61",
+          "c62",
+          "c63",
+          "c64",
+          "c65",
+          "c66",
+          "c67",
+          "c68",
+          "c69",
+          "c70",
+          "c71"
+        ],
+        "offsets": {
+          "A": [
+            -2,
+            -8
+          ],
+          "B": [
+            -9,
+            4
+          ],
+          "C": [
+            9,
+            4
+          ],
+          "O": [
+            -11,
+            -9
+          ],
+          "M": [
+            2,
+            14
+          ],
+          "N": [
+            9,
+            -4
+          ],
+          "P": [
+            -10,
+            -2
+          ]
+        },
+        "shapes": [
+          {
+            "poly": [
+              "c0",
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6",
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11",
+              "c12",
+              "c13",
+              "c14",
+              "c15",
+              "c16",
+              "c17",
+              "c18",
+              "c19",
+              "c20",
+              "c21",
+              "c22",
+              "c23",
+              "c24",
+              "c25",
+              "c26",
+              "c27",
+              "c28",
+              "c29",
+              "c30",
+              "c31",
+              "c32",
+              "c33",
+              "c34",
+              "c35",
+              "c36",
+              "c37",
+              "c38",
+              "c39",
+              "c40",
+              "c41",
+              "c42",
+              "c43",
+              "c44",
+              "c45",
+              "c46",
+              "c47",
+              "c48",
+              "c49",
+              "c50",
+              "c51",
+              "c52",
+              "c53",
+              "c54",
+              "c55",
+              "c56",
+              "c57",
+              "c58",
+              "c59",
+              "c60",
+              "c61",
+              "c62",
+              "c63",
+              "c64",
+              "c65",
+              "c66",
+              "c67",
+              "c68",
+              "c69",
+              "c70",
+              "c71"
+            ]
+          },
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": "BM",
+            "ticks": 1
+          },
+          {
+            "seg": "MC",
+            "ticks": 1
+          },
+          {
+            "seg": "CN",
+            "ticks": 2
+          },
+          {
+            "seg": "NA",
+            "ticks": 2
+          },
+          {
+            "seg": "AP",
+            "ticks": 3
+          },
+          {
+            "seg": "PB",
+            "ticks": 3
+          },
+          {
+            "seg": "Mm2"
+          },
+          {
+            "seg": "Nn2"
+          },
+          {
+            "seg": "Pp2"
+          },
+          {
+            "right": "CMO"
+          },
+          {
+            "right": "ANO"
+          },
+          {
+            "right": "BPO"
+          },
+          {
+            "seg": "OA",
+            "dash": true
+          },
+          {
+            "seg": "OB",
+            "dash": true
+          },
+          {
+            "seg": "OC",
+            "dash": true
+          }
+        ],
+        "caption": "$OA = OB = OC$; đường tròn tâm $O$ qua $A, B, C$"
+      },
+      "keywords": "trung trực, $O$, cách đều ba đỉnh"
+    },
+    {
+      "title": "Đường cao và trực tâm",
+      "body": [
+        "Đoạn $AI$ kẻ từ đỉnh $A$, vuông góc với cạnh đối diện $BC$, là một **đường cao** của $\\Delta ABC$ (đường cao ứng với cạnh $BC$).",
+        "> **Định lí 2:** Ba đường cao của một tam giác đồng quy tại một điểm.",
+        "- Điểm đồng quy $H$ gọi là **trực tâm** của tam giác."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 210,
+        "h": 135,
+        "points": {
+          "A": [
+            80,
+            10
+          ],
+          "B": [
+            10,
+            125
+          ],
+          "C": [
+            200,
+            125
+          ],
+          "I": [
+            80,
+            125
+          ],
+          "J": [
+            101,
+            30.1
+          ],
+          "K": [
+            61.4,
+            40.6
+          ],
+          "H": [
+            80,
+            52
+          ]
+        },
+        "offsets": {
+          "A": [
+            0,
+            -8
+          ],
+          "B": [
+            -8,
+            6
+          ],
+          "C": [
+            8,
+            6
+          ],
+          "I": [
+            0,
+            15
+          ],
+          "J": [
+            9,
+            -5
+          ],
+          "K": [
+            -10,
+            -2
+          ],
+          "H": [
+            12,
+            -4
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": "AI"
+          },
+          {
+            "seg": "BJ"
+          },
+          {
+            "seg": "CK"
+          },
+          {
+            "right": "AIC"
+          },
+          {
+            "right": "BJC"
+          },
+          {
+            "right": "CKB"
+          }
+        ],
+        "caption": "$AI, BJ, CK$ đồng quy tại trực tâm $H$"
+      },
+      "after": [
+        "- Tam giác nhọn: $H$ nằm bên trong tam giác.",
+        "- Tam giác vuông tại $A$: $H$ trùng với $A$ ($H \\equiv A$).",
+        "- Tam giác tù: $H$ nằm bên ngoài tam giác."
+      ],
+      "keywords": "vuông góc cạnh đối, trực tâm $H$"
+    },
+    {
+      "title": "Tam giác cân, tam giác đều",
+      "body": [
+        "> Trong tam giác cân tại $A$, đường cao xuất phát từ đỉnh $A$ đồng thời là đường trung trực, đường phân giác, đường trung tuyến của tam giác đó.",
+        "- VD (Bài 34): giao điểm ba đường phân giác nằm trên trung tuyến $AM$.",
+        "- Tam giác đều: ba đường cao cũng là ba đường trung trực, nên trực tâm cách đều ba đỉnh."
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 200,
+        "h": 128,
+        "points": {
+          "A": [
+            100,
+            8
+          ],
+          "B": [
+            30,
+            118
+          ],
+          "C": [
+            170,
+            118
+          ],
+          "M": [
+            100,
+            118
+          ]
+        },
+        "offsets": {
+          "A": [
+            0,
+            -7
+          ],
+          "B": [
+            -9,
+            5
+          ],
+          "C": [
+            9,
+            5
+          ],
+          "M": [
+            0,
+            15
+          ]
+        },
+        "shapes": [
+          {
+            "poly": "ABC",
+            "fill": 1
+          },
+          {
+            "seg": "AB",
+            "ticks": 1
+          },
+          {
+            "seg": "AC",
+            "ticks": 1
+          },
+          {
+            "seg": "BM",
+            "ticks": 2
+          },
+          {
+            "seg": "MC",
+            "ticks": 2
+          },
+          {
+            "seg": "AM"
+          },
+          {
+            "angle": "BAM",
+            "arcs": 1,
+            "r": 22
+          },
+          {
+            "angle": "MAC",
+            "arcs": 1,
+            "r": 22
+          },
+          {
+            "right": "AMC"
+          }
+        ],
+        "caption": "$AM \\perp BC$, $BM = MC$, $\\widehat{BAM} = \\widehat{MAC}$"
+      },
+      "keywords": "cân tại $A$, bốn đường trùng nhau"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Trong tam giác, góc lớn hơn đối diện cạnh lớn hơn và ngược lại; cạnh huyền là cạnh lớn nhất.",
+      "Đường vuông góc ngắn hơn mọi đường xiên; độ dài của nó là khoảng cách từ điểm đến đường thẳng.",
+      "Ba cạnh $a, b, c$ của tam giác luôn thoả mãn $b - c < a < b + c$.",
+      "Trọng tâm $G$: $GA = \\frac{2}{3}MA$; giao ba phân giác cách đều ba cạnh.",
+      "Giao ba trung trực cách đều ba đỉnh; ba đường cao đồng quy tại trực tâm $H$."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Hiểu bản chất – làm bài chắc chắn!",
+  "source": "SGK Toán 7 – tập hai (Bộ SGK thống nhất, NXBGD), tr. 59–81"
+}

@@ -1,0 +1,334 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP MỘT",
+    "subtitle": "Chương I. Số hữu tỉ"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy Chương I",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Số hữu tỉ<br>$\\mathbb{Q}$",
+        "branches": [
+          {
+            "label": "Khái niệm",
+            "items": [
+              "$\\frac{a}{b}$ với $a, b \\in \\mathbb{Z},\\ b \\neq 0$",
+              "số đối của $m$ là $-m$"
+            ]
+          },
+          {
+            "label": "Trục số & thứ tự",
+            "items": [
+              "điểm biểu diễn số $a$ là điểm $a$",
+              "$a < b$: điểm $a$ nằm trước điểm $b$"
+            ]
+          },
+          {
+            "label": "Cộng, trừ, nhân, chia",
+            "items": [
+              "viết dưới dạng phân số",
+              "quy tắc dấu ngoặc như trong $\\mathbb{Z}$"
+            ]
+          },
+          {
+            "label": "Luỹ thừa",
+            "items": [
+              "$x^n$: tích của $n$ thừa số $x$",
+              "$x^m \\cdot x^n = x^{m+n}$; $(x^m)^n = x^{m \\cdot n}$"
+            ]
+          },
+          {
+            "label": "Thứ tự phép tính",
+            "items": [
+              "luỹ thừa → nhân, chia → cộng, trừ",
+              "$(\\ ) \\to [\\ ] \\to \\{\\ \\}$"
+            ]
+          },
+          {
+            "label": "Chuyển vế",
+            "items": [
+              "$a + b = c \\Rightarrow a = c - b$",
+              "đổi dấu số hạng"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Khái niệm số hữu tỉ",
+      "body": [
+        "**Số hữu tỉ** là số viết được dưới dạng phân số $\\frac{a}{b}$ với $a, b \\in \\mathbb{Z},\\ b \\neq 0$",
+        "Tập hợp các số hữu tỉ được kí hiệu là ==$\\mathbb{Q}$==."
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "\\dfrac{a}{b}",
+        "note": "$a, b \\in \\mathbb{Z},\\ b \\neq 0$"
+      },
+      "after": [
+        "- Ví dụ: $-7 = \\frac{-7}{1}$; $0{,}6 = \\frac{6}{10}$; $-1{,}2 = \\frac{-12}{10}$; $1\\frac{4}{5} = \\frac{9}{5}$.",
+        "- Số thập phân, số nguyên, hỗn số đều là số hữu tỉ.",
+        "> Mỗi số hữu tỉ đều có một số đối. Số đối của số hữu tỉ $m$ là số hữu tỉ $-m$."
+      ],
+      "keywords": "$\\frac{a}{b}$, $\\mathbb{Q}$, số đối"
+    },
+    {
+      "title": "Biểu diễn trên trục số",
+      "body": [
+        "Biểu diễn $\\frac{3}{2}$: chia đoạn đơn vị thành hai đoạn bằng nhau, lấy một đoạn làm **đơn vị mới** (bằng $\\frac{1}{2}$ đơn vị cũ). Điểm $M$ nằm sau gốc $O$, cách $O$ 3 đơn vị mới.",
+        "Điểm $N$ biểu diễn $-\\frac{3}{2}$ nằm trước gốc $O$, cách $O$ 3 đơn vị mới."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -2,
+        "max": 2,
+        "step": 1,
+        "points": [
+          {
+            "x": -1.5,
+            "label": "-\\frac{3}{2}"
+          },
+          {
+            "x": 1.5,
+            "label": "\\frac{3}{2}"
+          }
+        ],
+        "arcs": [
+          {
+            "from": -1.5,
+            "to": 0,
+            "label": "ON"
+          },
+          {
+            "from": 0,
+            "to": 1.5,
+            "label": "OM"
+          }
+        ],
+        "caption": "$OM = ON$: hai số đối $a$ và $-a$ nằm về hai phía điểm $O$, cùng khoảng cách đến $O$"
+      },
+      "after": [
+        "> Trên trục số, điểm biểu diễn số hữu tỉ $a$ được gọi là **điểm $a$**."
+      ],
+      "keywords": "đơn vị mới, điểm $a$, $OM = ON$"
+    },
+    {
+      "title": "Thứ tự trong tập $\\mathbb{Q}$",
+      "body": [
+        "- So sánh hai số hữu tỉ: viết chúng dưới dạng phân số rồi so sánh hai phân số đó.",
+        "- Luôn có: $a = b$ hoặc $a < b$ hoặc $a > b$.",
+        "- **Bắc cầu:** $a < b$ và $b < c$ thì $a < c$.",
+        "- Trên trục số, nếu $a < b$ thì điểm $a$ nằm trước điểm $b$."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -1,
+        "max": 2,
+        "step": 1,
+        "points": [
+          {
+            "x": 0.7,
+            "label": "0{,}7"
+          },
+          {
+            "x": 1.2,
+            "label": "\\frac{6}{5}"
+          }
+        ],
+        "caption": "$0{,}7 = \\frac{7}{10} < \\frac{12}{10} = \\frac{6}{5}$ nên điểm $0{,}7$ nằm trước điểm $\\frac{6}{5}$"
+      },
+      "after": [
+        "> Trước gốc $O$: **số hữu tỉ âm**; sau gốc $O$: **số hữu tỉ dương**. Số 0 không là số hữu tỉ dương, cũng không là số hữu tỉ âm."
+      ],
+      "keywords": "phân số, bắc cầu, trước – sau"
+    },
+    {
+      "title": "Cộng, trừ, nhân, chia",
+      "body": [
+        "Ta có thể cộng, trừ, nhân, chia hai số hữu tỉ bằng cách **viết chúng dưới dạng phân số** rồi áp dụng quy tắc cộng, trừ, nhân, chia phân số."
+      ],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Phép tính",
+          "Ví dụ"
+        ],
+        "rows": [
+          [
+            "Cộng, trừ",
+            "$-0{,}5 + \\frac{2}{3} + \\frac{1}{2} = \\frac{-1}{2} + \\frac{2}{3} + \\frac{1}{2} = \\frac{2}{3}$"
+          ],
+          [
+            "Nhân",
+            "$\\frac{6}{7} \\cdot 0{,}25 = \\frac{6}{7} \\cdot \\frac{1}{4} = \\frac{3}{14}$"
+          ],
+          [
+            "Chia",
+            "$-2{,}4 : \\frac{6}{5} = \\frac{-12}{5} \\cdot \\frac{5}{6} = -2$"
+          ],
+          [
+            "Hai số thập phân",
+            "$(-9{,}15) + 8{,}09 = -1{,}06$<br>$1{,}25 \\cdot (-4{,}6) = -5{,}75$"
+          ]
+        ]
+      },
+      "after": [
+        "- Phép cộng, phép nhân số hữu tỉ cũng có tính chất **giao hoán, kết hợp** như phân số.",
+        "- Hai số đối nhau luôn có tổng bằng 0: $a + (-a) = 0$."
+      ],
+      "keywords": "phân số, thập phân, $a + (-a) = 0$"
+    },
+    {
+      "title": "Quy tắc dấu ngoặc",
+      "body": [
+        "- Trong $\\mathbb{Q}$ cũng có quy tắc dấu ngoặc tương tự như trong $\\mathbb{Z}$.",
+        "- Đối với một tổng trong $\\mathbb{Q}$, có thể **đổi chỗ** các số hạng, **đặt dấu ngoặc** để nhóm các số hạng một cách tuỳ ý."
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "$\\frac{8}{9} - \\left[\\frac{7}{4} - \\left(\\frac{3}{4} - \\frac{2}{3}\\right)\\right]$",
+          "$\\frac{8}{9} - \\frac{7}{4} + \\frac{3}{4} - \\frac{2}{3}$",
+          "$\\left(\\frac{8}{9} - \\frac{2}{3}\\right) - \\left(\\frac{7}{4} - \\frac{3}{4}\\right) = -\\frac{7}{9}$"
+        ],
+        "arrows": [
+          "bỏ ngoặc",
+          "nhóm"
+        ]
+      },
+      "after": [
+        "- Ví dụ: $\\frac{-2}{3} + \\frac{5}{2} + \\frac{1}{3} + \\frac{3}{2} = \\left(\\frac{-2}{3} + \\frac{1}{3}\\right) + \\left(\\frac{5}{2} + \\frac{3}{2}\\right) = \\frac{11}{3}$"
+      ],
+      "keywords": "bỏ ngoặc, đổi chỗ, nhóm"
+    },
+    {
+      "title": "Luỹ thừa số mũ tự nhiên",
+      "body": [
+        "**Luỹ thừa bậc $n$** của số hữu tỉ $x$, kí hiệu $x^n$, là tích của $n$ thừa số $x$ ($n$ là số tự nhiên lớn hơn 1):",
+        "$$x^n = \\underbrace{x \\cdot x \\cdot \\ldots \\cdot x}_{n\\ \\text{thừa số}} \\quad (x \\in \\mathbb{Q},\\ n \\in \\mathbb{N},\\ n > 1)$$"
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "x^{n}",
+        "note": "$x$: cơ số · $n$: số mũ"
+      },
+      "after": [
+        "- Quy ước: $x^0 = 1\\ (x \\neq 0)$; $x^1 = x$.",
+        "- Ví dụ: $(-3)^3 = -27$; $\\left(\\frac{1}{3}\\right)^4 = \\frac{1}{81}$."
+      ],
+      "keywords": "cơ số, số mũ, $x^0 = 1$"
+    },
+    {
+      "title": "Các quy tắc tính luỹ thừa",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Quy tắc",
+          "Công thức",
+          "Ví dụ"
+        ],
+        "rows": [
+          [
+            "Nhân hai luỹ thừa cùng cơ số: giữ nguyên cơ số, **cộng** hai số mũ",
+            "$x^m \\cdot x^n = x^{m+n}$",
+            "$\\left(\\frac{2}{3}\\right)^5 \\cdot \\left(\\frac{2}{3}\\right)^3 = \\left(\\frac{2}{3}\\right)^8 = \\frac{256}{6\\,561}$"
+          ],
+          [
+            "Chia hai luỹ thừa cùng cơ số khác 0: giữ nguyên cơ số, **trừ** số mũ",
+            "$x^m : x^n = x^{m-n}$<br>$(x \\neq 0,\\ m \\geq n)$",
+            "$(-5)^5 : (-5)^5 = (-5)^0 = 1$"
+          ],
+          [
+            "Luỹ thừa của một luỹ thừa: giữ nguyên cơ số, **nhân** hai số mũ",
+            "$(x^m)^n = x^{m \\cdot n}$",
+            "$\\left[(-5)^3\\right]^7 = (-5)^{21}$"
+          ],
+          [
+            "Luỹ thừa của một tích bằng tích các luỹ thừa",
+            "$(x \\cdot y)^n = x^n \\cdot y^n$",
+            "$2^2 \\cdot 3^2 = (2 \\cdot 3)^2 = 36$"
+          ],
+          [
+            "Luỹ thừa của một thương bằng thương các luỹ thừa",
+            "$\\left(\\frac{x}{y}\\right)^n = \\frac{x^n}{y^n}\\ (y \\neq 0)$",
+            "$\\frac{(-14)^2}{7^2} = \\left(\\frac{-14}{7}\\right)^2 = 4$"
+          ]
+        ]
+      },
+      "after": [
+        "> Viết gọn số lớn bằng luỹ thừa của 10: một năm ánh sáng $\\approx 9\\,460\\,000\\,000\\,000$ km $= 9{,}46 \\cdot 10^{12}$ km."
+      ],
+      "keywords": "cộng mũ, trừ mũ, nhân mũ"
+    },
+    {
+      "title": "Thứ tự thực hiện phép tính",
+      "body": [
+        "Thứ tự thực hiện phép tính đối với số tự nhiên vẫn đúng với số hữu tỉ.",
+        "- Chỉ có cộng và trừ, hoặc chỉ có nhân và chia: thực hiện **từ trái sang phải**.",
+        "- Không có dấu ngoặc: thực hiện theo thứ tự"
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "Luỹ thừa",
+          "Nhân và chia",
+          "Cộng và trừ"
+        ]
+      },
+      "after": [
+        "- Có dấu ngoặc: trong ngoặc trước, ngoài ngoặc sau:",
+        "$$(\\ ) \\to [\\ ] \\to \\{\\ \\}$$",
+        "- Ví dụ: $1{,}2 - 3^2 + 7{,}5 : 3 = 1{,}2 - 9 + 2{,}5 = -5{,}3$."
+      ],
+      "keywords": "trái sang phải, ngoặc trước"
+    },
+    {
+      "title": "Quy tắc chuyển vế",
+      "body": [
+        "**Đẳng thức** $A = B$: $A$ là vế trái, $B$ là vế phải. Nếu $a = b$ thì:",
+        "$$b = a;\\qquad a + c = b + c.$$",
+        "> Khi chuyển một số hạng từ vế này sang vế kia của một đẳng thức, ta phải **đổi dấu** số hạng đó: dấu \"$+$\" đổi thành dấu \"$-$\" và dấu \"$-$\" đổi thành dấu \"$+$\"."
+      ],
+      "visual": {
+        "type": "compare",
+        "left": [
+          "$a + b = c$",
+          "$a - b = c$"
+        ],
+        "right": [
+          "$a = c - b$",
+          "$a = c + b$"
+        ],
+        "sep": "⇒"
+      },
+      "after": [
+        "- Ví dụ: $x + \\frac{1}{2} = -\\frac{6}{7}$ ⇒ $x = -\\frac{6}{7} - \\frac{1}{2} = -\\frac{19}{14}$."
+      ],
+      "keywords": "vế trái, vế phải, đổi dấu"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Số hữu tỉ là số viết được dưới dạng phân số $\\frac{a}{b}$ $(a, b \\in \\mathbb{Z},\\ b \\neq 0)$, kí hiệu $\\mathbb{Q}$.",
+      "Cộng, trừ, nhân, chia số hữu tỉ: viết dưới dạng phân số rồi áp dụng quy tắc của phân số.",
+      "Cùng cơ số: nhân thì cộng số mũ, chia thì trừ số mũ; luỹ thừa của luỹ thừa thì nhân số mũ.",
+      "Thứ tự: luỹ thừa → nhân, chia → cộng, trừ; ngoặc: $(\\ ) \\to [\\ ] \\to \\{\\ \\}$.",
+      "Chuyển một số hạng sang vế kia của đẳng thức thì phải đổi dấu số hạng đó."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Hiểu bản chất – làm bài chắc chắn!",
+  "source": "SGK Toán 7 – tập một (Bộ SGK thống nhất, NXBGD), tr. 5–23"
+}

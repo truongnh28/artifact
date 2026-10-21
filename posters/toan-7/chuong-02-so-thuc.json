@@ -1,0 +1,477 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP MỘT",
+    "subtitle": "Chương II. Số thực"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy Chương II",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Số thực<br>$\\mathbb{R}$",
+        "branches": [
+          {
+            "label": "Thập phân vô hạn tuần hoàn",
+            "items": [
+              "$0{,}2777... = 0{,}2(7)$",
+              "chu kì: chữ số lặp lại"
+            ]
+          },
+          {
+            "label": "Làm tròn số",
+            "items": [
+              "trăm → 50; đơn vị → $0{,}5$",
+              "$46{,}333... \\approx 46$"
+            ]
+          },
+          {
+            "label": "Số vô tỉ $\\mathbb{I}$",
+            "items": [
+              "thập phân vô hạn không tuần hoàn",
+              "$\\pi$; $\\sqrt{2} = 1{,}41421...$"
+            ]
+          },
+          {
+            "label": "Căn bậc hai số học",
+            "items": [
+              "$\\sqrt{a} = x$: $x \\geq 0,\\ x^2 = a$",
+              "máy tính: $\\sqrt{2} \\approx 1{,}414213562$"
+            ]
+          },
+          {
+            "label": "Số thực & trục số",
+            "items": [
+              "số hữu tỉ và số vô tỉ",
+              "mỗi số thực ↔ một điểm"
+            ]
+          },
+          {
+            "label": "Thứ tự & $|a|$",
+            "items": [
+              "$a < b$: điểm $a$ trước điểm $b$",
+              "$|a|$: khoảng cách từ $a$ đến $O$"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Số thập phân vô hạn tuần hoàn",
+      "body": [
+        "Chia 5 cho 18 không bao giờ chấm dứt, chữ số 7 lặp lại mãi:",
+        "$$\\frac{5}{18} = 0{,}2777... = 0{,}2(7)$$",
+        "Kí hiệu (7): chữ số 7 được lặp lại vô hạn lần; 7 là **chu kì** của **số thập phân vô hạn tuần hoàn** $0{,}2(7)$.",
+        "- $-\\frac{17}{11} = -1{,}545454... = -1{,}(54)$: chu kì 54.",
+        "- $\\frac{7}{22} = 0{,}31818... = 0{,}3(18)$: chu kì 18."
+      ],
+      "visual": {
+        "type": "compare",
+        "left": [
+          "**Hữu hạn**",
+          "$\\frac{4}{5} = 0{,}8$; $1{,}25$"
+        ],
+        "right": [
+          "**Vô hạn tuần hoàn**",
+          "$\\frac{5}{18} = 0{,}2(7)$"
+        ],
+        "sep": "vs"
+      },
+      "after": [
+        "- Các số đã học như $0{,}8$; $1{,}25$… gọi là **số thập phân hữu hạn**.",
+        "> Mọi số hữu tỉ đều viết được dưới dạng số thập phân hữu hạn hoặc vô hạn tuần hoàn."
+      ],
+      "keywords": "chu kì, $0{,}2(7)$, hữu hạn"
+    },
+    {
+      "title": "Làm tròn theo độ chính xác",
+      "body": [
+        "$46{,}333... \\approx 46$ (hàng đơn vị); $-1{,}27(534) \\approx -1{,}28$ (hàng phần trăm). Kí hiệu $\\approx$ đọc là xấp xỉ.",
+        "> Khi làm tròn số đến một hàng nào đó, kết quả làm tròn có **độ chính xác bằng một nửa đơn vị hàng làm tròn**."
+      ],
+      "visual": [
+        {
+          "type": "numberline",
+          "min": 46,
+          "max": 47,
+          "step": 1,
+          "points": [
+            {
+              "x": 46.333,
+              "label": "a"
+            }
+          ],
+          "arcs": [
+            {
+              "from": 46,
+              "to": 46.5,
+              "label": "0{,}5"
+            }
+          ],
+          "caption": "Khoảng cách từ 46 đến $a = 46{,}333...$ nhỏ hơn $0{,}5$"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Hàng làm tròn",
+            "Độ chính xác"
+          ],
+          "rows": [
+            [
+              "trăm",
+              "$50$"
+            ],
+            [
+              "chục",
+              "$5$"
+            ],
+            [
+              "đơn vị",
+              "$0{,}5$"
+            ],
+            [
+              "phần mười",
+              "$0{,}05$"
+            ],
+            [
+              "phần trăm",
+              "$0{,}005$"
+            ]
+          ]
+        }
+      ],
+      "after": [
+        "- Độ chính xác 50 (hàng trăm): $12\\,591{,}27 \\approx 12\\,600$.",
+        "- Độ chính xác $0{,}05$ (hàng phần mười): $12\\,591{,}27 \\approx 12\\,591{,}3$."
+      ],
+      "keywords": "nửa đơn vị, xấp xỉ $\\approx$"
+    },
+    {
+      "title": "Số vô tỉ",
+      "body": [
+        "Hình vuông diện tích $2\\ \\text{dm}^2$ có cạnh $x$ (dm), $x > 0$ thì $x^2 = 2$. Không có số hữu tỉ nào mà bình phương bằng 2:",
+        "$$x = 1{,}4142135623730950488016887...$$"
+      ],
+      "visual": {
+        "type": "geometry",
+        "w": 255,
+        "h": 135,
+        "points": {
+          "A": [
+            15,
+            22
+          ],
+          "B": [
+            115,
+            22
+          ],
+          "C": [
+            115,
+            122
+          ],
+          "D": [
+            15,
+            122
+          ],
+          "E": [
+            65,
+            72
+          ],
+          "S": [
+            140,
+            72
+          ],
+          "P": [
+            190,
+            22
+          ],
+          "Q": [
+            240,
+            72
+          ],
+          "R": [
+            190,
+            122
+          ]
+        },
+        "hide": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "S",
+          "P",
+          "Q",
+          "R"
+        ],
+        "shapes": [
+          {
+            "poly": "AEB",
+            "fill": 1
+          },
+          {
+            "poly": "BEC",
+            "fill": 2
+          },
+          {
+            "poly": "ABCD"
+          },
+          {
+            "seg": "AC",
+            "dash": true
+          },
+          {
+            "seg": "BD",
+            "dash": true
+          },
+          {
+            "seg": "BA",
+            "label": "2 dm"
+          },
+          {
+            "poly": "SPQ",
+            "fill": 1
+          },
+          {
+            "poly": "SRQ",
+            "fill": 2
+          },
+          {
+            "seg": "SQ",
+            "dash": true,
+            "label": "2 dm"
+          },
+          {
+            "seg": "QP",
+            "label": "x"
+          }
+        ],
+        "caption": "Ghép 2 tam giác: hình vuông $S = 2\\ \\text{dm}^2$, cạnh $x$ với $x^2 = 2$"
+      },
+      "after": [
+        "> **Số vô tỉ** là số viết được dưới dạng số thập phân vô hạn không tuần hoàn. Tập hợp các số vô tỉ được kí hiệu là $\\mathbb{I}$.",
+        "- Ví dụ: $\\pi = 3{,}14159265358...$; $-0{,}10100100...$"
+      ],
+      "keywords": "vô hạn không tuần hoàn, $\\mathbb{I}$, $\\pi$"
+    },
+    {
+      "title": "Căn bậc hai số học",
+      "body": [
+        "> **Căn bậc hai số học** của một số $a$ không âm, kí hiệu là $\\sqrt{a}$, là số $x$ không âm sao cho $x^2 = a$."
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "\\sqrt{a} = x",
+        "note": "$a \\geq 0$ · $x \\geq 0$ và $x^2 = a$"
+      },
+      "after": [
+        "- Cạnh hình vuông diện tích $2\\ \\text{dm}^2$ dài $\\sqrt{2}$ dm.",
+        "- $\\sqrt{100} = 10$ vì $10^2 = 100$ và $10 > 0$.",
+        "- $\\sqrt{191^2} = 191$; $\\sqrt{21{,}5^2} = 21{,}5$; $\\left(\\sqrt{4{,}1}\\right)^2 = 4{,}1$.",
+        "- $\\sqrt{3^2} = 3$ vì $3 > 0$; tương tự $\\sqrt{a^2} = a$ ($a$ là số thực dương).",
+        "> Căn bậc hai số học của một số tự nhiên không chính phương luôn là một số vô tỉ."
+      ],
+      "keywords": "$\\sqrt{a}$, $x \\geq 0$, $x^2 = a$"
+    },
+    {
+      "title": "Tính căn bằng máy tính",
+      "body": [
+        "Có thể dùng máy tính cầm tay thích hợp để tính căn bậc hai số học của một số không âm."
+      ],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Phép tính",
+          "Ấn các phím",
+          "Kết quả"
+        ],
+        "rows": [
+          [
+            "$\\sqrt{2}$",
+            "$\\boxed{\\sqrt{\\blacksquare}}\\ \\boxed{2}\\ \\boxed{=}$",
+            "$1{,}414213562$"
+          ],
+          [
+            "$\\sqrt{1\\,024}$",
+            "$\\boxed{\\sqrt{\\blacksquare}}\\ \\boxed{1}\\ \\boxed{0}\\ \\boxed{2}\\ \\boxed{4}\\ \\boxed{=}$",
+            "$32$"
+          ],
+          [
+            "$\\sqrt{91}$",
+            "$\\boxed{\\sqrt{\\blacksquare}}\\ \\boxed{9}\\ \\boxed{1}\\ \\boxed{=}$",
+            "$9{,}539392014$"
+          ]
+        ]
+      },
+      "after": [
+        "- Màn hình chỉ hiển thị hữu hạn chữ số nên kết quả vô hạn đều được làm tròn: $\\sqrt{2} \\approx 1{,}414213562$.",
+        "- $\\sqrt{91} \\approx 9{,}5394$ (đến chữ số thập phân thứ tư); $\\sqrt{91} \\approx 9{,}5$ (độ chính xác $0{,}05$)."
+      ],
+      "keywords": "máy tính, làm tròn, không chính phương"
+    },
+    {
+      "title": "Số thực – tập hợp $\\mathbb{R}$",
+      "body": [
+        "Số hữu tỉ và số vô tỉ đều viết được dưới dạng số thập phân hữu hạn hoặc vô hạn (tuần hoàn hoặc không tuần hoàn)."
+      ],
+      "visual": {
+        "type": "compare",
+        "left": [
+          "**Số hữu tỉ** $\\mathbb{Q}$",
+          "$\\frac{3}{4} = 0{,}75$; $\\frac{1}{9} = 0{,}(1)$"
+        ],
+        "right": [
+          "**Số vô tỉ** $\\mathbb{I}$",
+          "$\\sqrt{2} = 1{,}4142...$"
+        ],
+        "sep": "và"
+      },
+      "after": [
+        "> Số hữu tỉ và số vô tỉ được gọi chung là **số thực**. Tập hợp các số thực được kí hiệu là $\\mathbb{R}$.",
+        "- Mỗi số thực $a$ đều có một **số đối** kí hiệu là $-a$.",
+        "- Trong tập số thực cũng có các phép toán với các tính chất như trong tập số hữu tỉ."
+      ],
+      "keywords": "$\\mathbb{Q}$, $\\mathbb{I}$, $\\mathbb{R}$, số đối"
+    },
+    {
+      "title": "Trục số thực",
+      "span": 2,
+      "body": [
+        "Biểu diễn $\\sqrt{2}$: vẽ hình vuông $MNPQ$ cạnh bằng 2, $E$ là giao điểm hai đường chéo; vẽ đường tròn tâm $O$ (gốc của trục số), bán kính $ME$. Giao điểm $A$ của đường tròn với tia $Ox$ là điểm biểu diễn $\\sqrt{2}$.",
+        "> Mỗi số thực đều được biểu diễn bởi một điểm trên trục số. Ngược lại, mỗi điểm trên trục số đều biểu diễn một số thực."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -3,
+        "max": 3,
+        "step": 1,
+        "points": [
+          {
+            "x": -2.3333,
+            "label": "-2\\frac{1}{3}"
+          },
+          {
+            "x": -1.4142,
+            "label": "-\\sqrt{2}"
+          },
+          {
+            "x": -0.6,
+            "label": "\\frac{-3}{5}"
+          },
+          {
+            "x": 0.3,
+            "label": "0{,}3"
+          },
+          {
+            "x": 1.4142,
+            "label": "\\sqrt{2}"
+          },
+          {
+            "x": 2.3333,
+            "label": "2\\frac{1}{3}"
+          }
+        ],
+        "caption": "Các số thực lấp đầy trục số: **trục số thực**"
+      },
+      "keywords": "trục số thực, lấp đầy"
+    },
+    {
+      "title": "Thứ tự trong tập $\\mathbb{R}$",
+      "body": [
+        "- So sánh như hai số hữu tỉ viết dưới dạng số thập phân: $0{,}24(7) = 0{,}2477... > 0{,}2382...$",
+        "- Luôn có $a = b$ hoặc $a < b$ hoặc $a > b$; **bắc cầu**: $a < b$ và $b < c$ thì $a < c$.",
+        "- Trên trục số thực, nếu $a < b$ thì điểm $a$ nằm trước điểm $b$; $x < 0$: $x$ là số âm, $x > 0$: $x$ là số dương."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -1,
+        "max": 4,
+        "step": 1,
+        "points": [
+          {
+            "x": 1.5,
+            "label": "\\frac{3}{2}"
+          },
+          {
+            "x": 2.236,
+            "label": "\\sqrt{5}"
+          }
+        ],
+        "arcs": [
+          {
+            "from": 1,
+            "to": 3,
+            "label": "1 < x < 3"
+          }
+        ],
+        "caption": "Nếu $1 < x < 3$ thì điểm $x$ nằm giữa điểm 1 và điểm 3"
+      },
+      "after": [
+        "> Nếu $0 < a < b$ thì $\\sqrt{a} < \\sqrt{b}$. Chẳng hạn $\\sqrt{2} < \\sqrt{5}$ vì $2 < 5$."
+      ],
+      "keywords": "bắc cầu, âm – dương, $\\sqrt{a} < \\sqrt{b}$"
+    },
+    {
+      "title": "Giá trị tuyệt đối",
+      "body": [
+        "> Khoảng cách từ điểm $a$ trên trục số đến gốc $O$ là **giá trị tuyệt đối** của số $a$, kí hiệu là $|a|$."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -3,
+        "max": 4,
+        "step": 1,
+        "ticks": "zero",
+        "points": [
+          {
+            "x": -2,
+            "label": "-2"
+          },
+          {
+            "x": 3,
+            "label": "3"
+          }
+        ],
+        "arcs": [
+          {
+            "from": -2,
+            "to": 0,
+            "label": "|{-2}| = 2"
+          },
+          {
+            "from": 0,
+            "to": 3,
+            "label": "|3| = 3"
+          }
+        ],
+        "caption": "Hai số đối nhau thì có giá trị tuyệt đối bằng nhau"
+      },
+      "after": [
+        "$$|a| = \\begin{cases} a & \\text{khi } a > 0 \\\\ -a & \\text{khi } a < 0 \\\\ 0 & \\text{khi } a = 0 \\end{cases}$$",
+        "- Ví dụ: $|{-5{,}1}| = 5{,}1$; $\\left|\\frac{5}{8}\\right| = \\frac{5}{8}$; $|{-\\sqrt{2}}| = \\sqrt{2}$."
+      ],
+      "keywords": "khoảng cách, gốc $O$, số đối"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Mọi số hữu tỉ đều viết được dưới dạng số thập phân hữu hạn hoặc vô hạn tuần hoàn.",
+      "Làm tròn đến một hàng thì độ chính xác bằng một nửa đơn vị hàng làm tròn.",
+      "Số vô tỉ là số thập phân vô hạn không tuần hoàn; $\\sqrt{a}$ là số $x \\geq 0$ mà $x^2 = a$.",
+      "Số hữu tỉ và số vô tỉ gọi chung là số thực, kí hiệu $\\mathbb{R}$.",
+      "$|a|$ là khoảng cách từ điểm $a$ đến gốc $O$; hai số đối có giá trị tuyệt đối bằng nhau."
+    ],
+    "icon": "stack"
+  },
+  "footer": "Học để hiểu, hiểu để vận dụng!",
+  "source": "SGK Toán 7 – tập một (Bộ SGK thống nhất, NXBGD), tr. 26–37"
+}

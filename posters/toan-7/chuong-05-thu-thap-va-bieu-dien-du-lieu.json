@@ -1,0 +1,309 @@
+{
+  "theme": "blue-ink",
+  "density": "dense",
+  "columns": 2,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP MỘT",
+    "subtitle": "Chương V. Thu thập và biểu diễn dữ liệu"
+  },
+  "cards": [
+    {
+      "title": "Sơ đồ tư duy chương V",
+      "noNumber": true,
+      "icon": "puzzle",
+      "span": 2,
+      "body": [],
+      "visual": {
+        "type": "mindmap",
+        "center": "Thu thập &<br>biểu diễn dữ liệu",
+        "branches": [
+          {
+            "label": "Thu thập",
+            "items": [
+              "phỏng vấn, bảng hỏi",
+              "phiếu khảo sát"
+            ]
+          },
+          {
+            "label": "Phân loại",
+            "items": [
+              "là số: định lượng",
+              "không là số: định tính"
+            ]
+          },
+          {
+            "label": "Tính đại diện",
+            "items": [
+              "chọn ngẫu nhiên",
+              "kết luận hợp lí"
+            ]
+          },
+          {
+            "label": "Biểu đồ quạt tròn",
+            "items": [
+              "so sánh các phần trong toàn bộ",
+              "cả hình tròn = 100%"
+            ]
+          },
+          {
+            "label": "Biểu đồ đoạn thẳng",
+            "items": [
+              "thay đổi theo thời gian",
+              "xu thế, độ dốc"
+            ]
+          },
+          {
+            "label": "Phân tích",
+            "items": [
+              "lập bảng thống kê",
+              "ước lượng, dự đoán"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Thu thập và phân loại dữ liệu",
+      "body": [
+        "Thu thập dữ liệu bằng **phỏng vấn**, **bảng hỏi** (phiếu khảo sát).",
+        "> Dữ liệu là số (số liệu) còn gọi là ==dữ liệu định lượng==. Dữ liệu không là số còn gọi là ==dữ liệu định tính==."
+      ],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Loại dữ liệu",
+          "Ví dụ 1"
+        ],
+        "rows": [
+          [
+            "**Số liệu** (định lượng)",
+            "Cân nặng (kg): 43; 41; 48; 45; 52"
+          ],
+          [
+            "Không là số, **không thể sắp thứ tự**",
+            "Tên tỉnh: Ninh Bình, Hưng Yên, Bắc Ninh"
+          ],
+          [
+            "Không là số, **có thể sắp thứ tự**",
+            "Đánh giá bài giảng: Xuất sắc › Tốt › Khá Tốt › Trung bình"
+          ]
+        ]
+      },
+      "keywords": "định lượng, định tính, sắp thứ tự"
+    },
+    {
+      "title": "Tính đại diện của dữ liệu",
+      "body": [
+        "Để đưa ra các kết luận hợp lí, dữ liệu thu được phải đảm bảo **tính đại diện** cho toàn bộ đối tượng đang được quan tâm.",
+        "- Phải lấy ý kiến của các đối tượng được ==chọn một cách ngẫu nhiên==."
+      ],
+      "visual": {
+        "type": "compare",
+        "sep": "vs",
+        "left": [
+          "**Cách 1** :warning:",
+          "Hỏi 20 hành khách hạng thương gia",
+          "Chưa đảm bảo tính đại diện"
+        ],
+        "right": [
+          "**Cách 2** :check:",
+          "Đánh số ngẫu nhiên 100 khách, hỏi khách số 5; 10; …; 100",
+          "Hợp lí hơn"
+        ]
+      },
+      "after": [
+        "> Ví dụ 3: thuốc trị cảm cúm chỉ thử trên người 20 – 30 tuổi → quảng cáo \"95% khỏi bệnh\" là **không hợp lí**."
+      ],
+      "keywords": "đại diện, ngẫu nhiên, hợp lí"
+    },
+    {
+      "title": "Biểu đồ hình quạt tròn",
+      "body": [
+        "**Biểu đồ hình quạt tròn** dùng để so sánh các phần trong toàn bộ dữ liệu.",
+        "- Hình tròn được chia thành nhiều **hình quạt**; mỗi hình quạt biểu diễn tỉ lệ của một phần so với toàn bộ dữ liệu.",
+        "- Cả hình tròn ứng với ==100%==.",
+        "- Thành phần: tiêu đề, hình tròn biểu diễn dữ liệu, chú giải."
+      ],
+      "visual": {
+        "type": "pie",
+        "items": [
+          {
+            "label": "Huy chương vàng",
+            "value": 10
+          },
+          {
+            "label": "Huy chương bạc",
+            "value": 20
+          },
+          {
+            "label": "Huy chương đồng",
+            "value": 20
+          },
+          {
+            "label": "Không có huy chương",
+            "value": 50
+          }
+        ],
+        "caption": "Tỉ lệ trao huy chương trong cuộc thi (H.5.6)"
+      },
+      "after": [
+        "- Hai hình quạt giống nhau biểu diễn cùng một tỉ lệ.",
+        "- Nửa hình tròn ↔ 50%; $\\frac{1}{4}$ hình tròn ↔ 25%."
+      ],
+      "keywords": "hình quạt, 100%, chú giải"
+    },
+    {
+      "title": "Biểu diễn vào biểu đồ quạt",
+      "body": [
+        "Ví dụ 2: kĩ năng bơi của học sinh tiểu học ở một xã: 250 em bơi thành thạo, 175 em biết bơi nhưng chưa thành thạo, 75 em chưa biết bơi."
+      ],
+      "visual": [
+        {
+          "type": "steps",
+          "items": [
+            "Tổng: $250 + 175 + 75 = 500$",
+            "Tỉ lệ: $\\frac{250}{500} = 50\\%$; $\\frac{175}{500} = 35\\%$; $\\frac{75}{500} = 15\\%$",
+            "Tô các hình quạt tương ứng"
+          ]
+        },
+        {
+          "type": "pie",
+          "items": [
+            {
+              "label": "Bơi thành thạo",
+              "value": 250
+            },
+            {
+              "label": "Biết bơi, chưa thành thạo",
+              "value": 175
+            },
+            {
+              "label": "Chưa biết bơi",
+              "value": 75
+            }
+          ],
+          "caption": "Kết quả phổ cập bơi sau một năm (H.5.12)"
+        }
+      ],
+      "after": [
+        "> Hình tròn thường **chia sẵn**, mỗi hình quạt ứng với 10% (hoặc 5%). Hình quạt nào lớn hơn biểu diễn số liệu lớn hơn."
+      ],
+      "keywords": "tổng, tỉ lệ %, chia sẵn"
+    },
+    {
+      "title": "Phân tích biểu đồ quạt",
+      "body": [
+        "- **Lập bảng thống kê** từ biểu đồ (Ví dụ 3, H.5.14): vận động 20; di truyền 23; dinh dưỡng 32; giấc ngủ và môi trường 16; yếu tố khác 9 (%).",
+        "- Ngoài di truyền, ba yếu tố ảnh hưởng nhiều nhất đến chiều cao: $32\\% + 20\\% + 16\\% = 68\\%$.",
+        "- **Ứng dụng để dự đoán** (Ví dụ 4, H.5.16): 30% học sinh khối 7 thích chơi thể thao. Trong 200 học sinh có khoảng:"
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "200 \\cdot \\dfrac{30}{100} = 60",
+        "note": "$200 \\cdot 30\\%$ = 60 (học sinh)"
+      },
+      "after": [
+        "> Kết quả dự đoán chỉ là **con số ước lượng**."
+      ],
+      "keywords": "bảng thống kê, dự đoán, ước lượng"
+    },
+    {
+      "title": "Biểu đồ đoạn thẳng",
+      "body": [
+        "**Biểu đồ đoạn thẳng** thường được dùng để biểu diễn sự thay đổi của một đại lượng ==theo thời gian==. Thành phần:",
+        "- Trục ngang biểu diễn thời gian;",
+        "- Trục đứng biểu diễn đại lượng ta đang quan tâm;",
+        "- Mỗi điểm biểu diễn giá trị của đại lượng tại một thời điểm; hai điểm liên tiếp nối bằng một đoạn thẳng;",
+        "- Tiêu đề thường ở dòng trên cùng."
+      ],
+      "visual": {
+        "type": "linechart",
+        "labels": [
+          "1979",
+          "1989",
+          "1999",
+          "2009",
+          "2019"
+        ],
+        "values": [
+          54.7,
+          64.4,
+          76.3,
+          85.8,
+          96.2
+        ],
+        "unit": "triệu người",
+        "min": 0,
+        "caption": "Dân số Việt Nam qua 5 lần tổng điều tra (H.5.21)"
+      },
+      "keywords": "thời gian, trục ngang, trục đứng"
+    },
+    {
+      "title": "Phân tích biểu đồ đoạn thẳng",
+      "body": [
+        "Biểu đồ đoạn thẳng giúp ta dễ dàng nhận ra **xu thế** của đại lượng ta đang quan tâm theo thời gian (VD: dân số Việt Nam tăng từ 1979 đến 2019).",
+        "- **Độ dốc** của biểu đồ cho biết tốc độ tăng của đại lượng."
+      ],
+      "visual": {
+        "type": "linechart",
+        "labels": [
+          "Ngày 1",
+          "Ngày 2",
+          "Ngày 3",
+          "Ngày 4",
+          "Ngày 5"
+        ],
+        "values": [
+          0.5,
+          0.75,
+          1,
+          1.4,
+          2.5
+        ],
+        "unit": "cm",
+        "min": 0,
+        "max": 3,
+        "caption": "Chiều cao của cây đậu (H.5.24)"
+      },
+      "after": [
+        "- Ngày 5 cây đậu tăng nhiều nhất: $2{,}5 - 1{,}4 = 1{,}1$ (cm)."
+      ],
+      "keywords": "xu thế, độ dốc, tăng – giảm"
+    },
+    {
+      "title": "Vẽ biểu đồ đoạn thẳng",
+      "body": [
+        "Vẽ biểu đồ biểu diễn chiều cao cây đậu (Bảng 5.1) theo 4 bước:"
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "**B1.** Vẽ trục ngang (ngày), trục đứng (chiều cao); chọn đơn vị 0,5, lớn nhất 3",
+          "**B2.** Mỗi ngày ↔ một điểm biểu diễn chiều cao",
+          "**B3.** Nối các điểm liên tiếp bằng đoạn thẳng",
+          "**B4.** Ghi chú thích trục, giá trị các điểm, tên biểu đồ"
+        ]
+      },
+      "after": [
+        "- Có thể dùng dấu chấm tròn, dấu nhân,… để biểu diễn các điểm.",
+        "> **Chú ý:** có thể biểu diễn nhiều bộ số liệu trên cùng một biểu đồ để dễ so sánh (H.5.26).",
+        "> **Nhận xét:** Độ dốc của biểu đồ phụ thuộc vào việc chọn đơn vị của trục đứng. Khi số liệu lớn trong khi đơn vị độ dài của trục đứng nhỏ thì ta **không nên** vẽ trục đứng bắt đầu từ 0."
+      ],
+      "keywords": "4 bước, đơn vị trục đứng"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Dữ liệu là số gọi là định lượng; dữ liệu không là số gọi là định tính.",
+      "Dữ liệu thu được phải đảm bảo tính đại diện cho toàn bộ đối tượng quan tâm.",
+      "Biểu đồ hình quạt tròn so sánh các phần trong toàn bộ dữ liệu; cả hình tròn ứng với 100%.",
+      "Biểu đồ đoạn thẳng biểu diễn sự thay đổi theo thời gian, giúp nhận ra xu thế.",
+      "Từ tỉ lệ trên biểu đồ có thể ước lượng, dự đoán: $200 \\cdot 30\\% = 60$."
+    ],
+    "icon": "chart"
+  },
+  "footer": "Thu thập đúng – biểu diễn rõ – phân tích hay!",
+  "source": "SGK Toán 7 – tập một (Bộ SGK thống nhất, NXBGD), tr. 88–109"
+}
