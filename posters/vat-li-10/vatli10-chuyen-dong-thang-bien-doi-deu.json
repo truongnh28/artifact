@@ -1,0 +1,130 @@
+{
+  "theme": "chalkboard",
+  "columns": 3,
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "VẬT LÍ 10 – CHƯƠNG 2 – ĐỘNG HỌC",
+    "subtitle": "Chuyển động thẳng biến đổi đều"
+  },
+  "cards": [
+    {
+      "title": "Gia tốc",
+      "body": [
+        "Gia tốc là đại lượng đặc trưng cho **sự thay đổi nhanh hay chậm của vận tốc**.",
+        "$$a = \\frac{v - v_0}{t - t_0}$$",
+        "- Đơn vị: $\\text{m/s}^2$"
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "a = \\dfrac{\\Delta v}{\\Delta t}"
+      },
+      "keywords": "$\\Delta v / \\Delta t$, $\\text{m/s}^2$"
+    },
+    {
+      "title": "Chuyển động thẳng biến đổi đều",
+      "body": [
+        "- Quỹ đạo là **đường thẳng**.",
+        "- Gia tốc **không đổi**."
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "rocket",
+        "align": "center"
+      },
+      "keywords": "Đường thẳng, $a$ không đổi"
+    },
+    {
+      "title": "Nhanh dần – chậm dần",
+      "body": [
+        "- **Nhanh dần đều**: $a$ cùng dấu với $v$",
+        "- **Chậm dần đều**: $a$ ngược dấu với $v$"
+      ],
+      "visual": {
+        "type": "compare",
+        "left": [
+          "**Nhanh dần**",
+          "$a \\cdot v > 0$"
+        ],
+        "right": [
+          "**Chậm dần**",
+          "$a \\cdot v < 0$"
+        ]
+      },
+      "keywords": "Dấu của $a \\cdot v$"
+    },
+    {
+      "title": "Công thức (chọn $t_0 = 0$)",
+      "span": 2,
+      "body": [
+        "- **Vận tốc:**",
+        "$$v = v_0 + a t$$",
+        "- **Độ dịch chuyển:**",
+        "$$d = v_0 t + \\frac{1}{2} a t^2$$",
+        "- **Liên hệ** (không có $t$):",
+        "$$v^2 - v_0^2 = 2 a d$$"
+      ],
+      "keywords": "$v_0$, $a$, $t$, $d$"
+    },
+    {
+      "title": "Đồ thị vận tốc – thời gian",
+      "body": [
+        "Đồ thị $v$–$t$ là **đoạn thẳng xiên**.",
+        "- Độ dốc của đồ thị = gia tốc $a$",
+        "- Diện tích dưới đồ thị = độ dịch chuyển $d$"
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "chart",
+        "align": "center"
+      },
+      "keywords": "Độ dốc, diện tích"
+    },
+    {
+      "title": "Rơi tự do",
+      "body": [
+        "Chuyển động nhanh dần đều **không vận tốc đầu**, $a = g \\approx 9{,}8\\ \\text{m/s}^2$.",
+        "$$v = g t \\quad;\\quad h = \\frac{1}{2} g t^2$$"
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "globe",
+        "align": "center"
+      },
+      "keywords": "$v_0 = 0$, $g \\approx 9{,}8$"
+    },
+    {
+      "title": "Ví dụ",
+      "body": [
+        "Ô tô đang chạy $10\\ \\text{m/s}$ thì tăng tốc với $a = 2\\ \\text{m/s}^2$. Sau $5\\ \\text{s}$:",
+        "$$v = 10 + 2 \\cdot 5 = 20\\ \\text{m/s}$$",
+        "$$d = 10 \\cdot 5 + \\frac{1}{2} \\cdot 2 \\cdot 5^2 = 75\\ \\text{m}$$"
+      ],
+      "keywords": "Thay số, đúng đơn vị"
+    },
+    {
+      "title": "Lưu ý hay sai",
+      "body": [
+        "- Đổi $\\text{km/h}$ sang $\\text{m/s}$: **chia cho** $3{,}6$.",
+        "- Dấu của $a$ phụ thuộc **chiều dương** đã chọn."
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "warning",
+        "align": "center"
+      },
+      "keywords": "Chia $3{,}6$, chiều dương"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Gia tốc $a = \\frac{\\Delta v}{\\Delta t}$ cho biết vận tốc thay đổi nhanh hay chậm, đơn vị $\\text{m/s}^2$.",
+      "Nhanh dần đều khi $a \\cdot v > 0$, chậm dần đều khi $a \\cdot v < 0$.",
+      "Đồ thị $v$–$t$: độ dốc là gia tốc, diện tích dưới đồ thị là độ dịch chuyển.",
+      "Rơi tự do: nhanh dần đều không vận tốc đầu, $a = g \\approx 9{,}8\\ \\text{m/s}^2$."
+    ],
+    "icon": "atom"
+  },
+  "footer": "Hiểu bản chất – làm bài chắc chắn!",
+  "source": "Ghi chép bài giảng Vật lí 10"
+}

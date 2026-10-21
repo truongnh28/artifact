@@ -1,0 +1,158 @@
+{
+  "theme": "blue-ink",
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TOÁN 7 – TẬP 1 – KNTT",
+    "subtitle": "Bài 1. Tập hợp các số hữu tỉ"
+  },
+  "cards": [
+    {
+      "title": "Khái niệm số hữu tỉ",
+      "body": [
+        "Số hữu tỉ là số viết được dưới dạng $\\dfrac{a}{b}$, trong đó $a, b \\in \\mathbb{Z},\\ b \\neq 0$."
+      ],
+      "visual": {
+        "type": "formula",
+        "tex": "\\dfrac{a}{b}",
+        "note": "$a$: tử số · $b$: mẫu số $(b \\neq 0)$"
+      },
+      "keywords": "$a, b, \\mathbb{Z}, b \\neq 0$"
+    },
+    {
+      "title": "Dạng $\\frac{a}{b}$",
+      "body": [
+        "- Tử số: $a$ (số nguyên)",
+        "- Mẫu số: $b$ (số nguyên, $b \\neq 0$)",
+        "- Mỗi cặp $(a, b)$ với $b \\neq 0$ cho một số hữu tỉ."
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "book",
+        "align": "center"
+      },
+      "keywords": "Dạng $\\frac{a}{b}$"
+    },
+    {
+      "title": "Ví dụ số hữu tỉ",
+      "body": [
+        "Một số số hữu tỉ:",
+        "$$-\\frac{3}{5};\\ 0;\\ \\frac{4}{9};\\ -2;\\ \\frac{7}{3}$$",
+        "- Số nguyên cũng là số hữu tỉ:",
+        "$$5 = \\frac{5}{1};\\quad -3 = \\frac{-3}{1}$$",
+        "- Số 0: $0 = \\frac{0}{1}$"
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "pencil"
+      },
+      "keywords": "Ví dụ, số nguyên, 0"
+    },
+    {
+      "title": "Biểu diễn trên trục số",
+      "body": [
+        "Mỗi số hữu tỉ được biểu diễn bởi **một điểm** trên trục số."
+      ],
+      "visual": {
+        "type": "numberline",
+        "min": -2,
+        "max": 2,
+        "step": 1,
+        "points": [
+          {
+            "x": -1.5,
+            "label": "-\\frac{3}{2}"
+          },
+          {
+            "x": -0.5,
+            "label": "-\\frac{1}{2}"
+          },
+          {
+            "x": 0.6667,
+            "label": "\\frac{2}{3}"
+          },
+          {
+            "x": 1.5,
+            "label": "\\frac{3}{2}"
+          }
+        ]
+      },
+      "keywords": "Trục số, điểm"
+    },
+    {
+      "title": "Tập hợp số hữu tỉ",
+      "body": [
+        "Tập hợp số hữu tỉ kí hiệu là $\\mathbb{Q}$.",
+        "$$\\mathbb{Q} = \\left\\{ \\frac{a}{b} \\;\\middle|\\; a, b \\in \\mathbb{Z},\\ b \\neq 0 \\right\\}$$"
+      ],
+      "visual": {
+        "type": "nested",
+        "sets": [
+          "$\\mathbb{Q}$ (số hữu tỉ)",
+          "$\\mathbb{Z}$ (số nguyên)"
+        ]
+      },
+      "keywords": "$\\mathbb{Q}$, tập hợp"
+    },
+    {
+      "title": "Tính chất cơ bản",
+      "body": [
+        "Với $a, b, c, d \\in \\mathbb{Z}$, $b, d \\neq 0$:",
+        "- $\\frac{a}{b} + \\frac{c}{d} \\in \\mathbb{Q}$ :plus:",
+        "- $\\frac{a}{b} - \\frac{c}{d} \\in \\mathbb{Q}$ :minus:",
+        "- $\\frac{a}{b} \\cdot \\frac{c}{d} \\in \\mathbb{Q}$ :times:",
+        "- $\\frac{a}{b} : \\frac{c}{d} \\in \\mathbb{Q}$ :divide: (với $\\frac{c}{d} \\neq 0$)"
+      ],
+      "keywords": "Đóng: cộng, trừ, nhân, chia"
+    },
+    {
+      "title": "So sánh hai số hữu tỉ",
+      "body": [
+        "Với $\\frac{a}{b}, \\frac{c}{d}$ $(b, d > 0)$:",
+        "- $\\frac{a}{b} = \\frac{c}{d} \\Leftrightarrow ad = bc$",
+        "- $\\frac{a}{b} < \\frac{c}{d} \\Leftrightarrow ad < bc$",
+        "- $\\frac{a}{b} > \\frac{c}{d} \\Leftrightarrow ad > bc$"
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "scale",
+        "align": "center"
+      },
+      "keywords": "So sánh, $ad$, $bc$"
+    },
+    {
+      "title": "Số đối và giá trị tuyệt đối",
+      "body": [
+        "- Số đối của $\\frac{a}{b}$ là $-\\frac{a}{b}$. Tổng hai số đối bằng 0:",
+        "$$\\frac{a}{b} + \\left(-\\frac{a}{b}\\right) = 0$$",
+        "- Giá trị tuyệt đối:",
+        "$$\\left|\\frac{a}{b}\\right| = \\frac{|a|}{|b|}\\quad (b \\neq 0)$$"
+      ],
+      "keywords": "Số đối, $|\\ |$"
+    },
+    {
+      "title": "Quan hệ giữa $\\mathbb{N}, \\mathbb{Z}, \\mathbb{Q}$",
+      "body": [],
+      "visual": [
+        {
+          "type": "nested",
+          "sets": [
+            "$\\mathbb{Q}$ (số hữu tỉ)",
+            "$\\mathbb{Z}$ (số nguyên)",
+            "$\\mathbb{N}$ (số tự nhiên)"
+          ]
+        }
+      ],
+      "keywords": "$\\mathbb{N} \\subset \\mathbb{Z} \\subset \\mathbb{Q}$"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Số hữu tỉ là số viết được dưới dạng $\\frac{a}{b}$ $(a, b \\in \\mathbb{Z},\\ b \\neq 0)$.",
+      "Tập hợp số hữu tỉ kí hiệu là $\\mathbb{Q}$, gồm cả số nguyên và phân số.",
+      "Thực hiện được các phép toán cộng, trừ, nhân, chia (số chia khác 0).",
+      "Mỗi số hữu tỉ được biểu diễn bởi một điểm trên trục số."
+    ]
+  },
+  "footer": "Học để hiểu, hiểu để vận dụng!"
+}

@@ -1,0 +1,113 @@
+{
+  "theme": "blue-ink",
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "TIẾNG ANH 7 – GLOBAL SUCCESS",
+    "subtitle": "Ngữ pháp Unit 7 – 12"
+  },
+  "cards": [
+    {
+      "title": "Unit 7: \"It\" & động từ khiếm khuyết",
+      "body": [
+        "- It + is + khoảng cách + from/to",
+        "- **Should/Shouldn't** + V: lời khuyên",
+        "- **Must**: bắt buộc chủ quan (người nói)",
+        "- **Have to**: bắt buộc khách quan (luật lệ, quy định)",
+        "- **Can/Could** + V: khả năng, xin phép, yêu cầu"
+      ],
+      "keywords": "should, must, have to"
+    },
+    {
+      "title": "Unit 8: Although/Though & However",
+      "span": 2,
+      "body": ["Chỉ sự **đối lập, tương phản**: \"mặc dù\" hoặc \"tuy nhiên\"."],
+      "visual": {
+        "type": "compare",
+        "left": [
+          "**Although/Though** (Mặc dù)",
+          "Although/Though + S + V, S + V",
+          "S + V + although/though + S + V",
+          "Nối **hai mệnh đề** trái ngược.",
+          "> Although it was raining, they went to the park."
+        ],
+        "right": [
+          "**However** (Tuy nhiên)",
+          "S + V. However, S + V.",
+          "S + V; however, S + V.",
+          "Nối **hai câu hoàn chỉnh**, đứng sau dấu . hoặc ;",
+          "> He worked hard. However, he didn't succeed."
+        ],
+        "sep": "≠"
+      },
+      "keywords": "mặc dù, tuy nhiên"
+    },
+    {
+      "title": "Unit 9: Yes/No Questions",
+      "span": 2,
+      "body": ["Câu hỏi trả lời bằng **Yes** hoặc **No**."],
+      "visual": {
+        "type": "table",
+        "head": ["Loại", "Cấu trúc", "Ví dụ"],
+        "rows": [
+          ["Động từ \"to be\"", "To be + S + ...?", "Are you a student?"],
+          ["Động từ khuyết thiếu", "Modal verb + S + V (nguyên thể) + ...?", "Can you swim?"],
+          ["Động từ thường", "Do/Does/Did + S + V (nguyên thể) + ...?", "Do they play football?"],
+          ["Hiện tại hoàn thành", "Have/Has + S + V3/V-ed + ...?", "Has he finished his homework?"]
+        ]
+      },
+      "keywords": "Yes/No, đứng đầu câu"
+    },
+    {
+      "title": "Unit 10: Hiện tại tiếp diễn",
+      "body": [
+        "Hành động **đang diễn ra** lúc nói, tạm thời; kế hoạch gần; sự thay đổi.",
+        "- **(+)** S + am/is/are + V-ing",
+        "- **(–)** S + am/is/are + not + V-ing",
+        "- **(?)** Am/Is/Are + S + V-ing?",
+        "> She is studying English now."
+      ],
+      "keywords": "now, at the moment"
+    },
+    {
+      "title": "Unit 11: Will & đại từ sở hữu",
+      "span": 2,
+      "body": [
+        "**Tương lai đơn**: dự đoán, quyết định tức thì, hứa hẹn, đề nghị.",
+        "- **(+)** S + will + V (nguyên thể)",
+        "- **(–)** S + will not (won't) + V (nguyên thể)",
+        "- **(?)** Will + S + V (nguyên thể)?"
+      ],
+      "visual": {
+        "type": "table",
+        "head": ["Chủ ngữ", "I", "you", "he", "she", "we", "they"],
+        "rows": [
+          ["Tính từ sở hữu", "my", "your", "his", "her", "our", "their"],
+          ["Đại từ sở hữu", "mine", "yours", "his", "hers", "ours", "theirs"]
+        ]
+      },
+      "keywords": "will + V, mine/yours"
+    },
+    {
+      "title": "Unit 12: Mạo từ a/an, the",
+      "body": [
+        "- **a** + danh từ số ít, đếm được, bắt đầu bằng **phụ âm**",
+        "- **an** + danh từ số ít, bắt đầu bằng **nguyên âm** (a, e, i, o, u) hoặc âm \"h\" câm",
+        "- **the**: danh từ đã xác định, duy nhất, đã nhắc đến",
+        "> Không dùng mạo từ: tên riêng, môn học, ngôn ngữ."
+      ],
+      "keywords": "phụ âm, nguyên âm"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Must: bắt buộc chủ quan; have to: bắt buộc khách quan.",
+      "Although nối hai mệnh đề; however nối hai câu, đứng sau dấu . hoặc ;",
+      "Câu hỏi Yes/No: to be, động từ khuyết thiếu hoặc trợ động từ đứng đầu câu.",
+      "Hiện tại tiếp diễn: am/is/are + V-ing; tương lai đơn: will + V (nguyên thể).",
+      "a trước phụ âm, an trước nguyên âm, the cho danh từ đã xác định."
+    ]
+  },
+  "footer": "Học để hiểu, hiểu để vận dụng!",
+  "source": "apollo.edu.vn – Ngữ pháp tiếng Anh lớp 7 Global Success"
+}

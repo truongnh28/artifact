@@ -1,0 +1,162 @@
+{
+  "theme": "blue-ink",
+  "header": {
+    "title": "TỔNG HỢP KIẾN THỨC",
+    "tag": "KHTN 7 – KNTT",
+    "subtitle": "Quang hợp ở thực vật"
+  },
+  "cards": [
+    {
+      "title": "Khái niệm quang hợp",
+      "body": [
+        "Quang hợp là quá trình **lá cây** sử dụng ==nước== và ==khí carbon dioxide== nhờ năng lượng ánh sáng đã được **diệp lục** hấp thụ để tổng hợp chất hữu cơ (glucose) và giải phóng khí oxygen."
+      ],
+      "visual": {
+        "type": "icon",
+        "name": "leaf",
+        "align": "right"
+      },
+      "keywords": "Ánh sáng, diệp lục"
+    },
+    {
+      "title": "Phương trình tổng quát",
+      "body": [
+        "Dạng chữ:",
+        "> Điều kiện: **ánh sáng**, **diệp lục**"
+      ],
+      "visual": [
+        {
+          "type": "steps",
+          "items": [
+            "**Nước** + **Carbon dioxide**",
+            "**Glucose** + **Oxygen**"
+          ]
+        },
+        {
+          "type": "icons",
+          "names": [
+            "sun",
+            "leaf"
+          ]
+        }
+      ],
+      "keywords": "Ánh sáng + diệp lục"
+    },
+    {
+      "title": "Nguyên liệu và sản phẩm",
+      "body": [],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Nguyên liệu",
+          "Sản phẩm"
+        ],
+        "rows": [
+          [
+            "**Nước**: rễ hút từ đất, qua thân lên lá",
+            "**Glucose**: nuôi cây hoặc dự trữ"
+          ],
+          [
+            "**Khí carbon dioxide**: từ không khí, qua khí khổng",
+            "**Khí oxygen**: thải ra môi trường qua khí khổng"
+          ]
+        ]
+      },
+      "keywords": "Hút vào – thải ra"
+    },
+    {
+      "title": "Trao đổi chất & chuyển hoá năng lượng",
+      "body": [
+        "- **Trao đổi chất:** lấy vào nước, carbon dioxide; thải ra oxygen.",
+        "- **Chuyển hoá năng lượng:**"
+      ],
+      "visual": {
+        "type": "steps",
+        "items": [
+          "Quang năng (năng lượng ánh sáng)",
+          "Hoá năng (tích luỹ trong chất hữu cơ)"
+        ]
+      },
+      "keywords": "Đồng thời, gắn liền"
+    },
+    {
+      "title": "Lá cây – cơ quan quang hợp",
+      "body": [],
+      "visual": {
+        "type": "table",
+        "head": [
+          "Bộ phận",
+          "Đặc điểm – chức năng"
+        ],
+        "rows": [
+          [
+            "Phiến lá",
+            "Bản mỏng, diện tích bề mặt lớn → thu nhận nhiều ánh sáng"
+          ],
+          [
+            "Lục lạp",
+            "Chứa diệp lục: hấp thụ và chuyển hoá năng lượng ánh sáng"
+          ],
+          [
+            "Khí khổng",
+            "Chủ yếu ở biểu bì mặt dưới lá; carbon dioxide vào, oxygen ra"
+          ],
+          [
+            "Gân lá",
+            "Vận chuyển nước đến lục lạp; chất hữu cơ từ lá đến cơ quan khác"
+          ]
+        ]
+      },
+      "keywords": "Phiến lá, lục lạp, khí khổng, gân lá",
+      "span": 2
+    },
+    {
+      "title": "Yếu tố ảnh hưởng",
+      "body": [
+        "- Ánh sáng :sun:",
+        "- Nước",
+        "- Hàm lượng khí carbon dioxide",
+        "- Nhiệt độ",
+        "> Nhiệt độ thuận lợi cho đa số cây trồng: **từ 25 °C đến 35 °C**."
+      ],
+      "keywords": "4 yếu tố, 25 °C – 35 °C",
+      "span": 2,
+      "visual": {
+        "type": "icons",
+        "names": [
+          "sun",
+          "cloud"
+        ]
+      }
+    },
+    {
+      "title": "Vai trò của quang hợp",
+      "body": [
+        "- Tạo ra **chất hữu cơ** cung cấp cho sự sống của hầu hết sinh vật trên Trái Đất.",
+        "- Giải phóng **oxygen**, góp phần điều hoà không khí."
+      ],
+      "visual": {
+        "type": "icons",
+        "names": [
+          "plant",
+          "people",
+          "globe"
+        ]
+      },
+      "keywords": "Nuôi sống, điều hoà không khí"
+    }
+  ],
+  "recap": {
+    "label": "GHI NHỚ NHANH",
+    "items": [
+      "Lá cây dùng nước, carbon dioxide và ánh sáng (nhờ diệp lục) để tạo glucose, thải oxygen.",
+      "Quang năng được chuyển hoá thành hoá năng tích luỹ trong chất hữu cơ.",
+      "Trao đổi chất và chuyển hoá năng lượng luôn diễn ra đồng thời, gắn liền với nhau.",
+      "Khí khổng tập trung chủ yếu ở mặt dưới lá: carbon dioxide đi vào, oxygen đi ra.",
+      "Nhiệt độ thuận lợi cho quang hợp của đa số cây trồng: từ 25 °C đến 35 °C."
+    ],
+    "icon": "leaf"
+  },
+  "footer": "Hiểu bản chất – học chắc kiến thức!",
+  "source": "KHTN 7 – KNTT (tài liệu tóm lược)"
+}
